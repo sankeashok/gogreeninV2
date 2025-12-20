@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GoGreenIn - Cycling Revolution</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Google+Sans:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles-reimagined-v2.css">
+</head>
+<body>
+    <!-- Top Bar -->
+    <div class="top-bar">
+        <div class="top-content">
+            <div class="logo-section">
+                <img src="GGI_logo.png" alt="GoGreenIn" class="logo">
+                <span class="brand">GoGreenIn</span>
+            </div>
+            <div class="action-buttons">
+                <div class="gallery-nav">
+                    <a href="#events-gallery" data-filter="all" class="gallery-link">All</a>
+                    <a href="#events-gallery" data-filter="sunday-rides" class="gallery-link">Sunday</a>
+                    <a href="#events-gallery" data-filter="anniversary" class="gallery-link">Anniversary</a>
+                    <a href="#events-gallery" data-filter="national-events" class="gallery-link">Special Events</a>
+                    <a href="#events-gallery" data-filter="endurance" class="gallery-link">Endurance</a>
+                </div>
+                <button class="theme-toggle" onclick="toggleTheme()">
+                    <span class="theme-icon">🌙</span>
+                </button>
+                <a href="https://forms.gle/xBr4Ppko3zwNsc2eA" class="anniversary-btn">🎉 Anniversary Ride 2025</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Join Community Button - Top Right Corner -->
+    <div class="join-corner">
+        <a href="https://docs.google.com/forms/d/e/1FAIpQLSc-w0_2NGRsqiSUqDAiFzO2F6dtd7mAY1N-bXx02eR1WWbQ7g/viewform" class="join-btn priority">JOIN COMMUNITY</a>
+    </div>
+
+    <!-- Main Hero -->
+    <section class="main-hero">
+        <div class="hero-content">
+            <div class="hero-left">
+                <div class="hero-text">
+                    <div class="badge">17 Years • 5000+ Cyclists</div>
+                    <h1 class="material-expressive-title">Don't Wait, <span class="highlight">Be the Change.</span></h1>
+                    <p>Transform Bangalore through cycling. Join India's most impactful environmental community.</p>
+                </div>
+                
+                <div class="videos-section">
+                    <h2>Our Core Stories</h2>
+                    <div class="videos-grid">
+                        <div class="video-card">
+                            <div class="video-thumbnail" onclick="window.open('https://www.youtube.com/watch?v=kojDjqbusYs', '_blank')">
+                                <img src="https://img.youtube.com/vi/kojDjqbusYs/maxresdefault.jpg" alt="Video Thumbnail">
+                                <div class="play-button">▶</div>
+                            </div>
+                            <h3>An Tribute to Mother Nature</h3>
+                            <p>Our journey of environmental conservation</p>
+                        </div>
+                        
+                        <div class="video-card">
+                            <div class="video-thumbnail" onclick="window.open('https://youtu.be/4_BBbjwphnI', '_blank')">
+                                <img src="https://img.youtube.com/vi/4_BBbjwphnI/hqdefault.jpg" alt="Video Thumbnail" onerror="this.src='https://img.youtube.com/vi/4_BBbjwphnI/mqdefault.jpg'">
+                                <div class="play-button">▶</div>
+                            </div>
+                            <h3>GoGreen Rao at Crayon Connect 2023</h3>
+                            <p>Leadership in sustainability movement</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="stats-row">
+                    <div class="stat">
+                        <span class="number" data-target="17">0</span>
+                        <span class="label">Years</span>
+                    </div>
+                    <div class="stat">
+                        <span class="number" data-target="5000">0</span>
+                        <span class="label">Cyclists</span>
+                    </div>
+                    <div class="stat">
+                        <span class="number" data-target="300">0</span>
+                        <span class="label">Events</span>
+                    </div>
+                    <div class="stat">
+                        <span class="number" data-target="50">0</span>
+                        <span class="label">K+ KM</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="hero-right">
+            </div>
+        </div>
+    </section>
+
+    <!-- Journey Timeline -->
+    <section class="journey-timeline">
+        <div class="timeline-container">
+            <h2>Our Journey</h2>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-image">
+                        <img src="GGI_Campaign2008.jpg" alt="2008">
+                    </div>
+                    <div class="timeline-content">
+                        <div class="year">2008</div>
+                        <h3>The Beginning</h3>
+                        <p>Started with a vision to make Bangalore greener</p>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-image">
+                        <img src="GGI_Campaign2023.png" alt="2023">
+                    </div>
+                    <div class="timeline-content">
+                        <div class="year">2023</div>
+                        <h3>15 Years Strong</h3>
+                        <p>Grown into Bangalore's largest cycling community</p>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-image">
+                        <img src="GGI_Campaign2023.png" alt="2025">
+                    </div>
+                    <div class="timeline-content">
+                        <div class="year">2025</div>
+                        <h3>17 Years Legacy</h3>
+                        <p>Continuing the environmental revolution</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Events Gallery -->
+    <section id="events-gallery" class="events-gallery">
+        <div class="gallery-container">
+            <div class="gallery-header">
+                <h2>Our Events Gallery</h2>
+                <button class="gallery-toggle" onclick="toggleGallery()">
+                    <span class="toggle-text">Expand</span>
+                    <span class="toggle-icon">▶</span>
+                </button>
+            </div>
+            <div class="gallery-content collapsed" id="galleryContent">
+            <div class="gallery-filters">
+                <button class="filter-btn active" data-filter="all">All Events</button>
+                <button class="filter-btn" data-filter="sunday-rides">Sunday Rides</button>
+                <button class="filter-btn" data-filter="anniversary">Anniversary</button>
+                <button class="filter-btn" data-filter="national-events">Special Events</button>
+                <button class="filter-btn" data-filter="endurance">Endurance Rides</button>
+            </div>
+            
+            <!-- Year-wise Organization -->
+            <div class="years-timeline">
+                <div class="year-section">
+                    <h3 class="year-title">2025</h3>
+                    <div class="events-row">
+                        <div class="event-item" data-category="anniversary">
+                            <div class="event-card">
+                                <div class="event-icon">🎉</div>
+                                <h4>17th Anniversary Ride</h4>
+                                <p>December 21, 2025</p>
+                                <a href="https://forms.gle/xBr4Ppko3zwNsc2eA" class="event-link" target="_blank">Register Now</a>
+                            </div>
+                        </div>
+                        
+                        <div class="event-item" data-category="sunday-rides">
+                            <div class="event-card">
+                                <div class="event-icon">🚴</div>
+                                <h4>Weekly Sunday Rides</h4>
+                                <p>Every Sunday 6:30 AM</p>
+                                <a href="#" class="event-link">View Photos</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="year-section">
+                    <h3 class="year-title">2024</h3>
+                    <div class="events-row">
+                        <div class="event-item" data-category="anniversary">
+                            <div class="event-card">
+                                <div class="event-icon">🎊</div>
+                                <h4>16th Anniversary Ride</h4>
+                                <p>December 2024</p>
+                                <a href="#" class="event-link">View Gallery</a>
+                            </div>
+                        </div>
+                        
+                        <div class="event-item" data-category="national-events">
+                            <div class="event-card">
+                                <div class="event-icon">🇮🇳</div>
+                                <h4>Independence Day Ride</h4>
+                                <p>August 15, 2024</p>
+                                <a href="#" class="event-link">Facebook Post</a>
+                            </div>
+                        </div>
+                        
+                        <div class="event-item" data-category="national-events">
+                            <div class="event-card">
+                                <div class="event-icon">🇮🇳</div>
+                                <h4>Republic Day Ride</h4>
+                                <p>January 26, 2024</p>
+                                <a href="#" class="event-link">YouTube Video</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="year-section">
+                    <h3 class="year-title">2023</h3>
+                    <div class="events-row">
+                        <div class="event-item" data-category="anniversary">
+                            <div class="event-card">
+                                <img src="GGI_Campaign2023.png" alt="15th Anniversary" class="event-image">
+                                <h4>15th Anniversary Ride</h4>
+                                <p>December 2023</p>
+                                <a href="#" class="event-link">View Photos</a>
+                            </div>
+                        </div>
+                        
+                        <div class="event-item" data-category="endurance">
+                            <div class="event-card">
+                                <div class="event-icon">💪</div>
+                                <h4>Temple Endurance Ride</h4>
+                                <p>Monthly rides to temples</p>
+                                <a href="#" class="event-link">Facebook Album</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="year-section">
+                    <h3 class="year-title">2008</h3>
+                    <div class="events-row">
+                        <div class="event-item" data-category="anniversary">
+                            <div class="event-card">
+                                <img src="GGI_Campaign2008.jpg" alt="Foundation Year" class="event-image">
+                                <h4>GoGreenIn Founded</h4>
+                                <p>The beginning of our journey</p>
+                                <a href="#" class="event-link">Origin Story</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="upload-section">
+                <h3>Share Your Event Photos & Links</h3>
+                <p>Help us build our timeline! Share photos, YouTube links, or Facebook posts from GoGreenIn events.</p>
+                <a href="mailto:prabhakarrao.cm@gmail.com?subject=Event Content" class="upload-btn">📧 Send Content</a>
+            </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Activities Grid -->
+    <section class="activities">
+        <div class="activities-container">
+            <h2>What We Do</h2>
+            <div class="activities-grid">
+                <div class="activity-card">
+                    <div class="activity-icon">🚴</div>
+                    <h3>Cycling for Sustainability</h3>
+                    <p>Weekend rides promoting eco-friendly transport</p>
+                </div>
+                
+                <div class="activity-card">
+                    <div class="activity-icon">💧</div>
+                    <h3>Lake Cleaning Drives</h3>
+                    <p>Restoring Bangalore's natural water bodies</p>
+                </div>
+                
+                <div class="activity-card">
+                    <div class="activity-icon">🌱</div>
+                    <h3>Tree Plantations</h3>
+                    <p>Increasing green cover across the city</p>
+                </div>
+                
+                <div class="activity-card">
+                    <div class="activity-icon">👥</div>
+                    <h3>Community Building</h3>
+                    <p>Bringing together sustainability enthusiasts</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Impact Numbers -->
+    <section class="impact">
+        <div class="impact-container">
+            <h2>Our Environmental Impact</h2>
+            <div class="impact-grid">
+                <div class="impact-item">
+                    <div class="impact-icon">🌱</div>
+                    <div class="impact-number" data-target="2500">0</div>
+                    <div class="impact-label">Trees Planted</div>
+                </div>
+                
+                <div class="impact-item">
+                    <div class="impact-icon">💧</div>
+                    <div class="impact-number" data-target="15">0</div>
+                    <div class="impact-label">Lakes Cleaned</div>
+                </div>
+                
+                <div class="impact-item">
+                    <div class="impact-icon">🚴</div>
+                    <div class="impact-number" data-target="50000">0</div>
+                    <div class="impact-label">KM Cycled</div>
+                </div>
+                
+                <div class="impact-item">
+                    <div class="impact-icon">🌍</div>
+                    <div class="impact-number" data-target="10000">0</div>
+                    <div class="impact-label">CO2 Saved (kg)</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Final CTA -->
+    <section class="final-cta">
+        <div class="cta-container">
+            <h2>Ready to Make a Difference?</h2>
+            <p>Join thousands of cyclists creating positive environmental impact</p>
+            <div class="cta-buttons">
+                <a href="https://docs.google.com/forms/d/e/1FAIpQLSc-w0_2NGRsqiSUqDAiFzO2F6dtd7mAY1N-bXx02eR1WWbQ7g/viewform" class="cta-primary">Join GoGreenIn</a>
+                <a href="https://forms.gle/xBr4Ppko3zwNsc2eA" class="cta-secondary">Anniversary Ride</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-info">
+                <img src="GGI_logo.png" alt="GoGreenIn" class="footer-logo">
+                <p>Pedaling towards a sustainable future since 2008</p>
+            </div>
+            <div class="footer-links">
+                <a href="https://www.facebook.com/profile.php?id=100064416142595">Facebook</a>
+                <a href="https://youtu.be/kojDjqbusYs">YouTube</a>
+                <a href="mailto:prabhakarrao.cm@gmail.com">Contact</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2025 GoGreenIn • Cycling Revolution</p>
+        </div>
+    </footer>
+
+    <script src="script-reimagined-v2.js"></script>
+</body>
+</html>
