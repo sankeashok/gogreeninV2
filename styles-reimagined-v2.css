@@ -901,25 +901,106 @@ body {
 }
 
 /* Responsive */
+@media (max-width: 1024px) {
+    .top-content {
+        gap: 20px;
+        padding: 0 15px;
+    }
+    
+    .gallery-nav {
+        gap: 10px;
+    }
+    
+    .gallery-link {
+        font-size: 11px;
+        padding: 6px 12px;
+    }
+    
+    .hero-content {
+        gap: 40px;
+    }
+    
+    .videos-section h2 {
+        font-size: 1.5rem;
+    }
+}
+
 @media (max-width: 768px) {
+    .material-expressive-title {
+        white-space: normal !important;
+        line-height: 1.2;
+    }
+    
+    .top-content {
+        flex-direction: column;
+        gap: 15px;
+        padding: 10px 15px;
+    }
+    
+    .action-buttons {
+        width: 100%;
+        justify-content: center;
+        margin-left: 0;
+    }
+    
+    .gallery-nav {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 8px;
+    }
+    
+    .join-corner {
+        position: relative;
+        top: auto;
+        right: auto;
+        margin: 10px 0;
+    }
+    
+    .main-hero {
+        padding: 120px 15px 30px;
+    }
+    
     .hero-content {
         grid-template-columns: 1fr;
-        gap: 40px;
+        gap: 30px;
+    }
+    
+    .hero-content h1 {
+        font-size: clamp(2rem, 6vw, 3rem);
+    }
+    
+    .hero-content p {
+        font-size: 16px;
+        margin-bottom: 30px;
     }
     
     .stats-row {
         grid-template-columns: repeat(2, 1fr);
-        gap: 20px;
+        gap: 15px;
     }
     
     .videos-grid {
         grid-template-columns: 1fr;
-        gap: 30px;
+        gap: 20px;
     }
     
     .timeline {
         grid-template-columns: 1fr;
-        gap: 30px;
+        gap: 25px;
+    }
+    
+    .gallery-header {
+        flex-direction: column;
+        gap: 15px;
+    }
+    
+    .gallery-filters {
+        gap: 10px;
+    }
+    
+    .filter-btn {
+        font-size: 12px;
+        padding: 8px 16px;
     }
     
     .impact-grid {
@@ -930,6 +1011,7 @@ body {
     .cta-buttons {
         flex-direction: column;
         align-items: center;
+        gap: 15px;
     }
     
     .footer-content {
@@ -938,24 +1020,149 @@ body {
         text-align: center;
     }
     
-    .action-buttons {
-        flex-direction: column;
-        gap: 10px;
+    .footer-links {
+        gap: 15px;
     }
 }
 
 @media (max-width: 480px) {
+    .top-bar {
+        padding: 10px 0;
+    }
+    
+    .logo {
+        width: 30px;
+        height: 30px;
+    }
+    
+    .brand {
+        font-size: 18px;
+    }
+    
+    .gallery-link {
+        font-size: 10px;
+        padding: 5px 10px;
+    }
+    
+    .join-btn {
+        font-size: 14px;
+        padding: 10px 20px;
+    }
+    
+    .main-hero {
+        padding: 100px 10px 20px;
+    }
+    
+    .hero-content h1 {
+        font-size: clamp(1.5rem, 5vw, 2.5rem);
+        margin-bottom: 15px;
+    }
+    
+    .hero-content p {
+        font-size: 14px;
+        margin-bottom: 25px;
+    }
+    
+    .badge {
+        font-size: 12px;
+        padding: 6px 15px;
+        margin-bottom: 20px;
+    }
+    
     .stats-row {
         grid-template-columns: 1fr;
-        gap: 15px;
+        gap: 10px;
+    }
+    
+    .stat {
+        padding: 12px;
+    }
+    
+    .stat .number {
+        font-size: 1.5rem;
+    }
+    
+    .videos-section h2 {
+        font-size: 1.2rem;
+        margin-bottom: 20px;
+    }
+    
+    .video-card {
+        padding: 12px;
+    }
+    
+    .video-card h3 {
+        font-size: 0.8rem;
+    }
+    
+    .video-card p {
+        font-size: 0.7rem;
+    }
+    
+    .play-button {
+        width: 50px;
+        height: 50px;
+        font-size: 16px;
+    }
+    
+    .journey-timeline,
+    .events-gallery,
+    .activities,
+    .impact,
+    .final-cta {
+        padding: 40px 10px;
+    }
+    
+    .journey-timeline h2,
+    .events-gallery h2,
+    .activities h2,
+    .impact h2,
+    .final-cta h2 {
+        font-size: 1.8rem;
+        margin-bottom: 30px;
+    }
+    
+    .timeline-item {
+        padding: 20px;
+    }
+    
+    .timeline-image {
+        height: 150px;
+    }
+    
+    .gallery-toggle {
+        padding: 8px 16px;
+        font-size: 14px;
+    }
+    
+    .filter-btn {
+        font-size: 11px;
+        padding: 6px 12px;
     }
     
     .impact-grid {
         grid-template-columns: 1fr;
-        gap: 20px;
+        gap: 15px;
+    }
+    
+    .impact-number {
+        font-size: 2rem;
     }
     
     .activities-grid {
         grid-template-columns: 1fr;
+        gap: 20px;
+    }
+    
+    .activity-card {
+        padding: 20px;
+    }
+    
+    .cta-primary,
+    .cta-secondary {
+        padding: 12px 25px;
+        font-size: 14px;
+        width: 100%;
+        max-width: 250px;
     }
 }
