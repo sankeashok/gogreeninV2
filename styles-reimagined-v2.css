@@ -1445,6 +1445,32 @@ body {
         padding: 10px 0;
     }
     
+    .timeline {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 8px;
+    }
+    
+    .timeline-item {
+        padding: 10px;
+    }
+    
+    .timeline-image {
+        height: 80px;
+    }
+    
+    .year {
+        font-size: 10px;
+        padding: 2px 8px;
+    }
+    
+    .timeline-item h3 {
+        font-size: 0.8rem;
+    }
+    
+    .timeline-item p {
+        font-size: 0.65rem;
+    }
+    
     .logo {
         width: 30px;
         height: 30px;
