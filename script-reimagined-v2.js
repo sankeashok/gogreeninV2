@@ -100,7 +100,7 @@ const yearData = {
     '2025': {
         title: '17 Years Legacy',
         description: 'Continuing the environmental revolution with future vision.',
-        image: '2025/17th Anniversary-2025 Year.jpg',
+        image: 'data/2025/17th Anniversary-2025 Year.jpg',
         events: ['17th Anniversary celebration'], //'Future vision planning', 'Next generation initiatives'
         monthlyData: [
             {month: 'Dec', rides: 5, cyclists: 300, events: [
@@ -158,7 +158,16 @@ const yearData = {
         monthlyData: [
             {month: 'Dec', rides: 5, cyclists: 320, events: ['Event 5 - 15th Anniversary Mega Ride', 'Event 4 - Community Awards', 'Event 3 - Year Review', 'Event 2 - Winter Festival', 'Event 1 - Holiday Ride']},
             {month: 'Nov', rides: 4, cyclists: 185, events: ['Event 4 - Diwali Celebration', 'Event 3 - Light Festival', 'Event 2 - Community Bonding', 'Event 1 - Autumn Ride']},
-            {month: 'Oct', rides: 4, cyclists: 200, events: ['Event 4 - Navratri Special', 'Event 3 - Cultural Ride', 'Event 2 - Heritage Route', 'Event 1 - Festival Season']}
+            {month: 'Oct', rides: 4, cyclists: 200, events: ['Event 4 - Navratri Special', 'Event 3 - Cultural Ride', 'Event 2 - Heritage Route', 'Event 1 - Festival Season']},
+            {month: 'Sep', rides: 4, cyclists: 190, events: ['Event 4 - September Strong', 'Event 3 - Community Growth', 'Event 2 - Milestone Progress', 'Event 1 - Strong Foundation']},
+            {month: 'Aug', rides: 5, cyclists: 240, events: ['Event 5 - Strong Independence', 'Event 4 - 15 Years Patriotic', 'Event 3 - Community Freedom', 'Event 2 - Strong Celebration', 'Event 1 - Independence Strong']},
+            {month: 'Jul', rides: 3, cyclists: 160, events: ['Event 3 - Strong Monsoon', 'Event 2 - Indoor Strong', 'Event 1 - Community Indoor']},
+            {month: 'Jun', rides: 4, cyclists: 175, events: ['Event 4 - Strong Environment', 'Event 3 - 15 Years Green', 'Event 2 - Community Eco', 'Event 1 - Strong World Day']},
+            {month: 'May', rides: 4, cyclists: 170, events: ['Event 4 - Strong May', 'Event 3 - Community Strong', 'Event 2 - 15 Years Growth', 'Event 1 - Strong Development']},
+            {month: 'Apr', rides: 4, cyclists: 165, events: ['Event 4 - Strong Spring', 'Event 3 - Community April', 'Event 2 - 15 Years Building', 'Event 1 - Strong Foundation']},
+            {month: 'Mar', rides: 4, cyclists: 160, events: ['Event 4 - Strong March', 'Event 3 - Community Planning', 'Event 2 - 15 Years Strategy', 'Event 1 - Strong Vision']},
+            {month: 'Feb', rides: 4, cyclists: 155, events: ['Event 4 - Strong February', 'Event 3 - Community Goal', 'Event 2 - 15 Years Target', 'Event 1 - Strong Mission']},
+            {month: 'Jan', rides: 4, cyclists: 150, events: ['Event 4 - Strong New Year', 'Event 3 - Community Resolution', 'Event 2 - 15 Years Vision', 'Event 1 - Strong Start']}
         ],
         url: '#2023-details'
     },
@@ -170,7 +179,16 @@ const yearData = {
         monthlyData: [
             {month: 'Dec', rides: 4, cyclists: 260, events: ['Event 4 - 14th Anniversary', 'Event 3 - Innovation Awards', 'Event 2 - Tech Integration', 'Event 1 - Year End Ride']},
             {month: 'Nov', rides: 4, cyclists: 175, events: ['Event 4 - Heritage Discovery', 'Event 3 - Route Innovation', 'Event 2 - Community Tech', 'Event 1 - Fitness Focus']},
-            {month: 'Oct', rides: 4, cyclists: 190, events: ['Event 4 - Digital Campaign', 'Event 3 - Smart Cycling', 'Event 2 - Tech Adoption', 'Event 1 - Innovation Drive']}
+            {month: 'Oct', rides: 4, cyclists: 190, events: ['Event 4 - Digital Campaign', 'Event 3 - Smart Cycling', 'Event 2 - Tech Adoption', 'Event 1 - Innovation Drive']},
+            {month: 'Sep', rides: 4, cyclists: 180, events: ['Event 4 - September Innovation', 'Event 3 - Tech September', 'Event 2 - Route Discovery', 'Event 1 - Innovation Focus']},
+            {month: 'Aug', rides: 5, cyclists: 220, events: ['Event 5 - Tech Independence', 'Event 4 - Innovation Patriotic', 'Event 3 - Digital Freedom', 'Event 2 - Route Freedom', 'Event 1 - Tech Celebration']},
+            {month: 'Jul', rides: 3, cyclists: 140, events: ['Event 3 - Monsoon Innovation', 'Event 2 - Indoor Tech', 'Event 1 - Digital Monsoon']},
+            {month: 'Jun', rides: 4, cyclists: 165, events: ['Event 4 - Tech Environment', 'Event 3 - Innovation Green', 'Event 2 - Digital Eco', 'Event 1 - Route Environment']},
+            {month: 'May', rides: 4, cyclists: 160, events: ['Event 4 - Innovation May', 'Event 3 - Tech Growth', 'Event 2 - Digital Development', 'Event 1 - Route Planning']},
+            {month: 'Apr', rides: 4, cyclists: 155, events: ['Event 4 - Tech Spring', 'Event 3 - Innovation Start', 'Event 2 - Digital Begin', 'Event 1 - Route Launch']},
+            {month: 'Mar', rides: 4, cyclists: 150, events: ['Event 4 - Innovation March', 'Event 3 - Tech Planning', 'Event 2 - Digital Strategy', 'Event 1 - Route Vision']},
+            {month: 'Feb', rides: 4, cyclists: 145, events: ['Event 4 - Tech February', 'Event 3 - Innovation Goal', 'Event 2 - Digital Target', 'Event 1 - Route Mission']},
+            {month: 'Jan', rides: 4, cyclists: 140, events: ['Event 4 - Innovation New Year', 'Event 3 - Tech Resolution', 'Event 2 - Digital Vision', 'Event 1 - Route Start']}
         ],
         url: '#2022-details'
     },
