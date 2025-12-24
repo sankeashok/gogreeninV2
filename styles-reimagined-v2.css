@@ -47,7 +47,8 @@ body {
     backdrop-filter: blur(20px);
     border-bottom: 1px solid rgba(0, 255, 136, 0.2);
     z-index: 1000;
-    padding: 15px 0;
+    padding: 10px 0;
+    min-height: 160px;
 }
 
 .top-content {
@@ -151,11 +152,28 @@ body {
     box-shadow: var(--shadow);
 }
 
-.join-corner {
+.join-corner-desktop {
     position: fixed;
     top: 20px;
     right: 20px;
     z-index: 1001;
+}
+
+.join-corner {
+    display: none;
+}
+
+@media (max-width: 768px) {
+    .join-corner-desktop {
+        display: none;
+    }
+    
+    .join-corner {
+        display: block !important;
+        order: 1;
+        align-self: center;
+        margin: 10px 0;
+    }
 }
 
 .join-btn {
@@ -450,6 +468,13 @@ body {
     grid-template-rows: repeat(3, 1fr);
     gap: 15px;
     max-height: 600px;
+}
+
+@media (max-width: 1024px) {
+    .timeline {
+        grid-template-columns: repeat(4, 1fr);
+        max-height: none;
+    }
 }
 
 .timeline-item {
@@ -1386,27 +1411,42 @@ body {
         padding: 10px 15px;
     }
     
+    .logo-section {
+        align-self: flex-start;
+    }
+    
+    .join-corner {
+        position: static !important;
+        order: 1;
+        align-self: center;
+        margin: 10px 0;
+        display: block !important;
+        visibility: visible !important;
+        opacity: 1 !important;
+    }
+    
+    .join-btn {
+        display: inline-block !important;
+        visibility: visible !important;
+        opacity: 1 !important;
+    }
+    
     .action-buttons {
         width: 100%;
         justify-content: center;
         margin-left: 0;
+        order: 2;
     }
     
     .gallery-nav {
         flex-wrap: wrap;
         justify-content: center;
         gap: 8px;
-    }
-    
-    .join-corner {
-        position: relative;
-        top: auto;
-        right: auto;
-        margin: 10px 0;
+        order: 3;
     }
     
     .main-hero {
-        padding: 120px 15px 30px;
+        padding: 220px 15px 30px;
     }
     
     .hero-content {
@@ -1434,8 +1474,17 @@ body {
     }
     
     .timeline {
-        grid-template-columns: repeat(6, 1fr);
-        gap: 10px;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 12px;
+        max-height: none;
+    }
+    
+    .timeline-item {
+        padding: 12px;
+    }
+    
+    .timeline-image {
+        height: 100px;
     }
     
     .gallery-header {
@@ -1479,17 +1528,33 @@ body {
         padding: 10px 0;
     }
     
+    .join-corner {
+        position: static;
+        order: 1;
+        align-self: center;
+        margin: 10px 0;
+        display: block;
+    }
+    
+    .join-btn {
+        font-size: 14px;
+        padding: 10px 20px;
+        display: inline-block;
+    }
+    
     .timeline {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 8px;
+        grid-template-columns: 1fr;
+        gap: 15px;
+        max-height: none;
     }
     
     .timeline-item {
-        padding: 10px;
+        padding: 15px;
+        margin-bottom: 10px;
     }
     
     .timeline-image {
-        height: 80px;
+        height: 120px;
     }
     
     .year {
@@ -1525,7 +1590,7 @@ body {
     }
     
     .main-hero {
-        padding: 100px 10px 20px;
+        padding: 240px 10px 20px;
     }
     
     .hero-content h1 {
