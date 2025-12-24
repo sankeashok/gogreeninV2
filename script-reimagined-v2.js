@@ -1,5 +1,42 @@
 // Reimagined GoGreenIn JavaScript
 
+// Handle Endurance navigation
+function handleEnduranceClick(event) {
+    event.preventDefault();
+    
+    // Scroll to events gallery
+    document.querySelector('#events-gallery').scrollIntoView({ behavior: 'smooth' });
+    
+    // Expand gallery and filter to endurance
+    setTimeout(() => {
+        const galleryContent = document.getElementById('galleryContent');
+        const toggleText = document.querySelector('.toggle-text');
+        const toggleIcon = document.querySelector('.toggle-icon');
+        
+        // Expand gallery if collapsed
+        if (galleryContent.classList.contains('collapsed')) {
+            galleryContent.classList.remove('collapsed');
+            toggleText.textContent = 'Collapse';
+            toggleIcon.textContent = '▼';
+        }
+        
+        // Filter to endurance
+        const filterBtns = document.querySelectorAll('.filter-btn');
+        filterBtns.forEach(btn => {
+            btn.classList.toggle('active', btn.dataset.filter === 'endurance');
+        });
+        
+        const eventItems = document.querySelectorAll('.event-item');
+        eventItems.forEach(item => {
+            if (item.dataset.category === 'endurance') {
+                item.style.display = 'block';
+            } else {
+                item.style.display = 'none';
+            }
+        });
+    }, 500);
+}
+
 // Header gallery navigation functionality
 document.addEventListener('DOMContentLoaded', () => {
     const galleryLinks = document.querySelectorAll('.gallery-link');

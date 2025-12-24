@@ -11,7 +11,7 @@
     <!-- Top Bar -->
     <div class="top-bar">
         <div class="top-content">
-            <div class="logo-section">
+            <div class="logo-section" onclick="window.location.reload()" style="cursor: pointer;">
                 <img src="GGI_logo.png" alt="GoGreenIn" class="logo">
                 <span class="brand">GoGreenIn</span>
             </div>
@@ -26,7 +26,7 @@
                     <a href="#events-gallery" data-filter="sunday-rides" class="gallery-link">Sunday</a>
                     <a href="#events-gallery" data-filter="anniversary" class="gallery-link">Anniversary</a>
                     <a href="#events-gallery" data-filter="national-events" class="gallery-link">Special Events</a>
-                    <a href="#events-gallery" data-filter="endurance" class="gallery-link">Endurance</a>
+                    <a href="#events-gallery" data-filter="endurance" class="gallery-link" onclick="handleEnduranceClick(event)">Endurance</a>
                     <a href="#journey-timeline" class="gallery-link nav-link">Our Journey</a>
                     <!-- <a href="statistics.html" class="gallery-link nav-link">📊 Statistics</a> -->
                 </div>
@@ -542,9 +542,9 @@
                         <div class="event-item" data-category="endurance">
                             <div class="event-card">
                                 <div class="event-icon">💪</div>
-                                <h4>Temple Endurance Ride</h4>
-                                <p>Monthly rides to temples</p>
-                                <a href="#" class="event-link">Facebook Album</a>
+                                <h4>Tour-De-Mysore 2025</h4>
+                                <p>Long distance endurance challenge</p>
+                                <a href="https://www.facebook.com/reel/1532990601217812" class="event-link" target="_blank">View Video</a>
                             </div>
                         </div>
                     </div>
