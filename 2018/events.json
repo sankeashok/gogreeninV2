@@ -1,32 +1,38 @@
 {
-  "year": 2024,
-  "title": "Continued Impact",
+  "year": 2018,
+  "title": "10 Years Legacy",
   "months": {
     "12": {
       "name": "December",
-      "rides": 4,
-      "cyclists": 280,
+      "rides": 5,
+      "cyclists": 240,
       "events": [
         {
-          "name": "Event 4 - 16th Anniversary Ride",
+          "name": "Event 5 - 10th Anniversary Celebration",
           "url": "",
           "photos": [],
           "description": ""
         },
         {
-          "name": "Event 3 - Year End Celebration",
+          "name": "Event 4 - Decade Milestone",
           "url": "",
           "photos": [],
           "description": ""
         },
         {
-          "name": "Event 2 - Winter Solstice",
+          "name": "Event 3 - Government Recognition",
           "url": "",
           "photos": [],
           "description": ""
         },
         {
-          "name": "Event 1 - Christmas Special",
+          "name": "Event 2 - Legacy Awards",
+          "url": "",
+          "photos": [],
+          "description": ""
+        },
+        {
+          "name": "Event 1 - Community Honor",
           "url": "",
           "photos": [],
           "description": ""
@@ -36,28 +42,28 @@
     "11": {
       "name": "November",
       "rides": 4,
-      "cyclists": 195,
+      "cyclists": 160,
       "events": [
         {
-          "name": "Event 4 - Diwali Ride",
+          "name": "Event 4 - Achievement Awards",
           "url": "",
           "photos": [],
           "description": ""
         },
         {
-          "name": "Event 3 - Air Quality Drive",
+          "name": "Event 3 - Community Recognition",
           "url": "",
           "photos": [],
           "description": ""
         },
         {
-          "name": "Event 2 - Heritage Tour",
+          "name": "Event 2 - Milestone Celebration",
           "url": "",
           "photos": [],
           "description": ""
         },
         {
-          "name": "Event 1 - Festival Prep",
+          "name": "Event 1 - Legacy Building",
           "url": "",
           "photos": [],
           "description": ""
@@ -67,28 +73,28 @@
     "10": {
       "name": "October",
       "rides": 4,
-      "cyclists": 210,
+      "cyclists": 170,
       "events": [
         {
-          "name": "Event 4 - Durga Puja Special",
+          "name": "Event 4 - Documentation Drive",
           "url": "",
           "photos": [],
           "description": ""
         },
         {
-          "name": "Event 3 - Clean Air Campaign",
+          "name": "Event 3 - History Recording",
           "url": "",
           "photos": [],
           "description": ""
         },
         {
-          "name": "Event 2 - Community Service",
+          "name": "Event 2 - Legacy Project",
           "url": "",
           "photos": [],
           "description": ""
         },
         {
-          "name": "Event 1 - Festive Season",
+          "name": "Event 1 - Memory Lane",
           "url": "",
           "photos": [],
           "description": ""
@@ -98,28 +104,28 @@
     "09": {
       "name": "September",
       "rides": 4,
-      "cyclists": 200,
+      "cyclists": 155,
       "events": [
         {
-          "name": "Event 4 - September Impact",
+          "name": "Event 4 - Anniversary September",
           "url": "",
           "photos": [],
           "description": ""
         },
         {
-          "name": "Event 3 - Climate Action",
+          "name": "Event 3 - Decade Progress",
           "url": "",
           "photos": [],
           "description": ""
         },
         {
-          "name": "Event 2 - Sustainable Transport",
+          "name": "Event 2 - Legacy Focus",
           "url": "",
           "photos": [],
           "description": ""
         },
         {
-          "name": "Event 1 - Impact Focus",
+          "name": "Event 1 - Milestone Journey",
           "url": "",
           "photos": [],
           "description": ""
@@ -129,34 +135,34 @@
     "08": {
       "name": "August",
       "rides": 5,
-      "cyclists": 250,
+      "cyclists": 200,
       "events": [
         {
-          "name": "Event 5 - Impact Independence",
+          "name": "Event 5 - Anniversary Independence",
           "url": "",
           "photos": [],
           "description": ""
         },
         {
-          "name": "Event 4 - Climate Patriotic",
+          "name": "Event 4 - Decade Patriotic",
           "url": "",
           "photos": [],
           "description": ""
         },
         {
-          "name": "Event 3 - Sustainable Freedom",
+          "name": "Event 3 - Legacy Freedom",
           "url": "",
           "photos": [],
           "description": ""
         },
         {
-          "name": "Event 2 - Transport Freedom",
+          "name": "Event 2 - Government Honor",
           "url": "",
           "photos": [],
           "description": ""
         },
         {
-          "name": "Event 1 - Independence Impact",
+          "name": "Event 1 - Recognition Celebration",
           "url": "",
           "photos": [],
           "description": ""
@@ -166,22 +172,22 @@
     "07": {
       "name": "July",
       "rides": 3,
-      "cyclists": 170,
+      "cyclists": 130,
       "events": [
         {
-          "name": "Event 3 - Impact Monsoon",
+          "name": "Event 3 - Anniversary Monsoon",
           "url": "",
           "photos": [],
           "description": ""
         },
         {
-          "name": "Event 2 - Indoor Impact",
+          "name": "Event 2 - Indoor Legacy",
           "url": "",
           "photos": [],
           "description": ""
         },
         {
-          "name": "Event 1 - Climate Indoor",
+          "name": "Event 1 - Decade Indoor",
           "url": "",
           "photos": [],
           "description": ""
@@ -191,28 +197,28 @@
     "06": {
       "name": "June",
       "rides": 4,
-      "cyclists": 185,
+      "cyclists": 145,
       "events": [
         {
-          "name": "Event 4 - Impact Environment",
+          "name": "Event 4 - Anniversary Environment",
           "url": "",
           "photos": [],
           "description": ""
         },
         {
-          "name": "Event 3 - Climate World Day",
+          "name": "Event 3 - Decade Green",
           "url": "",
           "photos": [],
           "description": ""
         },
         {
-          "name": "Event 2 - Sustainable Eco",
+          "name": "Event 2 - Legacy Eco",
           "url": "",
           "photos": [],
           "description": ""
         },
         {
-          "name": "Event 1 - Transport Environment",
+          "name": "Event 1 - Environmental Decade",
           "url": "",
           "photos": [],
           "description": ""
@@ -222,28 +228,28 @@
     "05": {
       "name": "May",
       "rides": 4,
-      "cyclists": 180,
+      "cyclists": 140,
       "events": [
         {
-          "name": "Event 4 - Impact May",
+          "name": "Event 4 - Decade May",
           "url": "",
           "photos": [],
           "description": ""
         },
         {
-          "name": "Event 3 - Climate Growth",
+          "name": "Event 3 - Anniversary Growth",
           "url": "",
           "photos": [],
           "description": ""
         },
         {
-          "name": "Event 2 - Sustainable Development",
+          "name": "Event 2 - Legacy Building",
           "url": "",
           "photos": [],
           "description": ""
         },
         {
-          "name": "Event 1 - Transport Focus",
+          "name": "Event 1 - Milestone Progress",
           "url": "",
           "photos": [],
           "description": ""
@@ -253,28 +259,28 @@
     "04": {
       "name": "April",
       "rides": 4,
-      "cyclists": 175,
+      "cyclists": 135,
       "events": [
         {
-          "name": "Event 4 - Impact Spring",
+          "name": "Event 4 - Anniversary Spring",
           "url": "",
           "photos": [],
           "description": ""
         },
         {
-          "name": "Event 3 - Climate Start",
+          "name": "Event 3 - Decade Planning",
           "url": "",
           "photos": [],
           "description": ""
         },
         {
-          "name": "Event 2 - Sustainable Begin",
+          "name": "Event 2 - Legacy Preparation",
           "url": "",
           "photos": [],
           "description": ""
         },
         {
-          "name": "Event 1 - Transport Launch",
+          "name": "Event 1 - Milestone Focus",
           "url": "",
           "photos": [],
           "description": ""
@@ -284,28 +290,28 @@
     "03": {
       "name": "March",
       "rides": 4,
-      "cyclists": 170,
+      "cyclists": 130,
       "events": [
         {
-          "name": "Event 4 - Impact March",
+          "name": "Event 4 - Decade March",
           "url": "",
           "photos": [],
           "description": ""
         },
         {
-          "name": "Event 3 - Climate Planning",
+          "name": "Event 3 - Anniversary Strategy",
           "url": "",
           "photos": [],
           "description": ""
         },
         {
-          "name": "Event 2 - Sustainable Strategy",
+          "name": "Event 2 - Legacy Plan",
           "url": "",
           "photos": [],
           "description": ""
         },
         {
-          "name": "Event 1 - Transport Vision",
+          "name": "Event 1 - Milestone Vision",
           "url": "",
           "photos": [],
           "description": ""
@@ -315,28 +321,28 @@
     "02": {
       "name": "February",
       "rides": 4,
-      "cyclists": 165,
+      "cyclists": 125,
       "events": [
         {
-          "name": "Event 4 - Impact February",
+          "name": "Event 4 - Anniversary February",
           "url": "",
           "photos": [],
           "description": ""
         },
         {
-          "name": "Event 3 - Climate Goal",
+          "name": "Event 3 - Decade Goal",
           "url": "",
           "photos": [],
           "description": ""
         },
         {
-          "name": "Event 2 - Sustainable Target",
+          "name": "Event 2 - Legacy Target",
           "url": "",
           "photos": [],
           "description": ""
         },
         {
-          "name": "Event 1 - Transport Mission",
+          "name": "Event 1 - Milestone Mission",
           "url": "",
           "photos": [],
           "description": ""
@@ -346,28 +352,28 @@
     "01": {
       "name": "January",
       "rides": 4,
-      "cyclists": 160,
+      "cyclists": 120,
       "events": [
         {
-          "name": "Event 4 - Impact New Year",
+          "name": "Event 4 - Decade New Year",
           "url": "",
           "photos": [],
           "description": ""
         },
         {
-          "name": "Event 3 - Climate Resolution",
+          "name": "Event 3 - Anniversary Resolution",
           "url": "",
           "photos": [],
           "description": ""
         },
         {
-          "name": "Event 2 - Sustainable Vision",
+          "name": "Event 2 - Legacy Vision",
           "url": "",
           "photos": [],
           "description": ""
         },
         {
-          "name": "Event 1 - Transport Start",
+          "name": "Event 1 - Milestone Start",
           "url": "",
           "photos": [],
           "description": ""

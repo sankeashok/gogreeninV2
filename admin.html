@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GoGreenIn Admin - Manage Events</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; background: #f5f5f5; }
+        .container { max-width: 1200px; margin: 0 auto; }
+        .year-selector { background: white; padding: 20px; border-radius: 10px; margin-bottom: 20px; }
+        .year-buttons { display: flex; flex-wrap: wrap; gap: 10px; }
+        .year-btn { padding: 10px 20px; border: none; border-radius: 5px; cursor: pointer; background: #00ff88; color: #0a0a0a; }
+        .year-btn.active { background: #0a0a0a; color: #00ff88; }
+        .editor-section { background: white; padding: 20px; border-radius: 10px; margin-bottom: 20px; }
+        .month-section { border: 1px solid #ddd; margin: 10px 0; padding: 15px; border-radius: 5px; }
+        .event-item { background: #f9f9f9; margin: 5px 0; padding: 10px; border-radius: 3px; }
+        .event-input { width: 100%; padding: 5px; margin: 2px 0; border: 1px solid #ddd; border-radius: 3px; }
+        .save-btn { background: #00ff88; color: #0a0a0a; padding: 15px 30px; border: none; border-radius: 5px; cursor: pointer; font-size: 16px; }
+        .status { padding: 10px; margin: 10px 0; border-radius: 5px; }
+        .success { background: #d4edda; color: #155724; }
+        .error { background: #f8d7da; color: #721c24; }
+        .instructions { background: #e8f5e8; padding: 15px; border-radius: 8px; margin-bottom: 20px; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🚴 GoGreenIn Events Manager</h1>
+        
+        <div class="instructions">
+            <h3>📝 How to Use:</h3>
+            <ol>
+                <li>Select a year from the buttons below</li>
+                <li>Edit event names, add URLs, and descriptions</li>
+                <li>Click "Save Changes" to update the JSON file</li>
+                <li>Refresh your main website to see the changes in "Our Journey"</li>
+            </ol>
+        </div>
+
+        <div class="year-selector">
+            <h3>Select Year to Edit:</h3>
+            <div class="year-buttons">
+                <button class="year-btn" onclick="loadYear('2025')">2025</button>
+                <button class="year-btn" onclick="loadYear('2024')">2024</button>
+                <button class="year-btn" onclick="loadYear('2023')">2023</button>
+                <button class="year-btn" onclick="loadYear('2020')">2020</button>
+                <button class="year-btn" onclick="loadYear('2018')">2018</button>
+                <button class="year-btn" onclick="loadYear('2013')">2013</button>
+                <button class="year-btn" onclick="loadYear('2010')">2010</button>
+                <button class="year-btn" onclick="loadYear('2009')">2009</button>
+                <button class="year-btn" onclick="loadYear('2008')">2008</button>
+            </div>
+        </div>
+
+        <div id="status"></div>
+
+        <div class="editor-section" id="editor" style="display: none;">
+            <h3 id="editorTitle">Edit Year Data</h3>
+            <div id="editorContent"></div>
+            <button class="save-btn" onclick="saveChanges()">💾 Save Changes</button>
+        </div>
+    </div>
+
+    <script>
+        let currentYear = null;
+        let currentData = null;
+
+        async function loadYear(year) {
+            currentYear = year;
+            
+            // Update active button
+            document.querySelectorAll('.year-btn').forEach(btn => btn.classList.remove('active'));
+            event.target.classList.add('active');
+            
+            try {
+                const response = await fetch(`${year}/events.json`);
+                if (response.ok) {
+                    currentData = await response.json();
+                    displayEditor();
+                    showStatus(`Loaded ${year} data successfully`, 'success');
+                } else {
+                    showStatus(`No data found for ${year}. Create the file first.`, 'error');
+                }
+            } catch (error) {
+                showStatus(`Error loading ${year}: ${error.message}`, 'error');
+            }
+        }
+
+        function displayEditor() {
+            const editor = document.getElementById('editor');
+            const title = document.getElementById('editorTitle');
+            const content = document.getElementById('editorContent');
+            
+            title.textContent = `Edit ${currentYear} - ${currentData.title}`;
+            
+            let html = `
+                <div class="event-item">
+                    <label>Year Title:</label>
+                    <input type="text" class="event-input" id="yearTitle" value="${currentData.title}">
+                </div>
+            `;
+            
+            // Sort months in display order (Dec to Jan)
+            const monthOrder = ['12', '11', '10', '09', '08', '07', '06', '05', '04', '03', '02', '01'];
+            
+            monthOrder.forEach(monthKey => {
+                if (currentData.months[monthKey]) {
+                    const month = currentData.months[monthKey];
+                    html += `
+                        <div class="month-section">
+                            <h4>${month.name} (${month.rides} rides, ${month.cyclists} cyclists)</h4>
+                    `;
+                    
+                    month.events.forEach((event, eventIndex) => {
+                        html += `
+                            <div class="event-item">
+                                <label>Event Name:</label>
+                                <input type="text" class="event-input" data-month="${monthKey}" data-event="${eventIndex}" data-field="name" value="${event.name}">
+                                <label>URL:</label>
+                                <input type="text" class="event-input" data-month="${monthKey}" data-event="${eventIndex}" data-field="url" value="${event.url || ''}" placeholder="https://facebook.com/post123">
+                                <label>Description:</label>
+                                <input type="text" class="event-input" data-month="${monthKey}" data-event="${eventIndex}" data-field="description" value="${event.description || ''}" placeholder="Event description">
+                            </div>
+                        `;
+                    });
+                    
+                    html += '</div>';
+                }
+            });
+            
+            content.innerHTML = html;
+            editor.style.display = 'block';
+        }
+
+        function saveChanges() {
+            if (!currentData) return;
+            
+            // Update title
+            currentData.title = document.getElementById('yearTitle').value;
+            
+            // Update events
+            document.querySelectorAll('.event-input[data-month]').forEach(input => {
+                const month = input.dataset.month;
+                const eventIndex = parseInt(input.dataset.event);
+                const field = input.dataset.field;
+                
+                if (currentData.months[month] && currentData.months[month].events[eventIndex]) {
+                    currentData.months[month].events[eventIndex][field] = input.value;
+                }
+            });
+            
+            // Display the JSON for manual saving
+            const jsonString = JSON.stringify(currentData, null, 2);
+            
+            showStatus(`
+                <strong>Copy this JSON and save it to ${currentYear}/events.json:</strong><br>
+                <textarea style="width: 100%; height: 200px; margin: 10px 0;">${jsonString}</textarea>
+                <br><small>After saving the file, refresh your main website to see changes.</small>
+            `, 'success');
+        }
+
+        function showStatus(message, type) {
+            const status = document.getElementById('status');
+            status.innerHTML = `<div class="status ${type}">${message}</div>`;
+        }
+
+        // Load 2025 by default
+        window.onload = () => {
+            document.querySelector('.year-btn').click();
+        };
+    </script>
+</body>
+</html>

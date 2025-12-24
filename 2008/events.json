@@ -11,13 +11,13 @@
           "name": "Event 2 - Year End Foundation",
           "url": "",
           "photos": [],
-          "description": "First year-end celebration"
+          "description": ""
         },
         {
           "name": "Event 1 - First Community Meet",
           "url": "",
           "photos": [],
-          "description": "Initial community gathering"
+          "description": ""
         }
       ]
     },
@@ -30,13 +30,13 @@
           "name": "Event 2 - Awareness Campaign",
           "url": "",
           "photos": [],
-          "description": "Environmental awareness drive"
+          "description": ""
         },
         {
           "name": "Event 1 - Group Formation",
           "url": "",
           "photos": [],
-          "description": "Official group formation"
+          "description": ""
         }
       ]
     },
@@ -49,7 +49,124 @@
           "name": "Event 1 - GoGreenIn Launch",
           "url": "",
           "photos": [],
-          "description": "Official launch of GoGreenIn"
+          "description": ""
+        }
+      ]
+    },
+    "09": {
+      "name": "September",
+      "rides": 1,
+      "cyclists": 12,
+      "events": [
+        {
+          "name": "Event 1 - Initial Planning",
+          "url": "",
+          "photos": [],
+          "description": ""
+        }
+      ]
+    },
+    "08": {
+      "name": "August",
+      "rides": 1,
+      "cyclists": 10,
+      "events": [
+        {
+          "name": "Event 1 - Concept Development",
+          "url": "",
+          "photos": [],
+          "description": ""
+        }
+      ]
+    },
+    "07": {
+      "name": "July",
+      "rides": 1,
+      "cyclists": 8,
+      "events": [
+        {
+          "name": "Event 1 - Vision Formation",
+          "url": "",
+          "photos": [],
+          "description": ""
+        }
+      ]
+    },
+    "06": {
+      "name": "June",
+      "rides": 1,
+      "cyclists": 6,
+      "events": [
+        {
+          "name": "Event 1 - Idea Discussion",
+          "url": "",
+          "photos": [],
+          "description": ""
+        }
+      ]
+    },
+    "05": {
+      "name": "May",
+      "rides": 1,
+      "cyclists": 5,
+      "events": [
+        {
+          "name": "Event 1 - Foundation Planning",
+          "url": "",
+          "photos": [],
+          "description": ""
+        }
+      ]
+    },
+    "04": {
+      "name": "April",
+      "rides": 1,
+      "cyclists": 4,
+      "events": [
+        {
+          "name": "Event 1 - Initial Concept",
+          "url": "",
+          "photos": [],
+          "description": ""
+        }
+      ]
+    },
+    "03": {
+      "name": "March",
+      "rides": 1,
+      "cyclists": 3,
+      "events": [
+        {
+          "name": "Event 1 - Vision Birth",
+          "url": "",
+          "photos": [],
+          "description": ""
+        }
+      ]
+    },
+    "02": {
+      "name": "February",
+      "rides": 1,
+      "cyclists": 2,
+      "events": [
+        {
+          "name": "Event 1 - Idea Formation",
+          "url": "",
+          "photos": [],
+          "description": ""
+        }
+      ]
+    },
+    "01": {
+      "name": "January",
+      "rides": 1,
+      "cyclists": 1,
+      "events": [
+        {
+          "name": "Event 1 - The Beginning",
+          "url": "",
+          "photos": [],
+          "description": ""
         }
       ]
     }

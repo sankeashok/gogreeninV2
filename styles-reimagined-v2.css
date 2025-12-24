@@ -379,6 +379,40 @@ body {
     letter-spacing: 1px;
 }
 
+/* Light theme fix for stats section only */
+[data-theme="light"] .stats-row .stat .label {
+    color: #333333;
+    opacity: 0.9;
+}
+
+[data-theme="light"] .stats-row .stat .number {
+    background: linear-gradient(135deg, #006b3c 0%, #000000 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+[data-theme="light"] .stats-row .stat .label {
+    background: linear-gradient(135deg, #006b3c 0%, #333333 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    opacity: 1;
+}
+
+/* Light theme fix for modal popup text */
+[data-theme="light"] .modal-details h3,
+[data-theme="light"] .modal-details p,
+[data-theme="light"] .modal-event-item,
+[data-theme="light"] .modal-monthly-section h4,
+[data-theme="light"] .modal-month-item,
+[data-theme="light"] .event-detail {
+    background: linear-gradient(135deg, #006b3c 0%, #333333 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
 .video-frame iframe {
     width: 100%;
     height: 100%;

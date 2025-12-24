@@ -8,31 +8,31 @@
       "cyclists": 300,
       "events": [
         {
-          "name": "Event 5 - 17th Anniversary Celebration",
+          "name": "Ride 5 - ",
           "url": "",
           "photos": [],
           "description": ""
         },
         {
-          "name": "Event 4 - Community Awards",
+          "name": "Ride 4 - 24-Dec-2025 Wednesday's ride to send off to GGI family's 2025 YearEndRide",
           "url": "",
           "photos": [],
           "description": ""
         },
         {
-          "name": "Event 3 - New Year Prep",
-          "url": "",
+          "name": "Ride 3 - 17th Anniversary Celebration",
+          "url": "https://drive.google.com/drive/folders/1G30nMM-8f7A0kyYcdw6-KDJsxLUGGiHv",
           "photos": [],
           "description": ""
         },
         {
-          "name": "Event 2 - Year-End Review",
-          "url": "",
+          "name": "Ride 2 - 14-Dec-2025 Sunday's ride",
+          "url": "https://youtube.com/shorts/gFjqLyykyn8",
           "photos": [],
           "description": ""
         },
         {
-          "name": "Event 1 - Christmas Ride",
+          "name": "Ride 1 - Christmas Ride",
           "url": "",
           "photos": [],
           "description": ""
@@ -45,25 +45,310 @@
       "cyclists": 210,
       "events": [
         {
-          "name": "Event 4 - Thanksgiving Ride",
+          "name": "Ride 4 - Thanksgiving Ride",
           "url": "",
           "photos": [],
           "description": ""
         },
         {
-          "name": "Event 3 - Winter Prep",
+          "name": "Ride 3 - Winter Prep",
           "url": "",
           "photos": [],
           "description": ""
         },
         {
-          "name": "Event 2 - Air Quality Awareness",
+          "name": "Ride 2 - Air Quality Awareness",
           "url": "",
           "photos": [],
           "description": ""
         },
         {
-          "name": "Event 1 - Diwali Celebration",
+          "name": "Ride 1 - Diwali Celebration",
+          "url": "",
+          "photos": [],
+          "description": ""
+        }
+      ]
+    },
+    "10": {
+      "name": "October",
+      "rides": 4,
+      "cyclists": 195,
+      "events": [
+        {
+          "name": "Event 4 - Community Bonding",
+          "url": "",
+          "photos": [],
+          "description": ""
+        },
+        {
+          "name": "Event 3 - Heritage Tour",
+          "url": "",
+          "photos": [],
+          "description": ""
+        },
+        {
+          "name": "Event 2 - Festival of Lights Prep",
+          "url": "",
+          "photos": [],
+          "description": ""
+        },
+        {
+          "name": "Event 1 - Dussehra Ride",
+          "url": "",
+          "photos": [],
+          "description": ""
+        }
+      ]
+    },
+    "09": {
+      "name": "September",
+      "rides": 4,
+      "cyclists": 185,
+      "events": [
+        {
+          "name": "Event 4 - Tour-De-Mysore 2025",
+          "url": "https://www.facebook.com/reel/1532990601217812",
+          "photos": [],
+          "description": ""
+        },
+        {
+          "name": "Event 3 - Clean-up Drive",
+          "url": "",
+          "photos": [],
+          "description": ""
+        },
+        {
+          "name": "Event 2 - Ganesh Festival",
+          "url": "",
+          "photos": [],
+          "description": ""
+        },
+        {
+          "name": "Event 1 - Post-Monsoon Revival",
+          "url": "",
+          "photos": [],
+          "description": ""
+        }
+      ]
+    },
+    "08": {
+      "name": "August",
+      "rides": 5,
+      "cyclists": 250,
+      "events": [
+        {
+          "name": "Event 5 - Unity Ride",
+          "url": "",
+          "photos": [],
+          "description": ""
+        },
+        {
+          "name": "Event 4 - Cultural Program",
+          "url": "",
+          "photos": [],
+          "description": ""
+        },
+        {
+          "name": "Event 3 - Flag Hoisting",
+          "url": "",
+          "photos": [],
+          "description": ""
+        },
+        {
+          "name": "Event 2 - Patriotic Route",
+          "url": "",
+          "photos": [],
+          "description": ""
+        },
+        {
+          "name": "Event 1 - Independence Day Ride",
+          "url": "",
+          "photos": [],
+          "description": ""
+        }
+      ]
+    },
+    "07": {
+      "name": "July",
+      "rides": 3,
+      "cyclists": 150,
+      "events": [
+        {
+          "name": "Event 3 - Community Meet",
+          "url": "",
+          "photos": [],
+          "description": ""
+        },
+        {
+          "name": "Event 2 - Indoor Training",
+          "url": "",
+          "photos": [],
+          "description": ""
+        },
+        {
+          "name": "Event 1 - Monsoon Ride",
+          "url": "",
+          "photos": [],
+          "description": ""
+        }
+      ]
+    },
+    "06": {
+      "name": "June",
+      "rides": 4,
+      "cyclists": 200,
+      "events": [
+        {
+          "name": "Event 4 - Mid-Year Review",
+          "url": "",
+          "photos": [],
+          "description": ""
+        },
+        {
+          "name": "Event 3 - Safety Awareness",
+          "url": "",
+          "photos": [],
+          "description": ""
+        },
+        {
+          "name": "Event 2 - Monsoon Prep",
+          "url": "",
+          "photos": [],
+          "description": ""
+        },
+        {
+          "name": "Event 1 - World Environment Day",
+          "url": "",
+          "photos": [],
+          "description": ""
+        }
+      ]
+    },
+    "05": {
+      "name": "May",
+      "rides": 4,
+      "cyclists": 175,
+      "events": [
+        {
+          "name": "Event 4 - Youth Engagement",
+          "url": "",
+          "photos": [],
+          "description": ""
+        },
+        {
+          "name": "Event 3 - Lake Restoration",
+          "url": "",
+          "photos": [],
+          "description": ""
+        },
+        {
+          "name": "Event 2 - Mother's Day Special",
+          "url": "",
+          "photos": [],
+          "description": ""
+        },
+        {
+          "name": "Event 1 - May Day Ride",
+          "url": "",
+          "photos": [],
+          "description": ""
+        }
+      ]
+    },
+    "04": {
+      "name": "April",
+      "rides": 4,
+      "cyclists": 190,
+      "events": [
+        {
+          "name": "Event 4 - Fitness Challenge",
+          "url": "",
+          "photos": [],
+          "description": ""
+        },
+        {
+          "name": "Event 3 - Community Service",
+          "url": "",
+          "photos": [],
+          "description": ""
+        },
+        {
+          "name": "Event 2 - Summer Prep Ride",
+          "url": "",
+          "photos": [],
+          "description": ""
+        },
+        {
+          "name": "Event 1 - Earth Day Special",
+          "url": "",
+          "photos": [],
+          "description": ""
+        }
+      ]
+    },
+    "03": {
+      "name": "March",
+      "rides": 5,
+      "cyclists": 220,
+      "events": [
+        {
+          "name": "Event 5 - Month End Ride",
+          "url": "",
+          "photos": [],
+          "description": ""
+        },
+        {
+          "name": "Event 4 - Endurance Challenge",
+          "url": "",
+          "photos": [],
+          "description": ""
+        },
+        {
+          "name": "Event 3 - Tree Plantation",
+          "url": "",
+          "photos": [],
+          "description": ""
+        },
+        {
+          "name": "Event 2 - Women's Day Special",
+          "url": "",
+          "photos": [],
+          "description": ""
+        },
+        {
+          "name": "Event 1 - Spring Festival",
+          "url": "",
+          "photos": [],
+          "description": ""
+        }
+      ]
+    },
+    "02": {
+      "name": "February",
+      "rides": 4,
+      "cyclists": 165,
+      "events": [
+        {
+          "name": "Event 4 - Heritage Route",
+          "url": "",
+          "photos": [],
+          "description": ""
+        },
+        {
+          "name": "Event 3 - Lake Cleaning Drive",
+          "url": "",
+          "photos": [],
+          "description": ""
+        },
+        {
+          "name": "Event 2 - Health Awareness",
+          "url": "",
+          "photos": [],
+          "description": ""
+        },
+        {
+          "name": "Event 1 - Valentine Ride",
           "url": "",
           "photos": [],
           "description": ""
@@ -76,25 +361,25 @@
       "cyclists": 180,
       "events": [
         {
-          "name": "Event 4 - Community Outreach Ride",
+          "name": "Ride 4 - Community Outreach Ride",
           "url": "",
           "photos": [],
           "description": ""
         },
         {
-          "name": "Event 3 - Weekend Wellness Ride",
+          "name": "Ride 3 - Weekend Wellness Ride",
           "url": "",
           "photos": [],
           "description": ""
         },
         {
-          "name": "Event 2 - Republic Day Preparation",
+          "name": "Ride 2 - Republic Day Preparation",
           "url": "",
           "photos": [],
           "description": ""
         },
         {
-          "name": "Event 1 - New Year Kickoff Ride",
+          "name": "Ride 1 - New Year Kickoff Ride",
           "url": "",
           "photos": [],
           "description": ""

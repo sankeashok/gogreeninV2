@@ -1,0 +1,18 @@
+{
+  "year": 2011,
+  "title": "Environmental Focus",
+  "months": {
+    "12": {"name": "December", "rides": 3, "cyclists": 80, "events": [{"name": "Event 3 - Lake Year End", "url": "", "photos": [], "description": ""}, {"name": "Event 2 - Water Conservation", "url": "", "photos": [], "description": ""}, {"name": "Event 1 - BBMP Collaboration", "url": "", "photos": [], "description": ""}]},
+    "11": {"name": "November", "rides": 3, "cyclists": 75, "events": [{"name": "Event 3 - Lake Festival", "url": "", "photos": [], "description": ""}, {"name": "Event 2 - Water Awareness", "url": "", "photos": [], "description": ""}, {"name": "Event 1 - Government Partnership", "url": "", "photos": [], "description": ""}]},
+    "10": {"name": "October", "rides": 3, "cyclists": 70, "events": [{"name": "Event 3 - Lake October", "url": "", "photos": [], "description": ""}, {"name": "Event 2 - Water Focus", "url": "", "photos": [], "description": ""}, {"name": "Event 1 - BBMP Meeting", "url": "", "photos": [], "description": ""}]},
+    "09": {"name": "September", "rides": 3, "cyclists": 65, "events": [{"name": "Event 3 - Lake September", "url": "", "photos": [], "description": ""}, {"name": "Event 2 - Water Campaign", "url": "", "photos": [], "description": ""}, {"name": "Event 1 - Environmental Focus", "url": "", "photos": [], "description": ""}]},
+    "08": {"name": "August", "rides": 4, "cyclists": 85, "events": [{"name": "Event 4 - Lake Independence", "url": "", "photos": [], "description": ""}, {"name": "Event 3 - Water Patriotic", "url": "", "photos": [], "description": ""}, {"name": "Event 2 - BBMP Special", "url": "", "photos": [], "description": ""}, {"name": "Event 1 - Environmental Freedom", "url": "", "photos": [], "description": ""}]},
+    "07": {"name": "July", "rides": 2, "cyclists": 50, "events": [{"name": "Event 2 - Monsoon Lake", "url": "", "photos": [], "description": ""}, {"name": "Event 1 - Water Monsoon", "url": "", "photos": [], "description": ""}]},
+    "06": {"name": "June", "rides": 3, "cyclists": 60, "events": [{"name": "Event 3 - Lake Environment", "url": "", "photos": [], "description": ""}, {"name": "Event 2 - Water World Day", "url": "", "photos": [], "description": ""}, {"name": "Event 1 - BBMP Eco", "url": "", "photos": [], "description": ""}]},
+    "05": {"name": "May", "rides": 3, "cyclists": 55, "events": [{"name": "Event 3 - Lake May", "url": "", "photos": [], "description": ""}, {"name": "Event 2 - Water Conservation", "url": "", "photos": [], "description": ""}, {"name": "Event 1 - Environmental Start", "url": "", "photos": [], "description": ""}]},
+    "04": {"name": "April", "rides": 3, "cyclists": 50, "events": [{"name": "Event 3 - Lake Spring", "url": "", "photos": [], "description": ""}, {"name": "Event 2 - Water Initiative", "url": "", "photos": [], "description": ""}, {"name": "Event 1 - BBMP Start", "url": "", "photos": [], "description": ""}]},
+    "03": {"name": "March", "rides": 3, "cyclists": 45, "events": [{"name": "Event 3 - Lake March", "url": "", "photos": [], "description": ""}, {"name": "Event 2 - Water Planning", "url": "", "photos": [], "description": ""}, {"name": "Event 1 - Environmental Vision", "url": "", "photos": [], "description": ""}]},
+    "02": {"name": "February", "rides": 2, "cyclists": 40, "events": [{"name": "Event 2 - Lake February", "url": "", "photos": [], "description": ""}, {"name": "Event 1 - Water Goal", "url": "", "photos": [], "description": ""}]},
+    "01": {"name": "January", "rides": 2, "cyclists": 35, "events": [{"name": "Event 2 - Lake New Year", "url": "", "photos": [], "description": ""}, {"name": "Event 1 - Water Mission", "url": "", "photos": [], "description": ""}]}
+  }
+}

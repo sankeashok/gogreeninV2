@@ -1,45 +1,384 @@
 {
   "year": 2023,
-  "events": [
-    {
-      "id": "anniversary-2023",
-      "title": "15th Anniversary Mega Ride",
-      "date": "2023-12-21",
-      "category": "anniversary",
-      "description": "Milestone celebration - 15 years of GoGreenIn",
-      "participants": 800,
-      "distance": "30km",
-      "route": "Bangalore Palace to Cubbon Park",
-      "photos": ["GGI_Campaign2023.png"],
-      "videos": [],
-      "impact": {
-        "co2_saved": "200kg",
-        "trees_equivalent": "8"
-      }
+  "title": "15 Years Strong",
+  "months": {
+    "12": {
+      "name": "December",
+      "rides": 5,
+      "cyclists": 320,
+      "events": [
+        {
+          "name": "Event 5 - 15th Anniversary Mega Ride",
+          "url": "",
+          "photos": [],
+          "description": ""
+        },
+        {
+          "name": "Event 4 - Community Awards",
+          "url": "",
+          "photos": [],
+          "description": ""
+        },
+        {
+          "name": "Event 3 - Year Review",
+          "url": "",
+          "photos": [],
+          "description": ""
+        },
+        {
+          "name": "Event 2 - Winter Festival",
+          "url": "",
+          "photos": [],
+          "description": ""
+        },
+        {
+          "name": "Event 1 - Holiday Ride",
+          "url": "",
+          "photos": [],
+          "description": ""
+        }
+      ]
     },
-    {
-      "id": "temple-endurance-2023",
-      "title": "Temple Endurance Ride",
-      "date": "2023-06-15",
-      "category": "endurance",
-      "description": "Monthly spiritual and fitness journey",
-      "participants": 200,
-      "distance": "50km",
-      "route": "ISKCON to Bull Temple",
-      "photos": [],
-      "videos": [],
-      "impact": {
-        "co2_saved": "250kg",
-        "trees_equivalent": "10"
-      }
+    "11": {
+      "name": "November",
+      "rides": 4,
+      "cyclists": 185,
+      "events": [
+        {
+          "name": "Event 4 - Diwali Celebration",
+          "url": "",
+          "photos": [],
+          "description": ""
+        },
+        {
+          "name": "Event 3 - Light Festival",
+          "url": "",
+          "photos": [],
+          "description": ""
+        },
+        {
+          "name": "Event 2 - Community Bonding",
+          "url": "",
+          "photos": [],
+          "description": ""
+        },
+        {
+          "name": "Event 1 - Autumn Ride",
+          "url": "",
+          "photos": [],
+          "description": ""
+        }
+      ]
+    },
+    "10": {
+      "name": "October",
+      "rides": 4,
+      "cyclists": 200,
+      "events": [
+        {
+          "name": "Event 4 - Navratri Special",
+          "url": "",
+          "photos": [],
+          "description": ""
+        },
+        {
+          "name": "Event 3 - Cultural Ride",
+          "url": "",
+          "photos": [],
+          "description": ""
+        },
+        {
+          "name": "Event 2 - Heritage Route",
+          "url": "",
+          "photos": [],
+          "description": ""
+        },
+        {
+          "name": "Event 1 - Festival Season",
+          "url": "",
+          "photos": [],
+          "description": ""
+        }
+      ]
+    },
+    "09": {
+      "name": "September",
+      "rides": 4,
+      "cyclists": 190,
+      "events": [
+        {
+          "name": "Event 4 - September Strong",
+          "url": "",
+          "photos": [],
+          "description": ""
+        },
+        {
+          "name": "Event 3 - Community Growth",
+          "url": "",
+          "photos": [],
+          "description": ""
+        },
+        {
+          "name": "Event 2 - Milestone Progress",
+          "url": "",
+          "photos": [],
+          "description": ""
+        },
+        {
+          "name": "Event 1 - Strong Foundation",
+          "url": "",
+          "photos": [],
+          "description": ""
+        }
+      ]
+    },
+    "08": {
+      "name": "August",
+      "rides": 5,
+      "cyclists": 240,
+      "events": [
+        {
+          "name": "Event 5 - Strong Independence",
+          "url": "",
+          "photos": [],
+          "description": ""
+        },
+        {
+          "name": "Event 4 - 15 Years Patriotic",
+          "url": "",
+          "photos": [],
+          "description": ""
+        },
+        {
+          "name": "Event 3 - Community Freedom",
+          "url": "",
+          "photos": [],
+          "description": ""
+        },
+        {
+          "name": "Event 2 - Strong Celebration",
+          "url": "",
+          "photos": [],
+          "description": ""
+        },
+        {
+          "name": "Event 1 - Independence Strong",
+          "url": "",
+          "photos": [],
+          "description": ""
+        }
+      ]
+    },
+    "07": {
+      "name": "July",
+      "rides": 3,
+      "cyclists": 160,
+      "events": [
+        {
+          "name": "Event 3 - Strong Monsoon",
+          "url": "",
+          "photos": [],
+          "description": ""
+        },
+        {
+          "name": "Event 2 - Indoor Strong",
+          "url": "",
+          "photos": [],
+          "description": ""
+        },
+        {
+          "name": "Event 1 - Community Indoor",
+          "url": "",
+          "photos": [],
+          "description": ""
+        }
+      ]
+    },
+    "06": {
+      "name": "June",
+      "rides": 4,
+      "cyclists": 175,
+      "events": [
+        {
+          "name": "Event 4 - Strong Environment",
+          "url": "",
+          "photos": [],
+          "description": ""
+        },
+        {
+          "name": "Event 3 - 15 Years Green",
+          "url": "",
+          "photos": [],
+          "description": ""
+        },
+        {
+          "name": "Event 2 - Community Eco",
+          "url": "",
+          "photos": [],
+          "description": ""
+        },
+        {
+          "name": "Event 1 - Strong World Day",
+          "url": "",
+          "photos": [],
+          "description": ""
+        }
+      ]
+    },
+    "05": {
+      "name": "May",
+      "rides": 4,
+      "cyclists": 170,
+      "events": [
+        {
+          "name": "Event 4 - Strong May",
+          "url": "",
+          "photos": [],
+          "description": ""
+        },
+        {
+          "name": "Event 3 - Community Strong",
+          "url": "",
+          "photos": [],
+          "description": ""
+        },
+        {
+          "name": "Event 2 - 15 Years Growth",
+          "url": "",
+          "photos": [],
+          "description": ""
+        },
+        {
+          "name": "Event 1 - Strong Development",
+          "url": "",
+          "photos": [],
+          "description": ""
+        }
+      ]
+    },
+    "04": {
+      "name": "April",
+      "rides": 4,
+      "cyclists": 165,
+      "events": [
+        {
+          "name": "Event 4 - Strong Spring",
+          "url": "",
+          "photos": [],
+          "description": ""
+        },
+        {
+          "name": "Event 3 - Community April",
+          "url": "",
+          "photos": [],
+          "description": ""
+        },
+        {
+          "name": "Event 2 - 15 Years Building",
+          "url": "",
+          "photos": [],
+          "description": ""
+        },
+        {
+          "name": "Event 1 - Strong Foundation",
+          "url": "",
+          "photos": [],
+          "description": ""
+        }
+      ]
+    },
+    "03": {
+      "name": "March",
+      "rides": 4,
+      "cyclists": 160,
+      "events": [
+        {
+          "name": "Event 4 - Strong March",
+          "url": "",
+          "photos": [],
+          "description": ""
+        },
+        {
+          "name": "Event 3 - Community Planning",
+          "url": "",
+          "photos": [],
+          "description": ""
+        },
+        {
+          "name": "Event 2 - 15 Years Strategy",
+          "url": "",
+          "photos": [],
+          "description": ""
+        },
+        {
+          "name": "Event 1 - Strong Vision",
+          "url": "",
+          "photos": [],
+          "description": ""
+        }
+      ]
+    },
+    "02": {
+      "name": "February",
+      "rides": 4,
+      "cyclists": 155,
+      "events": [
+        {
+          "name": "Event 4 - Strong February",
+          "url": "",
+          "photos": [],
+          "description": ""
+        },
+        {
+          "name": "Event 3 - Community Goal",
+          "url": "",
+          "photos": [],
+          "description": ""
+        },
+        {
+          "name": "Event 2 - 15 Years Target",
+          "url": "",
+          "photos": [],
+          "description": ""
+        },
+        {
+          "name": "Event 1 - Strong Mission",
+          "url": "",
+          "photos": [],
+          "description": ""
+        }
+      ]
+    },
+    "01": {
+      "name": "January",
+      "rides": 4,
+      "cyclists": 150,
+      "events": [
+        {
+          "name": "Event 4 - Strong New Year",
+          "url": "",
+          "photos": [],
+          "description": ""
+        },
+        {
+          "name": "Event 3 - Community Resolution",
+          "url": "",
+          "photos": [],
+          "description": ""
+        },
+        {
+          "name": "Event 2 - 15 Years Vision",
+          "url": "",
+          "photos": [],
+          "description": ""
+        },
+        {
+          "name": "Event 1 - Strong Start",
+          "url": "",
+          "photos": [],
+          "description": ""
+        }
+      ]
     }
-  ],
-  "yearly_stats": {
-    "total_events": 48,
-    "total_participants": 4800,
-    "total_distance": "960km",
-    "co2_saved": "2400kg",
-    "trees_planted": 120,
-    "lakes_cleaned": 2
   }
 }

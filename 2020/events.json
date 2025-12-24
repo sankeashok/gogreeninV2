@@ -1,0 +1,18 @@
+{
+  "year": 2020,
+  "title": "Pandemic Resilience",
+  "months": {
+    "12": {"name": "December", "rides": 2, "cyclists": 50, "events": [{"name": "Event 2 - Year End Virtual", "url": "", "photos": [], "description": ""}, {"name": "Event 1 - Safe Distance Ride", "url": "", "photos": [], "description": ""}]},
+    "11": {"name": "November", "rides": 2, "cyclists": 45, "events": [{"name": "Event 2 - Diwali Safety", "url": "", "photos": [], "description": ""}, {"name": "Event 1 - Virtual Celebration", "url": "", "photos": [], "description": ""}]},
+    "10": {"name": "October", "rides": 3, "cyclists": 60, "events": [{"name": "Event 3 - Outdoor Return", "url": "", "photos": [], "description": ""}, {"name": "Event 2 - Safety Protocol", "url": "", "photos": [], "description": ""}, {"name": "Event 1 - Cautious Restart", "url": "", "photos": [], "description": ""}]},
+    "09": {"name": "September", "rides": 2, "cyclists": 40, "events": [{"name": "Event 2 - September Safety", "url": "", "photos": [], "description": ""}, {"name": "Event 1 - Limited Gathering", "url": "", "photos": [], "description": ""}]},
+    "08": {"name": "August", "rides": 1, "cyclists": 30, "events": [{"name": "Event 1 - Independence Virtual", "url": "", "photos": [], "description": ""}]},
+    "07": {"name": "July", "rides": 1, "cyclists": 25, "events": [{"name": "Event 1 - Monsoon Indoor", "url": "", "photos": [], "description": ""}]},
+    "06": {"name": "June", "rides": 1, "cyclists": 20, "events": [{"name": "Event 1 - Unlock Phase", "url": "", "photos": [], "description": ""}]},
+    "05": {"name": "May", "rides": 0, "cyclists": 0, "events": [{"name": "Virtual Events Only", "url": "", "photos": [], "description": ""}]},
+    "04": {"name": "April", "rides": 0, "cyclists": 0, "events": [{"name": "Complete Lockdown", "url": "", "photos": [], "description": ""}]},
+    "03": {"name": "March", "rides": 2, "cyclists": 80, "events": [{"name": "Event 2 - Pre-Lockdown", "url": "", "photos": [], "description": ""}, {"name": "Event 1 - Last Normal Ride", "url": "", "photos": [], "description": ""}]},
+    "02": {"name": "February", "rides": 4, "cyclists": 180, "events": [{"name": "Event 4 - Normal Operations", "url": "", "photos": [], "description": ""}, {"name": "Event 3 - Community Strong", "url": "", "photos": [], "description": ""}, {"name": "Event 2 - Regular Rides", "url": "", "photos": [], "description": ""}, {"name": "Event 1 - February Active", "url": "", "photos": [], "description": ""}]},
+    "01": {"name": "January", "rides": 4, "cyclists": 190, "events": [{"name": "Event 4 - New Year Strong", "url": "", "photos": [], "description": ""}, {"name": "Event 3 - Community Active", "url": "", "photos": [], "description": ""}, {"name": "Event 2 - Regular Schedule", "url": "", "photos": [], "description": ""}, {"name": "Event 1 - January Kickoff", "url": "", "photos": [], "description": ""}]}
+  }
+}

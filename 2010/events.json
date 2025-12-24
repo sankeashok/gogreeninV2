@@ -1,0 +1,18 @@
+{
+  "year": 2010,
+  "title": "Expanding Reach",
+  "months": {
+    "12": {"name": "December", "rides": 3, "cyclists": 60, "events": [{"name": "Event 3 - Expansion Year End", "url": "", "photos": [], "description": ""}, {"name": "Event 2 - Inter-city Event", "url": "", "photos": [], "description": ""}, {"name": "Event 1 - NGO Partnership", "url": "", "photos": [], "description": ""}]},
+    "11": {"name": "November", "rides": 3, "cyclists": 55, "events": [{"name": "Event 3 - Reach November", "url": "", "photos": [], "description": ""}, {"name": "Event 2 - City Expansion", "url": "", "photos": [], "description": ""}, {"name": "Event 1 - NGO Collaboration", "url": "", "photos": [], "description": ""}]},
+    "10": {"name": "October", "rides": 3, "cyclists": 50, "events": [{"name": "Event 3 - Growth October", "url": "", "photos": [], "description": ""}, {"name": "Event 2 - Inter-city Planning", "url": "", "photos": [], "description": ""}, {"name": "Event 1 - Partnership Building", "url": "", "photos": [], "description": ""}]},
+    "09": {"name": "September", "rides": 3, "cyclists": 45, "events": [{"name": "Event 3 - Expansion September", "url": "", "photos": [], "description": ""}, {"name": "Event 2 - City Outreach", "url": "", "photos": [], "description": ""}, {"name": "Event 1 - NGO Meeting", "url": "", "photos": [], "description": ""}]},
+    "08": {"name": "August", "rides": 4, "cyclists": 70, "events": [{"name": "Event 4 - Expansion Independence", "url": "", "photos": [], "description": ""}, {"name": "Event 3 - Inter-city Patriotic", "url": "", "photos": [], "description": ""}, {"name": "Event 2 - NGO Freedom", "url": "", "photos": [], "description": ""}, {"name": "Event 1 - Growth Celebration", "url": "", "photos": [], "description": ""}]},
+    "07": {"name": "July", "rides": 2, "cyclists": 35, "events": [{"name": "Event 2 - Monsoon Expansion", "url": "", "photos": [], "description": ""}, {"name": "Event 1 - Indoor Growth", "url": "", "photos": [], "description": ""}]},
+    "06": {"name": "June", "rides": 3, "cyclists": 40, "events": [{"name": "Event 3 - Expansion Environment", "url": "", "photos": [], "description": ""}, {"name": "Event 2 - Inter-city Green", "url": "", "photos": [], "description": ""}, {"name": "Event 1 - NGO Eco", "url": "", "photos": [], "description": ""}]},
+    "05": {"name": "May", "rides": 3, "cyclists": 38, "events": [{"name": "Event 3 - Growth May", "url": "", "photos": [], "description": ""}, {"name": "Event 2 - City Expansion", "url": "", "photos": [], "description": ""}, {"name": "Event 1 - Partnership Start", "url": "", "photos": [], "description": ""}]},
+    "04": {"name": "April", "rides": 2, "cyclists": 35, "events": [{"name": "Event 2 - Expansion Spring", "url": "", "photos": [], "description": ""}, {"name": "Event 1 - Growth Focus", "url": "", "photos": [], "description": ""}]},
+    "03": {"name": "March", "rides": 2, "cyclists": 32, "events": [{"name": "Event 2 - Reach March", "url": "", "photos": [], "description": ""}, {"name": "Event 1 - Expansion Plan", "url": "", "photos": [], "description": ""}]},
+    "02": {"name": "February", "rides": 2, "cyclists": 30, "events": [{"name": "Event 2 - Growth February", "url": "", "photos": [], "description": ""}, {"name": "Event 1 - Expansion Vision", "url": "", "photos": [], "description": ""}]},
+    "01": {"name": "January", "rides": 2, "cyclists": 28, "events": [{"name": "Event 2 - Expansion New Year", "url": "", "photos": [], "description": ""}, {"name": "Event 1 - Growth Mission", "url": "", "photos": [], "description": ""}]}
+  }
+}
