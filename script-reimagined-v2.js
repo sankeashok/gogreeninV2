@@ -506,9 +506,18 @@ function openYearModal(year) {
                             
                             // Add photos if available
                             if (eventPhotos.length > 0) {
-                                eventHtml += `<div class="event-media"><button onclick="showMediaPopup('${eventName.replace(/'/g, "\\'")}, this')" style="background: #00ff88; color: black; border: none; padding: 5px 10px; border-radius: 4px; cursor: pointer; margin: 5px 0;" data-photos='${JSON.stringify(eventPhotos)}' data-videos='${JSON.stringify(eventVideos)}'>📷 View Photos & Videos (${eventPhotos.length + eventVideos.length})</button></div>`;
+                                // Special styling for Ride 4 and Ride 5 buttons
+                                const isRide4or5 = eventName.includes('Ride 4') || eventName.includes('Ride 5');
+                                const buttonStyle = isRide4or5 
+                                    ? "background: linear-gradient(135deg, #006400 0%, #228B22 100%); color: linear-gradient(135deg, #ff6b35 0%, #ffa500 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; border: none; padding: 5px 10px; border-radius: 4px; cursor: pointer; margin: 5px 0; font-weight: 700; background-color: #006400;"
+                                    : "background: linear-gradient(135deg, #ff6b35 0%, #ffa500 100%); color: #ffffff; border: none; padding: 5px 10px; border-radius: 4px; cursor: pointer; margin: 5px 0; font-weight: 700;";
+                                eventHtml += `<div class="event-media"><button onclick="showMediaPopup('${eventName.replace(/'/g, "\\'")}, this')" style="${buttonStyle}" data-photos='${JSON.stringify(eventPhotos)}' data-videos='${JSON.stringify(eventVideos)}'>View Photos & Videos (${eventPhotos.length + eventVideos.length})</button></div>`;
                             } else if (eventVideos.length > 0) {
-                                eventHtml += `<div class="event-media"><button onclick="showMediaPopup('${eventName.replace(/'/g, "\\'")}, this')" style="background: #00ff88; color: black; border: none; padding: 5px 10px; border-radius: 4px; cursor: pointer; margin: 5px 0;" data-photos='[]' data-videos='${JSON.stringify(eventVideos)}'>🎥 View Videos (${eventVideos.length})</button></div>`;
+                                const isRide4or5 = eventName.includes('Ride 4') || eventName.includes('Ride 5');
+                                const buttonStyle = isRide4or5 
+                                    ? "background: linear-gradient(135deg, #006400 0%, #228B22 100%); color: linear-gradient(135deg, #ff6b35 0%, #ffa500 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; border: none; padding: 5px 10px; border-radius: 4px; cursor: pointer; margin: 5px 0; font-weight: 700; background-color: #006400;"
+                                    : "background: linear-gradient(135deg, #ff6b35 0%, #ffa500 100%); color: #ffffff; border: none; padding: 5px 10px; border-radius: 4px; cursor: pointer; margin: 5px 0; font-weight: 700;";
+                                eventHtml += `<div class="event-media"><button onclick="showMediaPopup('${eventName.replace(/'/g, "\\'")}, this')" style="${buttonStyle}" data-photos='[]' data-videos='${JSON.stringify(eventVideos)}'>View Videos (${eventVideos.length})</button></div>`;
                             }
                             
                             return eventHtml;
