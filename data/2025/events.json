@@ -8,10 +8,20 @@
       "cyclists": 300,
       "events": [
         {
-          "name": "Ride 5 - ",
+          "name": "Ride 5 - GoGreen IRP Year End Ride",
           "url": "",
-          "photos": [],
-          "description": ""
+          "photos": [
+            "data/2025/12-December/28-Dec-2025 Sunday/IMG-20251228-WA0004.jpg",
+            "data/2025/12-December/28-Dec-2025 Sunday/IMG-20251228-WA0005.jpg",
+            "data/2025/12-December/28-Dec-2025 Sunday/IMG-20251228-WA0014.jpg",
+            "data/2025/12-December/28-Dec-2025 Sunday/IMG-20251228-WA0015.jpg",
+            "data/2025/12-December/28-Dec-2025 Sunday/IMG-20251228-WA0016.jpg"
+          ],
+          "videos": [
+            "data/2025/12-December/28-Dec-2025 Sunday/VID-20251228-WA0045.mp4",
+            "data/2025/12-December/28-Dec-2025 Sunday/VID-20251228-WA0046.mp4"
+          ],
+          "description": "Sunday community ride with great participation and memorable moments"
         },
         {
           "name": "Ride 4 - 24-Dec-2025 Wednesday's ride to send off to GGI family's 2025 YearEndRide",

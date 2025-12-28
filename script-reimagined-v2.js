@@ -141,8 +141,33 @@ const yearData = {
         events: ['17th Anniversary celebration'], //'Future vision planning', 'Next generation initiatives'
         monthlyData: [
             {month: 'Dec', rides: 5, cyclists: 300, events: [
-                {name: 'Ride 5 - ', url: ''},
-                {name: 'Ride 4 - 24-Dec-2025 Wednesday\'s ride to send off to GGI family\'s 2025 YearEndRide', url: ''},
+                {name: 'Ride 5 - GoGreen IRP Year End Ride', url: '', photos: [
+                    'data/2025/12-December/28-Dec-2025 Sunday/IMG-20251228-WA0011.jpg',
+                    'data/2025/12-December/28-Dec-2025 Sunday/IMG-20251228-WA0012.jpg',
+                    'data/2025/12-December/28-Dec-2025 Sunday/IMG-20251228-WA0013.jpg',
+                    'data/2025/12-December/28-Dec-2025 Sunday/IMG-20251228-WA0014.jpg',
+                    'data/2025/12-December/28-Dec-2025 Sunday/IMG-20251228-WA0016.jpg'
+                ], videos: [
+                    'data/2025/12-December/28-Dec-2025 Sunday/VID-20251228-WA0045.mp4',
+                    'data/2025/12-December/28-Dec-2025 Sunday/VID-20251228-WA0046.mp4'
+                ]},
+                {name: 'Ride 4 - 24-Dec-2025 Wednesday\'s ride to send off to GGI family\'s 2025 YearEndRide', url: '', photos: [
+                    'data/2025/12-December/24-Dec-2025 WednesDay/IMG_20251224_055237270_HDR_AE.jpg',
+                    'data/2025/12-December/24-Dec-2025 WednesDay/IMG-20251224-WA002.jpg',
+                    'data/2025/12-December/24-Dec-2025 WednesDay/IMG-20251224-WA003.jpg',
+                    'data/2025/12-December/24-Dec-2025 WednesDay/IMG-20251224-WA0026.jpg',
+                    'data/2025/12-December/24-Dec-2025 WednesDay/IMG-20251224-WA0028.jpg',
+                    'data/2025/12-December/24-Dec-2025 WednesDay/IMG-20251224-WA0029.jpg',
+                    'data/2025/12-December/24-Dec-2025 WednesDay/IMG-20251224-WA0030.jpg',
+                    'data/2025/12-December/24-Dec-2025 WednesDay/IMG-20251224-WA0032.jpg',
+                    'data/2025/12-December/24-Dec-2025 WednesDay/IMG-20251224-WA0033.jpg',
+                    'data/2025/12-December/24-Dec-2025 WednesDay/IMG-20251224-WA0034.jpg',
+                    'data/2025/12-December/24-Dec-2025 WednesDay/IMG-20251224-WA0035.jpg',
+                    'data/2025/12-December/24-Dec-2025 WednesDay/IMG-20251224-WA0049.jpg'
+                ], videos: [
+                    'data/2025/12-December/24-Dec-2025 WednesDay/VID-20251224-WA0038.mp4',
+                    'data/2025/12-December/24-Dec-2025 WednesDay/VID-20251224-WA0039.mp4'
+                ]},
                 {name: 'Ride 3 - 17th Anniversary Celebration', url: 'https://drive.google.com/drive/folders/1G30nMM-8f7A0kyYcdw6-KDJsxLUGGiHv'},
                 {name: 'Ride 2 - 14-Dec-2025 Sunday\'s ride', url: 'https://youtube.com/shorts/gFjqLyykyn8'},
                 {name: 'Ride 1 - Christmas Ride', url: ''}
@@ -457,21 +482,36 @@ function openYearModal(year) {
                     <div class="month-events collapsed" id="month-events-${index}">
                         ${monthData.events.map(event => {
                             // Handle both string and object formats
-                            let eventName, eventUrl;
+                            let eventName, eventUrl, eventPhotos, eventVideos;
                             if (typeof event === 'string') {
                                 eventName = event;
                                 eventUrl = null;
+                                eventPhotos = [];
+                                eventVideos = [];
                             } else {
                                 eventName = event.name;
                                 eventUrl = event.url;
+                                eventPhotos = event.photos || [];
+                                eventVideos = event.videos || [];
                             }
+                            
+                            let eventHtml = '';
                             
                             // Create event display with optional link
                             if (eventUrl && eventUrl.trim() !== '') {
-                                return `<div class="event-detail"><a href="${eventUrl}" target="_blank" style="color: #00ff88; text-decoration: underline;">${eventName}</a></div>`;
+                                eventHtml += `<div class="event-detail"><a href="${eventUrl}" target="_blank" style="color: #00ff88; text-decoration: underline;">${eventName}</a></div>`;
                             } else {
-                                return `<div class="event-detail">${eventName}</div>`;
+                                eventHtml += `<div class="event-detail">${eventName}</div>`;
                             }
+                            
+                            // Add photos if available
+                            if (eventPhotos.length > 0) {
+                                eventHtml += `<div class="event-media"><button onclick="showMediaPopup('${eventName.replace(/'/g, "\\'")}, this')" style="background: #00ff88; color: black; border: none; padding: 5px 10px; border-radius: 4px; cursor: pointer; margin: 5px 0;" data-photos='${JSON.stringify(eventPhotos)}' data-videos='${JSON.stringify(eventVideos)}'>📷 View Photos & Videos (${eventPhotos.length + eventVideos.length})</button></div>`;
+                            } else if (eventVideos.length > 0) {
+                                eventHtml += `<div class="event-media"><button onclick="showMediaPopup('${eventName.replace(/'/g, "\\'")}, this')" style="background: #00ff88; color: black; border: none; padding: 5px 10px; border-radius: 4px; cursor: pointer; margin: 5px 0;" data-photos='[]' data-videos='${JSON.stringify(eventVideos)}'>🎥 View Videos (${eventVideos.length})</button></div>`;
+                            }
+                            
+                            return eventHtml;
                         }).join('')}
                     </div>
                 </div>
@@ -511,10 +551,75 @@ function closeImageModal() {
     document.body.style.overflow = 'auto';
 }
 
+// Media popup function
+function showMediaPopup(eventName, button) {
+    // Get button element if not passed
+    if (!button) {
+        button = event.target;
+    }
+    
+    const photos = JSON.parse(button.getAttribute('data-photos') || '[]');
+    const videos = JSON.parse(button.getAttribute('data-videos') || '[]');
+    
+    const modal = document.getElementById('mediaModal') || createMediaModal();
+    const title = document.getElementById('mediaModalTitle');
+    const content = document.getElementById('mediaModalContent');
+    
+    title.textContent = eventName;
+    
+    let mediaHtml = '';
+    
+    if (photos.length > 0) {
+        mediaHtml += '<h4>Photos:</h4><div class="media-grid">';
+        photos.forEach(photo => {
+            mediaHtml += `<img src="${photo}" alt="Event Photo" style="width: 200px; height: 150px; object-fit: cover; margin: 5px; cursor: pointer; border-radius: 8px;" onclick="openImageFullscreen('${photo}')">`;
+        });
+        mediaHtml += '</div>';
+    }
+    
+    if (videos.length > 0) {
+        mediaHtml += '<h4>Videos:</h4><div class="media-grid">';
+        videos.forEach(video => {
+            mediaHtml += `<video controls style="width: 300px; height: 200px; margin: 5px; border-radius: 8px;"><source src="${video}" type="video/mp4">Your browser does not support the video tag.</video>`;
+        });
+        mediaHtml += '</div>';
+    }
+    
+    content.innerHTML = mediaHtml;
+    modal.style.display = 'block';
+    document.body.style.overflow = 'hidden';
+}
+
+function createMediaModal() {
+    const modal = document.createElement('div');
+    modal.id = 'mediaModal';
+    modal.className = 'modal';
+    modal.innerHTML = `
+        <div class="modal-content" style="max-width: 90%; max-height: 90%; overflow-y: auto;">
+            <div class="modal-header">
+                <h2 id="mediaModalTitle"></h2>
+                <span class="close" onclick="closeMediaModal()">&times;</span>
+            </div>
+            <div class="modal-body" id="mediaModalContent"></div>
+        </div>
+    `;
+    document.body.appendChild(modal);
+    return modal;
+}
+
+function closeMediaModal() {
+    const modal = document.getElementById('mediaModal');
+    if (modal) {
+        modal.style.display = 'none';
+        document.body.style.overflow = 'auto';
+    }
+}
+
 // Close modal when clicking outside
 window.onclick = function(event) {
     const modal = document.getElementById('yearModal');
     const imageModal = document.getElementById('imageModal');
+    const mediaModal = document.getElementById('mediaModal');
     
     if (event.target === modal) {
         closeYearModal();
@@ -522,6 +627,10 @@ window.onclick = function(event) {
     
     if (event.target === imageModal) {
         closeImageModal();
+    }
+    
+    if (event.target === mediaModal) {
+        closeMediaModal();
     }
 }
 
