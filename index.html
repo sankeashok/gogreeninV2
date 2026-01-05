@@ -677,6 +677,17 @@
         </div>
     </section>
 
+    <!-- Newsletter Section -->
+    <section class="newsletter-section">
+        <div class="newsletter-container">
+            <div class="newsletter-content">
+                <h2>Stay Connected with Our Movement</h2>
+                <p>Get updates on rides, environmental initiatives, and community events</p>
+                <button class="newsletter-btn" onclick="openNewsletterModal()">Subscribe to Updates</button>
+            </div>
+        </div>
+    </section>
+
     <!-- Final CTA -->
     <section class="final-cta">
         <div class="cta-container">
@@ -736,6 +747,69 @@
         <div class="image-modal-content">
             <span class="image-close" onclick="closeImageModal()">&times;</span>
             <img id="fullscreenImage" src="" alt="">
+        </div>
+    </div>
+
+    <!-- Newsletter Modal -->
+    <div id="newsletterModal" class="newsletter-modal">
+        <div class="newsletter-modal-content">
+            <div class="newsletter-modal-header">
+                <h2>Join Our Cycling Community</h2>
+                <span class="newsletter-close" onclick="closeNewsletterModal()">&times;</span>
+            </div>
+            <div class="newsletter-modal-body">
+                <div class="newsletter-form-container">
+                    <div class="newsletter-intro">
+                        <div class="newsletter-icon">🚴‍♂️</div>
+                        <h3>Transform Yourself, Transform Bangalore</h3>
+                        <p>Get exclusive updates on cycling events, environmental initiatives, and community rides. Join 5000+ cyclists making a difference!</p>
+                    </div>
+                    <form class="newsletter-form" onsubmit="submitNewsletterForm(event)">
+                        <div class="form-group">
+                            <label for="newsletter-name">Full Name</label>
+                            <input type="text" id="newsletter-name" name="name" required placeholder="Your full name">
+                        </div>
+                        <div class="form-group">
+                            <label for="newsletter-email">Email Address</label>
+                            <input type="email" id="newsletter-email" name="email" required placeholder="your.email@example.com">
+                        </div>
+                        <div class="form-group">
+                            <label for="newsletter-phone">Phone Number</label>
+                            <input type="tel" id="newsletter-phone" name="phone" placeholder="+91 9876543210">
+                        </div>
+                        <div class="form-group">
+                            <label for="newsletter-location">Location</label>
+                            <select id="newsletter-location" name="location">
+                                <option value="">Select your area in Bangalore</option>
+                                <option value="north">North Bangalore</option>
+                                <option value="south">South Bangalore</option>
+                                <option value="east">East Bangalore</option>
+                                <option value="west">West Bangalore</option>
+                                <option value="central">Central Bangalore</option>
+                                <option value="other">Other/Outside Bangalore</option>
+                            </select>
+                        </div>
+                        <div class="form-group checkbox-group">
+                            <label class="checkbox-label">
+                                <input type="checkbox" name="interests" value="sunday-rides"> Sunday Rides
+                            </label>
+                            <label class="checkbox-label">
+                                <input type="checkbox" name="interests" value="environmental"> Environmental Initiatives
+                            </label>
+                            <label class="checkbox-label">
+                                <input type="checkbox" name="interests" value="endurance"> Endurance Challenges
+                            </label>
+                            <label class="checkbox-label">
+                                <input type="checkbox" name="interests" value="community"> Community Events
+                            </label>
+                        </div>
+                        <button type="submit" class="newsletter-submit-btn">Join the Movement</button>
+                    </form>
+                    <div class="newsletter-footer">
+                        <p>🔒 Your information is secure and will only be used for GoGreenIn updates</p>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 

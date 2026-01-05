@@ -653,11 +653,57 @@ function closeMediaModal() {
     }
 }
 
-// Close modal when clicking outside
+// Newsletter Modal Functions
+function openNewsletterModal() {
+    document.getElementById('newsletterModal').style.display = 'block';
+    document.body.style.overflow = 'hidden';
+}
+
+function closeNewsletterModal() {
+    document.getElementById('newsletterModal').style.display = 'none';
+    document.body.style.overflow = 'auto';
+}
+
+function submitNewsletterForm(event) {
+    event.preventDefault();
+    
+    // Get form data
+    const formData = new FormData(event.target);
+    const data = {
+        name: formData.get('name'),
+        email: formData.get('email'),
+        phone: formData.get('phone'),
+        location: formData.get('location'),
+        interests: formData.getAll('interests')
+    };
+    
+    // Show success message
+    const submitBtn = event.target.querySelector('.newsletter-submit-btn');
+    const originalText = submitBtn.textContent;
+    submitBtn.textContent = 'Thank You! ✓';
+    submitBtn.style.background = '#28a745';
+    submitBtn.disabled = true;
+    
+    // Log the data (in real implementation, send to server)
+    console.log('Newsletter signup data:', data);
+    
+    // Close modal after 2 seconds
+    setTimeout(() => {
+        closeNewsletterModal();
+        // Reset form
+        event.target.reset();
+        submitBtn.textContent = originalText;
+        submitBtn.style.background = 'var(--primary)';
+        submitBtn.disabled = false;
+    }, 2000);
+}
+
+// Close modals when clicking outside
 window.onclick = function(event) {
     const modal = document.getElementById('yearModal');
     const imageModal = document.getElementById('imageModal');
     const mediaModal = document.getElementById('mediaModal');
+    const newsletterModal = document.getElementById('newsletterModal');
     
     if (event.target === modal) {
         closeYearModal();
@@ -669,6 +715,10 @@ window.onclick = function(event) {
     
     if (event.target === mediaModal) {
         closeMediaModal();
+    }
+    
+    if (event.target === newsletterModal) {
+        closeNewsletterModal();
     }
 }
 
