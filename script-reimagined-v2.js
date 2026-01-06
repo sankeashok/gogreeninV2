@@ -664,6 +664,17 @@ function closeNewsletterModal() {
     document.body.style.overflow = 'auto';
 }
 
+// Join Community Modal Functions
+function showJoinOptions() {
+    document.getElementById('joinModal').style.display = 'block';
+    document.body.style.overflow = 'hidden';
+}
+
+function closeJoinModal() {
+    document.getElementById('joinModal').style.display = 'none';
+    document.body.style.overflow = 'auto';
+}
+
 function submitNewsletterForm(event) {
     event.preventDefault();
     
@@ -677,25 +688,51 @@ function submitNewsletterForm(event) {
         interests: formData.getAll('interests')
     };
     
-    // Show success message
+    // Show loading state
     const submitBtn = event.target.querySelector('.newsletter-submit-btn');
     const originalText = submitBtn.textContent;
-    submitBtn.textContent = 'Thank You! ✓';
-    submitBtn.style.background = '#28a745';
+    submitBtn.textContent = 'Submitting...';
     submitBtn.disabled = true;
     
-    // Log the data (in real implementation, send to server)
-    console.log('Newsletter signup data:', data);
-    
-    // Close modal after 2 seconds
-    setTimeout(() => {
-        closeNewsletterModal();
-        // Reset form
-        event.target.reset();
-        submitBtn.textContent = originalText;
-        submitBtn.style.background = 'var(--primary)';
+    // Send to Google Apps Script
+    fetch('YOUR_GOOGLE_APPS_SCRIPT_URL', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(data)
+    })
+    .then(response => response.json())
+    .then(result => {
+        if (result.success) {
+            submitBtn.textContent = 'Thank You! ✓';
+            submitBtn.style.background = '#28a745';
+            
+            // Close modal after 2 seconds
+            setTimeout(() => {
+                closeNewsletterModal();
+                // Reset form
+                event.target.reset();
+                submitBtn.textContent = originalText;
+                submitBtn.style.background = 'var(--primary)';
+                submitBtn.disabled = false;
+            }, 2000);
+        } else {
+            throw new Error('Submission failed');
+        }
+    })
+    .catch(error => {
+        console.error('Error:', error);
+        submitBtn.textContent = 'Error - Try Again';
+        submitBtn.style.background = '#dc3545';
         submitBtn.disabled = false;
-    }, 2000);
+        
+        // Reset after 3 seconds
+        setTimeout(() => {
+            submitBtn.textContent = originalText;
+            submitBtn.style.background = 'var(--primary)';
+        }, 3000);
+    });
 }
 
 // Close modals when clicking outside
@@ -704,6 +741,7 @@ window.onclick = function(event) {
     const imageModal = document.getElementById('imageModal');
     const mediaModal = document.getElementById('mediaModal');
     const newsletterModal = document.getElementById('newsletterModal');
+    const joinModal = document.getElementById('joinModal');
     
     if (event.target === modal) {
         closeYearModal();
@@ -719,6 +757,10 @@ window.onclick = function(event) {
     
     if (event.target === newsletterModal) {
         closeNewsletterModal();
+    }
+    
+    if (event.target === joinModal) {
+        closeJoinModal();
     }
 }
 

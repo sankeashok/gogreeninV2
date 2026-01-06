@@ -189,6 +189,8 @@ body {
     letter-spacing: 1px;
     box-shadow: 0 0 20px rgba(0, 255, 136, 0.4);
     animation: pulse 2s infinite;
+    border: none;
+    cursor: pointer;
 }
 
 @keyframes pulse {
@@ -1694,6 +1696,8 @@ body {
     font-weight: 600;
     font-size: 16px;
     transition: all 0.3s ease;
+    border: none;
+    cursor: pointer;
 }
 
 .cta-primary {
@@ -1704,6 +1708,38 @@ body {
 .cta-secondary {
     background: var(--secondary);
     color: var(--light);
+}
+
+/* Join Options Modal Styles */
+.join-option-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 15px 25px;
+    border-radius: 12px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 16px;
+    transition: all 0.3s ease;
+    color: white;
+}
+
+.whatsapp-btn {
+    background: linear-gradient(135deg, #25D366 0%, #128C7E 100%);
+}
+
+.whatsapp-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(37, 211, 102, 0.3);
+}
+
+.form-btn {
+    background: linear-gradient(135deg, #4285F4 0%, #34A853 100%);
+}
+
+.form-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(66, 133, 244, 0.3);
 }
 
 .cta-primary:hover, .cta-secondary:hover {

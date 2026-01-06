@@ -16,6 +16,8 @@ GoGreenIn is Bangalore's oldest and largest cycling community, founded in 2008 w
 - **Real-time Statistics**: Animated counters showing community impact over the years
 - **Event Gallery**: Filterable events by category (Sunday rides, Anniversary, Special events)
 - **Full-Screen Image Viewer**: Click any image to view in full-screen modal with smooth animations
+- **Dual Join Options**: WhatsApp group and Google form registration choices
+- **Newsletter System**: Google Sheets integration with email notifications
 
 ## 📁 Clean Project Structure
 ```
@@ -23,6 +25,8 @@ gogreenin/
 ├── index.html                    # Main website (ACTIVE)
 ├── styles-reimagined-v2.css      # Active stylesheet with mobile optimization
 ├── script-reimagined-v2.js       # Active JavaScript with dynamic event loading
+├── google-apps-script.js         # 📊 Google Apps Script for form handling
+├── GOOGLE_SHEETS_SETUP.md        # 🔧 Setup guide for Google Sheets integration
 ├── data/                         # 📊 Organized events data (2008-2025)
 │   ├── 2008/events.json          # Foundation year events
 │   ├── 2009/events.json          # 1st Anniversary with YouTube links
@@ -151,11 +155,12 @@ gogreenin/
 
 ## 📞 Contact & Community
 - **Email**: prabhakarrao.cm@gmail.com
-- **Facebook**: [GoGreenIn Community](https://www.facebook.com/profile.php?id=100064416142595)
+- **Facebook**: [GoGreenIn.org](https://www.facebook.com/GoGreenIn.org/)
+- **WhatsApp**: [Join Community Group](https://chat.whatsapp.com/EEZAWjvonFW3oMoGP8C1id)
 - **YouTube**: [GoGreenIn Channel](https://youtu.be/kojDjqbusYs)
 - **Join Community**: Use the "🚴 Upcoming Ride" button on the website
 
-## 🎯 Recent Updates (December 2024)
+## 🎯 Recent Updates (January 2025)
 - ✅ **Complete 17-year timeline** with all years from 2008-2025
 - ✅ **Mobile-first responsive design** with optimized layouts
 - ✅ **Multimedia event links** to YouTube, Facebook, and Google Drive
@@ -164,6 +169,10 @@ gogreenin/
 - ✅ **Clean project structure** with organized data folder
 - ✅ **Full-screen image viewer** with smooth modal interactions
 - ✅ **Comprehensive content management** system for easy updates
+- ✅ **Dual join community options** (WhatsApp + Google Form)
+- ✅ **Google Sheets integration** for newsletter data storage
+- ✅ **Automated email notifications** for admin alerts
+- ✅ **Updated Facebook page** link to GoGreenIn.org
 
 ---
 

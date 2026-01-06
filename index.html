@@ -18,7 +18,7 @@
             
             <!-- Join Community Button - Mobile Visible -->
             <div class="join-corner">
-                <a href="https://docs.google.com/forms/d/e/1FAIpQLSc-w0_2NGRsqiSUqDAiFzO2F6dtd7mAY1N-bXx02eR1WWbQ7g/viewform" class="join-btn priority">JOIN COMMUNITY</a>
+                <button onclick="showJoinOptions()" class="join-btn priority">JOIN COMMUNITY</button>
             </div>
             
             <div class="action-buttons">
@@ -40,7 +40,7 @@
 
     <!-- Join Community Button - Desktop Position -->
     <div class="join-corner-desktop">
-        <a href="https://docs.google.com/forms/d/e/1FAIpQLSc-w0_2NGRsqiSUqDAiFzO2F6dtd7mAY1N-bXx02eR1WWbQ7g/viewform" class="join-btn priority">JOIN COMMUNITY</a>
+        <button onclick="showJoinOptions()" class="join-btn priority">JOIN COMMUNITY</button>
     </div>
 
     <!-- Main Hero -->
@@ -694,7 +694,7 @@
             <h2>Ready to Make a Difference?</h2>
             <p>Join thousands of cyclists creating positive environmental impact</p>
             <div class="cta-buttons">
-                <a href="https://docs.google.com/forms/d/e/1FAIpQLSc-w0_2NGRsqiSUqDAiFzO2F6dtd7mAY1N-bXx02eR1WWbQ7g/viewform" class="cta-primary">Join GoGreenIn</a>
+                <button onclick="showJoinOptions()" class="cta-primary">Join GoGreenIn</button>
                 <a href="https://forms.gle/xBr4Ppko3zwNsc2eA" class="cta-secondary">Anniversary Ride</a>
             </div>
         </div>
@@ -708,7 +708,7 @@
                 <p>Pedaling towards a sustainable future since 2008</p>
             </div>
             <div class="footer-links">
-                <a href="https://www.facebook.com/profile.php?id=100064416142595">Facebook</a>
+                <a href="https://www.facebook.com/GoGreenIn.org/">Facebook</a>
                 <a href="https://youtu.be/kojDjqbusYs">YouTube</a>
                 <a href="mailto:prabhakarrao.cm@gmail.com">Contact</a>
             </div>
@@ -808,6 +808,29 @@
                     <div class="newsletter-footer">
                         <p>🔒 Your information is secure and will only be used for GoGreenIn updates</p>
                     </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Join Options Modal -->
+    <div id="joinModal" class="modal">
+        <div class="modal-content" style="max-width: 500px;">
+            <div class="modal-header">
+                <h2>Join GoGreenIn Community</h2>
+                <span class="close" onclick="closeJoinModal()">&times;</span>
+            </div>
+            <div class="modal-body" style="text-align: center; padding: 30px;">
+                <p style="margin-bottom: 30px; color: var(--light); opacity: 0.9;">Choose how you'd like to join our cycling community:</p>
+                <div style="display: flex; flex-direction: column; gap: 20px;">
+                    <a href="https://chat.whatsapp.com/EEZAWjvonFW3oMoGP8C1id" target="_blank" class="join-option-btn whatsapp-btn">
+                        <span style="font-size: 24px; margin-right: 10px;">📱</span>
+                        Join WhatsApp Group
+                    </a>
+                    <a href="https://docs.google.com/forms/d/e/1FAIpQLSc-w0_2NGRsqiSUqDAiFzO2F6dtd7mAY1N-bXx02eR1WWbQ7g/viewform" target="_blank" class="join-option-btn form-btn">
+                        <span style="font-size: 24px; margin-right: 10px;">📝</span>
+                        Fill Registration Form
+                    </a>
                 </div>
             </div>
         </div>
