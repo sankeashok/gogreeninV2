@@ -728,14 +728,27 @@
             </div>
             
             <div class="instagram-feed" id="instagram-feed">
-                <!-- Instagram Embed Widget -->
+                <!-- LIVE INSTAGRAM OPTION 1: Elfsight Widget (Replace YOUR_APP_ID) -->
+                <!-- Uncomment below and add your Elfsight app ID -->
+                <!--
                 <script src="https://static.elfsight.com/platform/platform.js" data-use-service-core defer></script>
                 <div class="elfsight-app-instagram-feed" data-app-id="YOUR_ELFSIGHT_APP_ID"></div>
+                -->
                 
-                <!-- Alternative: SnapWidget Instagram Feed -->
-                <iframe src="https://snapwidget.com/embed/1234567" class="snapwidget-widget" allowtransparency="true" frameborder="0" scrolling="no" style="border:none; overflow:hidden; width:100%; height:400px; display:none;"></iframe>
+                <!-- LIVE INSTAGRAM OPTION 2: SnapWidget (Replace with your widget ID) -->
+                <!-- Uncomment below and replace 1234567 with your SnapWidget ID -->
+                <!--
+                <iframe src="https://snapwidget.com/embed/1234567" class="snapwidget-widget" allowtransparency="true" frameborder="0" scrolling="no" style="border:none; overflow:hidden; width:100%; height:400px;"></iframe>
+                -->
                 
-                <!-- Fallback: Manual Instagram Display -->
+                <!-- LIVE INSTAGRAM OPTION 3: LightWidget -->
+                <!-- Uncomment below and replace with your LightWidget code -->
+                <!--
+                <script src="https://cdn.lightwidget.com/widgets/lightwidget.js"></script>
+                <iframe src="//lightwidget.com/widgets/YOUR_WIDGET_ID.html" scrolling="no" allowtransparency="true" class="lightwidget-widget" style="width:100%;border:0;overflow:hidden;"></iframe>
+                -->
+                
+                <!-- CURRENT: Manual Display with your photos -->
                 <div class="instagram-manual">
                     <div class="instagram-header">
                         <a class="instagram-header-link" target="_blank" rel="nofollow noopener" href="https://www.instagram.com/gogreenrao/" title="@gogreenrao">
@@ -749,6 +762,7 @@
                                 </div>
                                 <div class="instagram-header-username">
                                     <h3>gogreenrao</h3>
+                                    <p style="font-size: 12px; color: #666; margin: 5px 0 0 0;">⚠️ To show live Instagram posts, set up a widget above</p>
                                 </div>
                             </div>
                         </a>
@@ -761,7 +775,7 @@
                     
                     <div class="instagram-load-more">
                         <button class="instagram-load-btn" type="button" onclick="loadInstagramPosts()">
-                            <span class="instagram-btn-text">Load Posts</span>
+                            <span class="instagram-btn-text">Load Sample Posts</span>
                         </button>
                         
                         <span class="instagram-follow-btn">
