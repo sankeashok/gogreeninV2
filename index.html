@@ -103,54 +103,7 @@
         </div>
     </section>
 
-    <!-- Latest Updates Section -->
-    <section class="latest-updates">
-        <div class="updates-container">
-            <h2>Latest Updates</h2>
-            <div class="updates-grid">
-                <div class="latest-ride-section">
-                    <h3>🚴 Latest Ride</h3>
-                    <div class="latest-ride-card">
-                        <h4>New Year Kickoff - Chikka Tirupathi</h4>
-                        <p>January 4, 2026 • 8 Cyclists</p>
-                        <div class="ride-images-scroll">
-                            <div class="images-container">
-                                <img src="data/2026/01-January/04-January-2026 - Chikka Tirupathi/IMG-20260104-WA00.jpg" alt="Chikka Tirupathi Ride" onclick="openImageFullscreen(this.src)">
-                                <img src="data/2026/01-January/04-January-2026 - Chikka Tirupathi/IMG-20260104-WA0008.jpg" alt="Chikka Tirupathi Ride" onclick="openImageFullscreen(this.src)">
-                                <img src="data/2026/01-January/04-January-2026 - Chikka Tirupathi/IMG-20260104-WA0010.jpg" alt="Chikka Tirupathi Ride" onclick="openImageFullscreen(this.src)">
-                                <img src="data/2026/01-January/04-January-2026 - Chikka Tirupathi/IMG-20260104-WA0011.jpg" alt="Chikka Tirupathi Ride" onclick="openImageFullscreen(this.src)">
-                            </div>
-                        </div>
-                        <a href="#" onclick="openYearModal('2026')" class="view-details-btn">View Full Details</a>
-                    </div>
-                </div>
-                <div class="facebook-feed">
-                    <h3>📘 Facebook Updates</h3>
-                    <div class="fb-page" 
-                         data-href="https://www.facebook.com/GoGreenIn.org/" 
-                         data-tabs="timeline" 
-                         data-width="350" 
-                         data-height="400" 
-                         data-small-header="true" 
-                         data-adapt-container-width="true" 
-                         data-hide-cover="true" 
-                         data-show-facepile="false">
-                    </div>
-                </div>
-                <div class="instagram-feed">
-                    <h3>📷 Instagram</h3>
-                    <div class="instagram-preview">
-                        <div class="instagram-mini-grid">
-                            <img src="data/2025/2-Feb-2025 00.jpg" alt="Recent ride" onclick="window.open('https://www.instagram.com/gogreenin.org/', '_blank')">
-                            <img src="data/2025/17th Anniversary-2025 Year.jpg" alt="Anniversary" onclick="window.open('https://www.instagram.com/gogreenin.org/', '_blank')">
-                            <img src="data/2026/01-January/04-January-2026 - Chikka Tirupathi/IMG-20260104-WA00.jpg" alt="Latest ride" onclick="window.open('https://www.instagram.com/gogreenin.org/', '_blank')">
-                        </div>
-                        <a href="https://www.instagram.com/gogreenin.org/" target="_blank" class="instagram-follow-btn">Follow @gogreenin.org</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+
 
     <!-- Journey Timeline -->
     <section id="journey-timeline" class="journey-timeline">
@@ -988,6 +941,105 @@
                                 </ul>
                             </div>
                         </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Latest Updates Section -->
+    <section class="latest-updates">
+        <div class="social-container">
+            <div class="social-header">
+                <h1 class="social-title">LATEST UPDATES</h1>
+            </div>
+            
+            <div class="instagram-feed" id="latest-updates-feed">
+                <div class="instagram-manual">
+                    <div class="instagram-header">
+                        <div class="instagram-header-text" style="width: 100%; display: flex; justify-content: space-between; align-items: center;">
+                            <div>
+                                <h3>New Year Kickoff - Chikka Tirupathi</h3>
+                                <p style="font-size: 12px; color: #666; margin: 5px 0 0 0;">January 4, 2026 • 8 Cyclists</p>
+                            </div>
+                            <button onclick="openYearModal('2026')" style="background: #007bff; color: white; border: none; padding: 8px 16px; border-radius: 20px; cursor: pointer; font-size: 12px;">View Details</button>
+                        </div>
+                    </div>
+                    
+                    <div class="instagram-images" id="latest-updates-images">
+                        <div class="instagram-item">
+                            <div class="instagram-photo-wrap">
+                                <a class="instagram-photo" href="#" onclick="openYearModal('2026')">
+                                    <img decoding="async" src="data/2026/01-January/04-January-2026 - Chikka Tirupathi/IMG-20260104-WA00.jpg" alt="New Year Kickoff - Chikka Tirupathi" class="instagram-image">
+                                    <div class="instagram-overlay">
+                                        <div class="instagram-icon">🚴</div>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                        
+                        <div class="instagram-item">
+                            <div class="instagram-photo-wrap">
+                                <a class="instagram-photo" href="#" onclick="openImageFullscreen('data/2026/01-January/04-January-2026 - Chikka Tirupathi/IMG-20260104-WA0008.jpg')">
+                                    <img decoding="async" src="data/2026/01-January/04-January-2026 - Chikka Tirupathi/IMG-20260104-WA0008.jpg" alt="Chikka Tirupathi Team" class="instagram-image">
+                                    <div class="instagram-overlay">
+                                        <div class="instagram-icon">👥</div>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                        
+                        <div class="instagram-item">
+                            <div class="instagram-photo-wrap">
+                                <a class="instagram-photo" href="#" onclick="openImageFullscreen('data/2026/01-January/04-January-2026 - Chikka Tirupathi/IMG-20260104-WA0010.jpg')">
+                                    <img decoding="async" src="data/2026/01-January/04-January-2026 - Chikka Tirupathi/IMG-20260104-WA0010.jpg" alt="Adventure Cycling" class="instagram-image">
+                                    <div class="instagram-overlay">
+                                        <div class="instagram-icon">🏔️</div>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                        
+                        <div class="instagram-item">
+                            <div class="instagram-photo-wrap">
+                                <a class="instagram-photo" href="#" onclick="openImageFullscreen('data/2026/01-January/04-January-2026 - Chikka Tirupathi/IMG-20260104-WA0011.jpg')">
+                                    <img decoding="async" src="data/2026/01-January/04-January-2026 - Chikka Tirupathi/IMG-20260104-WA0011.jpg" alt="Environmental Awareness" class="instagram-image">
+                                    <div class="instagram-overlay">
+                                        <div class="instagram-icon">🌱</div>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                        
+                        <div class="instagram-item">
+                            <div class="instagram-photo-wrap">
+                                <a class="instagram-photo" href="#" onclick="openImageFullscreen('data/2025/17th Anniversary-2025 Year.jpg')">
+                                    <img decoding="async" src="data/2025/17th Anniversary-2025 Year.jpg" alt="17th Anniversary" class="instagram-image">
+                                    <div class="instagram-overlay">
+                                        <div class="instagram-icon">🎉</div>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                        
+                        <div class="instagram-item">
+                            <div class="instagram-photo-wrap">
+                                <a class="instagram-photo" href="#" onclick="openImageFullscreen('data/2025/2-Feb-2025 00.jpg')">
+                                    <img decoding="async" src="data/2025/2-Feb-2025 00.jpg" alt="Sunday Ride" class="instagram-image">
+                                    <div class="instagram-overlay">
+                                        <div class="instagram-icon">☀️</div>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="instagram-load-more">
+                        <span class="instagram-follow-btn">
+                            <a href="#events-gallery">
+                                <span>View All Events</span>
+                            </a>
+                        </span>
                     </div>
                 </div>
             </div>
