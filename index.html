@@ -732,10 +732,13 @@
                 <script src="https://static.elfsight.com/platform/platform.js" data-use-service-core defer></script>
                 <div class="elfsight-app-instagram-feed" data-app-id="YOUR_ELFSIGHT_APP_ID"></div>
                 
+                <!-- Alternative: SnapWidget Instagram Feed -->
+                <iframe src="https://snapwidget.com/embed/1234567" class="snapwidget-widget" allowtransparency="true" frameborder="0" scrolling="no" style="border:none; overflow:hidden; width:100%; height:400px; display:none;"></iframe>
+                
                 <!-- Fallback: Manual Instagram Display -->
-                <div class="instagram-manual" style="display: none;">
+                <div class="instagram-manual">
                     <div class="instagram-header">
-                        <a class="instagram-header-link" target="_blank" rel="nofollow noopener" href="https://www.instagram.com/gogreenin.org/" title="@gogreenin.org">
+                        <a class="instagram-header-link" target="_blank" rel="nofollow noopener" href="https://www.instagram.com/gogreenrao/" title="@gogreenrao">
                             <div class="instagram-header-text">
                                 <div class="instagram-header-img">
                                     <div class="instagram-header-icon">
@@ -745,14 +748,31 @@
                                     </div>
                                 </div>
                                 <div class="instagram-header-username">
-                                    <h3>gogreenin.org</h3>
+                                    <h3>gogreenrao</h3>
                                 </div>
                             </div>
                         </a>
                     </div>
-                    <p style="text-align: center; margin: 20px 0;">
-                        <a href="https://www.instagram.com/gogreenin.org/" target="_blank" style="background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%); color: white; padding: 12px 24px; border-radius: 25px; text-decoration: none; font-weight: 600;">View on Instagram</a>
-                    </p>
+                    
+                    <!-- Instagram Posts Grid -->
+                    <div class="instagram-images" id="instagram-images">
+                        <!-- Posts will be loaded here -->
+                    </div>
+                    
+                    <div class="instagram-load-more">
+                        <button class="instagram-load-btn" type="button" onclick="loadInstagramPosts()">
+                            <span class="instagram-btn-text">Load Posts</span>
+                        </button>
+                        
+                        <span class="instagram-follow-btn">
+                            <a target="_blank" rel="nofollow noopener" href="https://www.instagram.com/gogreenrao/">
+                                <svg class="instagram-follow-icon" aria-hidden="true" viewBox="0 0 448 512">
+                                    <path fill="currentColor" d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z"></path>
+                                </svg>
+                                <span>Follow @gogreenrao</span>
+                            </a>
+                        </span>
+                    </div>
                 </div>
             </div>
         </div>
@@ -1110,6 +1130,88 @@
 
     <div id="fb-root"></div>
     <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v18.0"></script>
+    
+    <!-- Instagram Feed JavaScript -->
+    <script>
+    function loadInstagramPosts() {
+        const instagramImages = document.getElementById('instagram-images');
+        const loadBtn = document.querySelector('.instagram-load-btn');
+        
+        // Sample posts from your cycling activities
+        const posts = [
+            {
+                image: 'data/2025/2-Feb-2025 00.jpg',
+                caption: 'Sunday morning ride with GoGreenIn community! 🚴‍♂️ #Cycling #GoGreen #Bangalore',
+                link: 'https://www.instagram.com/gogreenrao/'
+            },
+            {
+                image: 'data/2025/17th Anniversary-2025 Year.jpg',
+                caption: '17 years of environmental impact! 🌱 #17thAnniversary #GoGreenIn #Sustainability',
+                link: 'https://www.instagram.com/gogreenrao/'
+            },
+            {
+                image: 'data/2026/01-January/04-January-2026 - Chikka Tirupathi/IMG-20260104-WA00.jpg',
+                caption: 'New Year kickoff ride to Chikka Tirupathi! 🎉 #NewYear2026 #ChikkaTirupathi #Cycling',
+                link: 'https://www.instagram.com/gogreenrao/'
+            },
+            {
+                image: 'data/2026/01-January/04-January-2026 - Chikka Tirupathi/IMG-20260104-WA0008.jpg',
+                caption: 'Team spirit at its best! 💪 #TeamWork #CyclingCommunity #GoGreenIn',
+                link: 'https://www.instagram.com/gogreenrao/'
+            },
+            {
+                image: 'data/2025/2-Feb-2025 01.jpg',
+                caption: 'Environmental awareness through cycling 🌍 #Environment #Sustainability #GreenLiving',
+                link: 'https://www.instagram.com/gogreenrao/'
+            },
+            {
+                image: 'data/2025/2-Feb-2025 02.jpg',
+                caption: 'Every pedal counts towards a greener future! 🚲 #GreenFuture #Cycling #EcoFriendly',
+                link: 'https://www.instagram.com/gogreenrao/'
+            },
+            {
+                image: 'data/2026/01-January/04-January-2026 - Chikka Tirupathi/IMG-20260104-WA0010.jpg',
+                caption: 'Adventure awaits on two wheels! 🏔️ #Adventure #MountainCycling #Nature',
+                link: 'https://www.instagram.com/gogreenrao/'
+            },
+            {
+                image: 'data/2026/01-January/04-January-2026 - Chikka Tirupathi/IMG-20260104-WA0011.jpg',
+                caption: 'Spreading the message of environmental consciousness 📢 #Awareness #GoGreen #Community',
+                link: 'https://www.instagram.com/gogreenrao/'
+            }
+        ];
+        
+        loadBtn.innerHTML = '<span class="instagram-btn-text">Loading...</span>';
+        
+        setTimeout(() => {
+            instagramImages.innerHTML = '';
+            
+            posts.forEach(post => {
+                const postElement = document.createElement('div');
+                postElement.className = 'instagram-item';
+                postElement.innerHTML = `
+                    <div class="instagram-photo-wrap">
+                        <a class="instagram-photo" href="${post.link}" target="_blank" rel="noopener nofollow">
+                            <img decoding="async" src="${post.image}" alt="${post.caption}" class="instagram-image">
+                            <div class="instagram-overlay">
+                                <div class="instagram-icon">📷</div>
+                            </div>
+                        </a>
+                    </div>
+                `;
+                instagramImages.appendChild(postElement);
+            });
+            
+            loadBtn.innerHTML = '<span class="instagram-btn-text">Refresh</span>';
+        }, 1000);
+    }
+    
+    // Auto-load posts on page load
+    document.addEventListener('DOMContentLoaded', function() {
+        setTimeout(loadInstagramPosts, 2000);
+    });
+    </script>
+    
     <script src="script-reimagined-v2.js"></script>
 </body>
 </html>
