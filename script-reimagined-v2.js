@@ -140,7 +140,18 @@ const yearData = {
         image: 'data/2025/17th Anniversary-2025 Year.jpg',
         events: ['18th Anniversary preparation', 'Endurance challenges', 'Community expansion'],
         monthlyData: [
-            {month: 'Jan', rides: 1, cyclists: 8, events: [
+            {month: 'Jan', rides: 2, cyclists: 15, events: [
+                {name: 'Ride 2 - www.GoGreenin.org website launch day', url: '', photos: [
+                    'data/2026/01-January/Ride02 - 11-Jan-2025 - gogreenin.org website launch day/IMG_20260111_073002956_HDR.jpg',
+                    'data/2026/01-January/Ride02 - 11-Jan-2025 - gogreenin.org website launch day/IMG_20260111_073042212_HDR_AE.jpg',
+                    'data/2026/01-January/Ride02 - 11-Jan-2025 - gogreenin.org website launch day/IMG_20260111_073814382.jpg',
+                    'data/2026/01-January/Ride02 - 11-Jan-2025 - gogreenin.org website launch day/IMG_20260111_073854005.jpg',
+                    'data/2026/01-January/Ride02 - 11-Jan-2025 - gogreenin.org website launch day/IMG_20260111_074206739_HDR_AE.jpg',
+                    'data/2026/01-January/Ride02 - 11-Jan-2025 - gogreenin.org website launch day/IMG_20260111_084122945.jpg',
+                    'data/2026/01-January/Ride02 - 11-Jan-2025 - gogreenin.org website launch day/IMG-20260111-WA0009.jpg',
+                    'data/2026/01-January/Ride02 - 11-Jan-2025 - gogreenin.org website launch day/IMG-20260111-WA0020.jpg',
+                    'data/2026/01-January/Ride02 - 11-Jan-2025 - gogreenin.org website launch day/IMG-20260111-WA0021.jpg'
+                ], videos: [], description: 'Ride to Vidhana Soudha to Malleshwaram'},
                 {name: 'Ride 1 - New Year Kickoff Ride - Endurance ride to Chikka Tirupathi', url: '', photos: [
                     'data/2026/01-January/04-January-2026 - Chikka Tirupathi/IMG-20260104-WA00.jpg',
                     'data/2026/01-January/04-January-2026 - Chikka Tirupathi/IMG-20260104-WA0008.jpg',
