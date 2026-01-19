@@ -818,8 +818,74 @@ document.addEventListener('DOMContentLoaded', () => {
         themeIcon.textContent = '🌙';
     }
     
+    // Load latest ride automatically
+    loadLatestRide();
+    
     console.log('2025 data loaded with your latest updates');
 });
+
+// Function to load latest ride automatically
+function loadLatestRide() {
+    // Get the most recent year with data
+    const years = Object.keys(yearData).sort((a, b) => b - a);
+    
+    for (const year of years) {
+        const data = yearData[year];
+        if (data.monthlyData && data.monthlyData.length > 0) {
+            // Get first month with events
+            const monthData = data.monthlyData[0];
+            if (monthData.events && monthData.events.length > 0) {
+                const latestEvent = monthData.events[0];
+                
+                // Extract event details
+                let eventName, eventPhotos, eventUrl;
+                if (typeof latestEvent === 'string') {
+                    eventName = latestEvent;
+                    eventPhotos = [];
+                    eventUrl = '';
+                } else {
+                    eventName = latestEvent.name;
+                    eventPhotos = latestEvent.photos || [];
+                    eventUrl = latestEvent.url || '';
+                }
+                
+                // Update header
+                const headerDiv = document.querySelector('#latest-updates-feed .instagram-header .instagram-header-text > div:first-child');
+                if (headerDiv) {
+                    headerDiv.innerHTML = `
+                        <h3>${eventName}</h3>
+                        <p style="font-size: 12px; color: #666; margin: 5px 0 0 0;">${monthData.month} ${year} • ${monthData.cyclists} Cyclists</p>
+                    `;
+                }
+                
+                // Update images
+                const imagesContainer = document.getElementById('latest-updates-images');
+                if (imagesContainer && eventPhotos.length > 0) {
+                    imagesContainer.innerHTML = eventPhotos.slice(0, 6).map((photo, index) => `
+                        <div class="instagram-item">
+                            <div class="instagram-photo-wrap">
+                                <a class="instagram-photo" href="#" onclick="${index === 0 ? `openYearModal('${year}')` : `openImageFullscreen('${photo}')`}">
+                                    <img decoding="async" src="${photo}" alt="${eventName}" class="instagram-image">
+                                    <div class="instagram-overlay">
+                                        <div class="instagram-icon">${index === 0 ? '🚴' : '📷'}</div>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                    `).join('');
+                }
+                
+                // Update button
+                const button = document.querySelector('#latest-updates-feed .instagram-header button');
+                if (button) {
+                    button.setAttribute('onclick', `openYearModal('${year}')`);
+                }
+                
+                break;
+            }
+        }
+    }
+}
 
 // Animated counter
 function animateCounter(element, target, duration = 2000) {
