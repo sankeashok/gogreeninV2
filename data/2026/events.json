@@ -4,7 +4,7 @@
   "months": {
     "01": {
       "name": "January",
-      "rides": 1,
+      "rides": 3,
       "cyclists": 8,
       "events": [
         {
@@ -25,6 +25,45 @@
             "data/2026/01-January/04-January-2026 - Chikka Tirupathi/VID-20260104-WA0043.mp4"
           ],
           "description": "Endurance ride to Chikka Tirupathi"
+        },
+        {
+          "name": "Ride 2 - gogreenin.org website launch day",
+          "url": "https://youtube.com/shorts/FceLuIk_1n4",
+          "photos": [
+            "data/2026/01-January/Ride02 - 11-Jan-2025 - gogreenin.org website launch day/IMG_20260111_073002956_HDR.jpg",
+            "data/2026/01-January/Ride02 - 11-Jan-2025 - gogreenin.org website launch day/IMG_20260111_073042212_HDR_AE.jpg",
+            "data/2026/01-January/Ride02 - 11-Jan-2025 - gogreenin.org website launch day/IMG_20260111_073814382.jpg",
+            "data/2026/01-January/Ride02 - 11-Jan-2025 - gogreenin.org website launch day/IMG_20260111_073854005.jpg",
+            "data/2026/01-January/Ride02 - 11-Jan-2025 - gogreenin.org website launch day/IMG_20260111_074206739_HDR_AE.jpg",
+            "data/2026/01-January/Ride02 - 11-Jan-2025 - gogreenin.org website launch day/IMG_20260111_084122945.jpg",
+            "data/2026/01-January/Ride02 - 11-Jan-2025 - gogreenin.org website launch day/IMG-20260111-WA0009.jpg",
+            "data/2026/01-January/Ride02 - 11-Jan-2025 - gogreenin.org website launch day/IMG-20260111-WA0020.jpg",
+            "data/2026/01-January/Ride02 - 11-Jan-2025 - gogreenin.org website launch day/IMG-20260111-WA0021.jpg"
+          ],
+          "videos": [],
+          "description": "Website launch celebration ride"
+        },
+        {
+          "name": "Ride 3 - KBDA Cycle Ride - Powered by HCL Cyclothon",
+          "url": "https://youtube.com/shorts/t1ylrrnwlGQ",
+          "photos": [
+            "data/2026/01-January/Ride03 - 18-Jan-2025 -  KBDA Cycle Ride - Powered by HCL Cyclothon/IMG-20260118-WA0003.jpg",
+            "data/2026/01-January/Ride03 - 18-Jan-2025 -  KBDA Cycle Ride - Powered by HCL Cyclothon/IMG-20260118-WA0010.jpg",
+            "data/2026/01-January/Ride03 - 18-Jan-2025 -  KBDA Cycle Ride - Powered by HCL Cyclothon/IMG-20260118-WA0011.jpg",
+            "data/2026/01-January/Ride03 - 18-Jan-2025 -  KBDA Cycle Ride - Powered by HCL Cyclothon/IMG-20260118-WA0014.jpg",
+            "data/2026/01-January/Ride03 - 18-Jan-2025 -  KBDA Cycle Ride - Powered by HCL Cyclothon/IMG-20260118-WA0016.jpg",
+            "data/2026/01-January/Ride03 - 18-Jan-2025 -  KBDA Cycle Ride - Powered by HCL Cyclothon/IMG-20260118-WA0018.jpg",
+            "data/2026/01-January/Ride03 - 18-Jan-2025 -  KBDA Cycle Ride - Powered by HCL Cyclothon/IMG-20260118-WA0040.jpg",
+            "data/2026/01-January/Ride03 - 18-Jan-2025 -  KBDA Cycle Ride - Powered by HCL Cyclothon/IMG-20260118-WA0041.jpg"
+          ],
+          "videos": [
+            "data/2026/01-January/Ride03 - 18-Jan-2025 -  KBDA Cycle Ride - Powered by HCL Cyclothon/VID-20260119-WA0020.mp4",
+            "data/2026/01-January/Ride03 - 18-Jan-2025 -  KBDA Cycle Ride - Powered by HCL Cyclothon/VID-20260119-WA0029.mp4",
+            "data/2026/01-January/Ride03 - 18-Jan-2025 -  KBDA Cycle Ride - Powered by HCL Cyclothon/VID-20260119-WA0030.mp4",
+            "data/2026/01-January/Ride03 - 18-Jan-2025 -  KBDA Cycle Ride - Powered by HCL Cyclothon/VID-20260119-WA0032.mp4",
+            "data/2026/01-January/Ride03 - 18-Jan-2025 -  KBDA Cycle Ride - Powered by HCL Cyclothon/VID-20260119-WA0033.mp4"
+          ],
+          "description": "KBDA Cycle Ride powered by HCL Cyclothon"
         }
       ]
     }
