@@ -142,44 +142,44 @@ const yearData = {
         monthlyData: [
             {month: 'Jan', rides: 3, cyclists: 15, events: [
                 {name: 'Ride 3 - KBDA Cycle Ride - Powered by HCL Cyclothon', url: 'https://youtube.com/shorts/t1ylrrnwlGQ', photos: [
-                    'data/2026/01-January/Ride03 - 18-Jan-2025 -  KBDA Cycle Ride - Powered by HCL Cyclothon/IMG-20260118-WA0003.jpg',
-                    'data/2026/01-January/Ride03 - 18-Jan-2025 -  KBDA Cycle Ride - Powered by HCL Cyclothon/IMG-20260118-WA0010.jpg',
-                    'data/2026/01-January/Ride03 - 18-Jan-2025 -  KBDA Cycle Ride - Powered by HCL Cyclothon/IMG-20260118-WA0011.jpg',
-                    'data/2026/01-January/Ride03 - 18-Jan-2025 -  KBDA Cycle Ride - Powered by HCL Cyclothon/IMG-20260118-WA0014.jpg',
-                    'data/2026/01-January/Ride03 - 18-Jan-2025 -  KBDA Cycle Ride - Powered by HCL Cyclothon/IMG-20260118-WA0016.jpg',
-                    'data/2026/01-January/Ride03 - 18-Jan-2025 -  KBDA Cycle Ride - Powered by HCL Cyclothon/IMG-20260118-WA0018.jpg',
-                    'data/2026/01-January/Ride03 - 18-Jan-2025 -  KBDA Cycle Ride - Powered by HCL Cyclothon/IMG-20260118-WA0040.jpg',
-                    'data/2026/01-January/Ride03 - 18-Jan-2025 -  KBDA Cycle Ride - Powered by HCL Cyclothon/IMG-20260118-WA0041.jpg'
+                    'https://res.cloudinary.com/dv6y9ykt9/image/upload/v1768845885/IMG-20260118-WA0003_e2npfr.jpg',
+                    'https://res.cloudinary.com/dv6y9ykt9/image/upload/v1768845881/IMG-20260118-WA0010_bmmupy.jpg',
+                    'https://res.cloudinary.com/dv6y9ykt9/image/upload/v1768845882/IMG-20260118-WA0011_vnffb0.jpg',
+                    'https://res.cloudinary.com/dv6y9ykt9/image/upload/v1768845881/IMG-20260118-WA0014_rshppa.jpg',
+                    'https://res.cloudinary.com/dv6y9ykt9/image/upload/v1768845890/IMG-20260118-WA0016_zkpvdh.jpg',
+                    'https://res.cloudinary.com/dv6y9ykt9/image/upload/v1768845882/IMG-20260118-WA0018_vdpalw.jpg',
+                    'https://res.cloudinary.com/dv6y9ykt9/image/upload/v1768845890/IMG-20260118-WA0040_ljkvxn.jpg',
+                    'https://res.cloudinary.com/dv6y9ykt9/image/upload/v1768845890/IMG-20260118-WA0041_czomzc.jpg'
                 ], videos: [
-                    'data/2026/01-January/Ride03 - 18-Jan-2025 -  KBDA Cycle Ride - Powered by HCL Cyclothon/VID-20260119-WA0020.mp4',
-                    'data/2026/01-January/Ride03 - 18-Jan-2025 -  KBDA Cycle Ride - Powered by HCL Cyclothon/VID-20260119-WA0029.mp4',
-                    'data/2026/01-January/Ride03 - 18-Jan-2025 -  KBDA Cycle Ride - Powered by HCL Cyclothon/VID-20260119-WA0030.mp4',
-                    'data/2026/01-January/Ride03 - 18-Jan-2025 -  KBDA Cycle Ride - Powered by HCL Cyclothon/VID-20260119-WA0032.mp4',
-                    'data/2026/01-January/Ride03 - 18-Jan-2025 -  KBDA Cycle Ride - Powered by HCL Cyclothon/VID-20260119-WA0033.mp4'
+                    'https://res.cloudinary.com/dv6y9ykt9/video/upload/v1768845890/VID-20260119-WA0020_cyexco.mp4',
+                    'https://res.cloudinary.com/dv6y9ykt9/video/upload/v1768845899/VID-20260119-WA0029_kfw9gf.mp4',
+                    'https://res.cloudinary.com/dv6y9ykt9/video/upload/v1768845884/VID-20260119-WA0030_cgqlgb.mp4',
+                    'https://res.cloudinary.com/dv6y9ykt9/video/upload/v1768845897/VID-20260119-WA0032_djaiwy.mp4',
+                    'https://res.cloudinary.com/dv6y9ykt9/video/upload/v1768845897/VID-20260119-WA0033_fcfokm.mp4'
                 ], description: 'KBDA Cycle Ride powered by HCL Cyclothon'},
                 {name: 'Ride 2 - www.GoGreenin.org website launch day', url: 'https://youtube.com/shorts/FceLuIk_1n4', photos: [
-                    'data/2026/01-January/Ride02 - 11-Jan-2025 - gogreenin.org website launch day/IMG_20260111_073002956_HDR.jpg',
-                    'data/2026/01-January/Ride02 - 11-Jan-2025 - gogreenin.org website launch day/IMG_20260111_073042212_HDR_AE.jpg',
-                    'data/2026/01-January/Ride02 - 11-Jan-2025 - gogreenin.org website launch day/IMG_20260111_073814382.jpg',
-                    'data/2026/01-January/Ride02 - 11-Jan-2025 - gogreenin.org website launch day/IMG_20260111_073854005.jpg',
-                    'data/2026/01-January/Ride02 - 11-Jan-2025 - gogreenin.org website launch day/IMG_20260111_074206739_HDR_AE.jpg',
-                    'data/2026/01-January/Ride02 - 11-Jan-2025 - gogreenin.org website launch day/IMG_20260111_084122945.jpg',
-                    'data/2026/01-January/Ride02 - 11-Jan-2025 - gogreenin.org website launch day/IMG-20260111-WA0009.jpg',
-                    'data/2026/01-January/Ride02 - 11-Jan-2025 - gogreenin.org website launch day/IMG-20260111-WA0020.jpg',
-                    'data/2026/01-January/Ride02 - 11-Jan-2025 - gogreenin.org website launch day/IMG-20260111-WA0021.jpg'
+                    'https://res.cloudinary.com/dv6y9ykt9/image/upload/v1768845893/IMG_20260111_073002956_HDR_v30gam.jpg',
+                    'https://res.cloudinary.com/dv6y9ykt9/image/upload/v1768845895/IMG_20260111_073042212_HDR_AE_vbxjze.jpg',
+                    'https://res.cloudinary.com/dv6y9ykt9/image/upload/v1768845894/IMG_20260111_073814382_t5o2oi.jpg',
+                    'https://res.cloudinary.com/dv6y9ykt9/image/upload/v1768845896/IMG_20260111_073854005_w7dbay.jpg',
+                    'https://res.cloudinary.com/dv6y9ykt9/image/upload/v1768845883/IMG_20260111_074206739_HDR_AE_dtuifq.jpg',
+                    'https://res.cloudinary.com/dv6y9ykt9/image/upload/v1768845897/IMG_20260111_084122945_pg6vlc.jpg',
+                    'https://res.cloudinary.com/dv6y9ykt9/image/upload/v1768845891/IMG-20260111-WA0009_mglz1t.jpg',
+                    'https://res.cloudinary.com/dv6y9ykt9/image/upload/v1768845884/IMG-20260111-WA0020_fy9yfh.jpg',
+                    'https://res.cloudinary.com/dv6y9ykt9/image/upload/v1768845886/IMG-20260111-WA0021_zwljsg.jpg'
                 ], videos: [], description: 'Ride to Vidhana Soudha to Malleshwaram'},
                 {name: 'Ride 1 - New Year Kickoff Ride - Endurance ride to Chikka Tirupathi', url: '', photos: [
-                    'data/2026/01-January/04-January-2026 - Chikka Tirupathi/IMG-20260104-WA00.jpg',
-                    'data/2026/01-January/04-January-2026 - Chikka Tirupathi/IMG-20260104-WA0008.jpg',
-                    'data/2026/01-January/04-January-2026 - Chikka Tirupathi/IMG-20260104-WA00099.jpg',
-                    'data/2026/01-January/04-January-2026 - Chikka Tirupathi/IMG-20260104-WA0010.jpg',
-                    'data/2026/01-January/04-January-2026 - Chikka Tirupathi/IMG-20260104-WA0011.jpg',
-                    'data/2026/01-January/04-January-2026 - Chikka Tirupathi/IMG-20260104-WA0014.jpg',
-                    'data/2026/01-January/04-January-2026 - Chikka Tirupathi/IMG-20260104-WA0016.jpg',
-                    'data/2026/01-January/04-January-2026 - Chikka Tirupathi/IMG-20260104-WA0017.jpg'
+                    'https://res.cloudinary.com/dv6y9ykt9/image/upload/v1768845892/IMG-20260104-WA00_jz3kw8.jpg',
+                    'https://res.cloudinary.com/dv6y9ykt9/image/upload/v1768845888/IMG-20260104-WA0008_lov5q8.jpg',
+                    'https://res.cloudinary.com/dv6y9ykt9/image/upload/v1768845889/IMG-20260104-WA00099_vg9zq9.jpg',
+                    'https://res.cloudinary.com/dv6y9ykt9/image/upload/v1768845890/IMG-20260104-WA0010_fwka1q.jpg',
+                    'https://res.cloudinary.com/dv6y9ykt9/image/upload/v1768845888/IMG-20260104-WA0011_jw9rvp.jpg',
+                    'https://res.cloudinary.com/dv6y9ykt9/image/upload/v1768845888/IMG-20260104-WA0014_w56bmw.jpg',
+                    'https://res.cloudinary.com/dv6y9ykt9/image/upload/v1768845888/IMG-20260104-WA0016_xlvtqe.jpg',
+                    'https://res.cloudinary.com/dv6y9ykt9/image/upload/v1768845891/IMG-20260104-WA0017_pwldxc.jpg'
                 ], videos: [
-                    'data/2026/01-January/04-January-2026 - Chikka Tirupathi/VID-20260104-WA0026.mp4',
-                    'data/2026/01-January/04-January-2026 - Chikka Tirupathi/VID-20260104-WA0043.mp4'
+                    'https://res.cloudinary.com/dv6y9ykt9/video/upload/v1768845883/VID-20260104-WA0026_oasgpf.mp4',
+                    'https://res.cloudinary.com/dv6y9ykt9/video/upload/v1768845884/VID-20260104-WA0043_tmpzrt.mp4'
                 ], description: 'Endurance ride to Chikka Tirupathi'}
             ]}
         ],
@@ -193,31 +193,31 @@ const yearData = {
         monthlyData: [
             {month: 'Dec', rides: 5, cyclists: 300, events: [
                 {name: 'Ride 5 - GoGreen IRP Year End Ride', url: '', photos: [
-                    'data/2025/12-December/28-Dec-2025 Sunday/IMG-20251228-WA0011.jpg',
-                    'data/2025/12-December/28-Dec-2025 Sunday/IMG-20251228-WA0012.jpg',
-                    'data/2025/12-December/28-Dec-2025 Sunday/IMG-20251228-WA0013.jpg',
-                    'data/2025/12-December/28-Dec-2025 Sunday/IMG-20251228-WA0014.jpg',
-                    'data/2025/12-December/28-Dec-2025 Sunday/IMG-20251228-WA0016.jpg'
+                    'https://res.cloudinary.com/dv6y9ykt9/image/upload/v1768845887/IMG-20251228-WA0011_gqglsx.jpg',
+                    'https://res.cloudinary.com/dv6y9ykt9/image/upload/v1768845887/IMG-20251228-WA0012_dbhisf.jpg',
+                    'https://res.cloudinary.com/dv6y9ykt9/image/upload/v1768845891/IMG-20251228-WA0013_blzaql.jpg',
+                    'https://res.cloudinary.com/dv6y9ykt9/image/upload/v1768845892/IMG-20251228-WA0014_obpjer.jpg',
+                    'https://res.cloudinary.com/dv6y9ykt9/image/upload/v1768845892/IMG-20251228-WA0016_cynb1f.jpg'
                 ], videos: [
-                    'data/2025/12-December/28-Dec-2025 Sunday/VID-20251228-WA0045.mp4',
-                    'data/2025/12-December/28-Dec-2025 Sunday/VID-20251228-WA0046.mp4'
+                    'https://res.cloudinary.com/dv6y9ykt9/video/upload/v1768845889/VID-20251228-WA0045_obekvz.mp4',
+                    'https://res.cloudinary.com/dv6y9ykt9/video/upload/v1768845895/VID-20251228-WA0046_kvakgz.mp4'
                 ]},
                 {name: 'Ride 4 - 24-Dec-2025 Wednesday\'s ride to send off to GGI family\'s 2025 YearEndRide', url: '', photos: [
-                    'data/2025/12-December/24-Dec-2025 WednesDay/IMG_20251224_055237270_HDR_AE.jpg',
-                    'data/2025/12-December/24-Dec-2025 WednesDay/IMG-20251224-WA002.jpg',
-                    'data/2025/12-December/24-Dec-2025 WednesDay/IMG-20251224-WA003.jpg',
-                    'data/2025/12-December/24-Dec-2025 WednesDay/IMG-20251224-WA0026.jpg',
-                    'data/2025/12-December/24-Dec-2025 WednesDay/IMG-20251224-WA0028.jpg',
-                    'data/2025/12-December/24-Dec-2025 WednesDay/IMG-20251224-WA0029.jpg',
+                    'https://res.cloudinary.com/dv6y9ykt9/image/upload/v1768845888/IMG_20251224_055237270_HDR_AE_qgitmf.jpg',
+                    'https://res.cloudinary.com/dv6y9ykt9/image/upload/v1768845883/IMG-20251224-WA002_kenmuq.jpg',
+                    'https://res.cloudinary.com/dv6y9ykt9/image/upload/v1768845886/IMG-20251224-WA003_lsf8mk.jpg',
+                    'https://res.cloudinary.com/dv6y9ykt9/image/upload/v1768845881/IMG-20251224-WA0026_f3qb2f.jpg',
+                    'https://res.cloudinary.com/dv6y9ykt9/image/upload/v1768845886/IMG-20251224-WA0028_fttse7.jpg',
+                    'https://res.cloudinary.com/dv6y9ykt9/image/upload/v1768845885/IMG-20251224-WA0029_hlgrq9.jpg',
                     'data/2025/12-December/24-Dec-2025 WednesDay/IMG-20251224-WA0030.jpg',
-                    'data/2025/12-December/24-Dec-2025 WednesDay/IMG-20251224-WA0032.jpg',
-                    'data/2025/12-December/24-Dec-2025 WednesDay/IMG-20251224-WA0033.jpg',
-                    'data/2025/12-December/24-Dec-2025 WednesDay/IMG-20251224-WA0034.jpg',
-                    'data/2025/12-December/24-Dec-2025 WednesDay/IMG-20251224-WA0035.jpg',
-                    'data/2025/12-December/24-Dec-2025 WednesDay/IMG-20251224-WA0049.jpg'
+                    'https://res.cloudinary.com/dv6y9ykt9/image/upload/v1768845886/IMG-20251224-WA0032_z8cfgu.jpg',
+                    'https://res.cloudinary.com/dv6y9ykt9/image/upload/v1768845889/IMG-20251224-WA0033_tfdbpx.jpg',
+                    'https://res.cloudinary.com/dv6y9ykt9/image/upload/v1768845889/IMG-20251224-WA0034_aisbxk.jpg',
+                    'https://res.cloudinary.com/dv6y9ykt9/image/upload/v1768845887/IMG-20251224-WA0035_r9phpd.jpg',
+                    'https://res.cloudinary.com/dv6y9ykt9/image/upload/v1768845892/IMG-20251224-WA0049_zfghis.jpg'
                 ], videos: [
-                    'data/2025/12-December/24-Dec-2025 WednesDay/VID-20251224-WA0038.mp4',
-                    'data/2025/12-December/24-Dec-2025 WednesDay/VID-20251224-WA0039.mp4'
+                    'https://res.cloudinary.com/dv6y9ykt9/video/upload/v1768845892/VID-20251224-WA0038_nnfher.mp4',
+                    'https://res.cloudinary.com/dv6y9ykt9/video/upload/v1768845900/VID-20251224-WA0039_tmzzyn.mp4'
                 ]},
                 {name: 'Ride 3 - 17th Anniversary Celebration', url: 'https://youtu.be/MEbBPBkV_rM?si=-B1o0b1R-rcqTz5v', additionalUrl: 'https://drive.google.com/drive/folders/1G30nMM-8f7A0kyYcdw6-KDJsxLUGGiHv'},
                 {name: 'Ride 2 - 14-Dec-2025 Sunday\'s ride', url: 'https://youtube.com/shorts/gFjqLyykyn8'},
