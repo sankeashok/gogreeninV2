@@ -1,5 +1,5 @@
 // Auto-synced from Google Sheets
-// Last updated: 2026-01-20T18:05:03.701Z
+// Last updated: 2026-01-20T18:09:50.737Z
 window.yearData = {
   "2008": {
     "title": "The Beginning",
@@ -148,7 +148,9 @@ window.yearData = {
           {
             "name": "17th Anniversary Celebration",
             "url": "https://youtu.be/MEbBPBkV_rM",
-            "photos": [],
+            "photos": [
+              "https://res.cloudinary.com/dv6y9ykt9/image/upload/v1768845892/IMG-20260104-WA00_jz3kw8.jpg"
+            ],
             "videos": [],
             "cyclists": 3
           }
@@ -213,6 +215,20 @@ window.yearData = {
             ],
             "videos": [],
             "cyclists": 1
+          }
+        ]
+      },
+      {
+        "month": "Feb",
+        "rides": 1,
+        "cyclists": 10,
+        "events": [
+          {
+            "name": "Ride 1 - Feb Month Endurance",
+            "url": "",
+            "photos": [],
+            "videos": [],
+            "cyclists": 10
           }
         ]
       }
