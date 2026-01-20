@@ -1,12 +1,12 @@
 // Service Worker for GoGreenIn V3
 const CACHE_NAME = 'gogreenin-v3-1.0';
 const urlsToCache = [
-  '/v3/',
-  '/v3/index.html',
-  '/v3/assets/css/main.css',
-  '/v3/assets/js/main.js',
-  '/v3/assets/js/yearData.js',
-  '/GGI_logo.png',
+  '/gogreeninV2/v3/',
+  '/gogreeninV2/v3/index.html',
+  '/gogreeninV2/v3/assets/css/main.css',
+  '/gogreeninV2/v3/assets/js/main.js',
+  '/gogreeninV2/v3/assets/js/yearData.js',
+  '/gogreeninV2/GGI_logo.png',
   'https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap'
 ];
 

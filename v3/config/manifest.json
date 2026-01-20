@@ -2,20 +2,20 @@
   "name": "GoGreenIn - Cycling Revolution",
   "short_name": "GoGreenIn",
   "description": "Bangalore's largest cycling community. 17 years of environmental impact.",
-  "start_url": "/v3/",
+  "start_url": "/gogreeninV2/",
   "display": "standalone",
   "background_color": "#0a0e27",
   "theme_color": "#00ff88",
   "orientation": "portrait-primary",
   "icons": [
     {
-      "src": "../GGI_logo.png",
+      "src": "/gogreeninV2/GGI_logo.png",
       "sizes": "192x192",
       "type": "image/png",
       "purpose": "any maskable"
     },
     {
-      "src": "../GGI_logo.png",
+      "src": "/gogreeninV2/GGI_logo.png",
       "sizes": "512x512",
       "type": "image/png",
       "purpose": "any maskable"
@@ -25,7 +25,7 @@
   "shortcuts": [
     {
       "name": "View Timeline",
-      "url": "/v3/#journey",
+      "url": "/gogreeninV2/#journey",
       "description": "View our 17-year journey"
     },
     {

@@ -204,7 +204,7 @@ window.addEventListener('load', () => {
 
 // Register Service Worker
 if ('serviceWorker' in navigator) {
-    navigator.serviceWorker.register('/v3/sw.js')
+    navigator.serviceWorker.register('/gogreeninV2/v3/sw.js')
         .then(() => console.log('Service Worker registered'))
         .catch(err => console.log('Service Worker registration failed:', err));
 }
