@@ -33,6 +33,8 @@ function openYearModal(year) {
     if (data.monthlyData && data.monthlyData.length > 0) {
         eventsHTML += '<h4>Monthly Breakdown:</h4>';
         data.monthlyData.forEach((monthData, index) => {
+            // Sort events in descending order (newest first)
+            const sortedEvents = [...monthData.events].reverse();
             eventsHTML += `
                 <div class="modal-month-item">
                     <div class="month-header" onclick="toggleMonthEvents(${index})">
@@ -40,7 +42,7 @@ function openYearModal(year) {
                         <span class="expand-arrow" id="arrow-${index}">▶</span>
                     </div>
                     <div class="month-events collapsed" id="month-events-${index}">
-                        ${monthData.events.map(event => {
+                        ${sortedEvents.map(event => {
                             const eventName = typeof event === 'string' ? event : event.name;
                             const eventUrl = typeof event === 'object' ? event.url : '';
                             const eventPhotos = typeof event === 'object' ? (event.photos || []) : [];
