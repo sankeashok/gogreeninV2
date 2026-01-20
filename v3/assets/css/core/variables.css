@@ -1,0 +1,29 @@
+/* Design Tokens */
+:root {
+  --primary: #00ff88;
+  --secondary: #ff6b35;
+  --dark: #0a0e27;
+  --light: #ffffff;
+  --gray: #8892b0;
+  
+  --gradient: linear-gradient(135deg, #00ff88 0%, #00d4ff 100%);
+  
+  --space-4: 1rem;
+  --space-8: 2rem;
+  --space-12: 3rem;
+  --space-16: 4rem;
+  
+  --radius-md: 0.5rem;
+  --radius-lg: 1rem;
+  --radius-full: 9999px;
+  
+  --shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+  --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  
+  --font-primary: 'Inter', sans-serif;
+}
+
+[data-theme="light"] {
+  --dark: #ffffff;
+  --light: #0a0e27;
+}
