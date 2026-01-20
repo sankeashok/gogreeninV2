@@ -2,8 +2,8 @@ name: Sync Google Sheets to Website
 
 on:
   schedule:
-    - cron: '0 0 * * *'  # Runs daily at midnight UTC
-  workflow_dispatch:  # Allows manual trigger
+    - cron: '0 0 * * *'
+  workflow_dispatch:
 
 jobs:
   sync-data:
@@ -27,27 +27,32 @@ jobs:
         run: |
           curl -s "https://sheets.googleapis.com/v4/spreadsheets/${SHEET_ID}/values/Sheet1?key=${API_KEY}" > sheet-data.json
       
-      - name: Merge Google Sheets with existing data
+      - name: Sync Google Sheets (replace mode)
         run: |
           node << 'EOF'
           const fs = require('fs');
           const sheetData = JSON.parse(fs.readFileSync('sheet-data.json', 'utf8'));
           
-          // Load existing yearData
           let existingData = {};
           try {
             const existingFile = fs.readFileSync('v3/assets/js/yearData.js', 'utf8');
             const match = existingFile.match(/window\.yearData\s*=\s*({[\s\S]*});/);
             if (match) existingData = JSON.parse(match[1]);
-          } catch (e) {
-            console.log('No existing data found, creating new');
-          }
+          } catch (e) {}
           
-          // Merge with Google Sheets data
+          // Clear monthlyData for years in Google Sheets
+          const sheetYears = new Set();
           if (sheetData.values && sheetData.values.length > 1) {
-            const rows = sheetData.values.slice(1);
+            sheetData.values.slice(1).forEach(row => {
+              if (row[0]) sheetYears.add(row[0].toString());
+            });
             
-            rows.forEach(row => {
+            sheetYears.forEach(year => {
+              if (existingData[year]) existingData[year].monthlyData = [];
+            });
+            
+            // Add fresh data
+            sheetData.values.slice(1).forEach(row => {
               const [year, month, rideName, cyclists, videoUrl, photoUrls] = row;
               if (!year || !month) return;
               
@@ -68,49 +73,20 @@ jobs:
                 existingData[year].monthlyData.push(monthData);
               }
               
-              const eventExists = monthData.events.some(e => 
-                (typeof e === 'string' ? e : e.name) === rideName
-              );
-              if (!eventExists) {
-                monthData.events.push({
-                  name: rideName,
-                  url: videoUrl || '',
-                  photos: photoUrls ? photoUrls.split(',').map(u => u.trim()) : [],
-                  videos: []
-                });
-              }
-            });
-            
-            // Recalculate rides and cyclists after deduplication
-            existingData[year].monthlyData.forEach(monthData => {
-              monthData.rides = monthData.events.length;
-              monthData.cyclists = monthData.events.reduce((sum, e) => sum + (parseInt(e.cyclists) || 0), 0);
-            });
-          }
-          
-          // Remove duplicate events within each month
-          Object.keys(existingData).forEach(year => {
-            if (existingData[year].monthlyData) {
-              existingData[year].monthlyData.forEach(monthData => {
-                const uniqueEvents = [];
-                const seen = new Set();
-                monthData.events.forEach(event => {
-                  const name = typeof event === 'string' ? event : event.name;
-                  if (!seen.has(name)) {
-                    seen.add(name);
-                    uniqueEvents.push(event);
-                  }
-                });
-                monthData.events = uniqueEvents;
-                monthData.rides = uniqueEvents.length;
+              monthData.rides++;
+              monthData.cyclists += parseInt(cyclists || 0);
+              monthData.events.push({
+                name: rideName,
+                url: videoUrl || '',
+                photos: photoUrls ? photoUrls.split(',').map(u => u.trim()) : [],
+                videos: []
               });
-            }
             });
           }
           
           const jsContent = `// Auto-synced from Google Sheets\n// Last updated: ${new Date().toISOString()}\nwindow.yearData = ${JSON.stringify(existingData, null, 2)};`;
           fs.writeFileSync('v3/assets/js/yearData.js', jsContent);
-          console.log('✅ yearData.js merged successfully');
+          console.log('✅ Synced successfully');
           EOF
       
       - name: Check for changes
@@ -121,8 +97,8 @@ jobs:
       - name: Commit and push if changed
         if: steps.check_changes.outputs.changed == 'true'
         run: |
-          git config user.name "GitHub Actions Bot"
-          git config user.email "actions@github.com"
+          git config user.name "Ashok Sanke"
+          git config user.email "sankeashok@gmail.com"
           git add v3/assets/js/yearData.js
           git commit -m "Auto-sync: Update ride data from Google Sheets"
           git push
