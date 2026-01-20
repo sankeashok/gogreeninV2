@@ -699,24 +699,27 @@ body {
     }
     
     .timeline::before {
-        left: 40px;
+        left: 30px;
     }
     
     .timeline-year {
-        left: 40px;
-        transform: translateX(-50%);
+        position: relative;
+        left: 0;
+        transform: none;
         width: 60px;
         height: 60px;
         font-size: 14px;
+        flex-shrink: 0;
     }
     
     .timeline-item {
         flex-direction: row !important;
+        align-items: flex-start;
     }
     
     .timeline-content {
-        width: calc(100% - 100px);
-        margin-left: 80px !important;
+        width: calc(100% - 80px);
+        margin-left: 20px !important;
         margin-right: 0 !important;
     }
     
