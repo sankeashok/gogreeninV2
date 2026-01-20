@@ -27,24 +27,32 @@ jobs:
         run: |
           curl -s "https://sheets.googleapis.com/v4/spreadsheets/${SHEET_ID}/values/Sheet1?key=${API_KEY}" > sheet-data.json
       
-      - name: Convert to yearData.js
+      - name: Merge Google Sheets with existing data
         run: |
           node << 'EOF'
           const fs = require('fs');
-          const data = JSON.parse(fs.readFileSync('sheet-data.json', 'utf8'));
+          const sheetData = JSON.parse(fs.readFileSync('sheet-data.json', 'utf8'));
           
-          const yearData = {};
+          // Load existing yearData
+          let existingData = {};
+          try {
+            const existingFile = fs.readFileSync('v3/assets/js/yearData.js', 'utf8');
+            const match = existingFile.match(/window\.yearData\s*=\s*({[\s\S]*});/);
+            if (match) existingData = JSON.parse(match[1]);
+          } catch (e) {
+            console.log('No existing data found, creating new');
+          }
           
-          if (data.values && data.values.length > 1) {
-            const rows = data.values.slice(1); // Skip header
+          // Merge with Google Sheets data
+          if (sheetData.values && sheetData.values.length > 1) {
+            const rows = sheetData.values.slice(1);
             
             rows.forEach(row => {
               const [year, month, rideName, cyclists, videoUrl, photoUrls] = row;
-              
               if (!year || !month) return;
               
-              if (!yearData[year]) {
-                yearData[year] = {
+              if (!existingData[year]) {
+                existingData[year] = {
                   title: `${year} Journey`,
                   description: `Events from ${year}`,
                   events: [],
@@ -52,26 +60,31 @@ jobs:
                 };
               }
               
-              let monthData = yearData[year].monthlyData.find(m => m.month === month);
+              if (!existingData[year].monthlyData) existingData[year].monthlyData = [];
+              
+              let monthData = existingData[year].monthlyData.find(m => m.month === month);
               if (!monthData) {
                 monthData = { month, rides: 0, cyclists: 0, events: [] };
-                yearData[year].monthlyData.push(monthData);
+                existingData[year].monthlyData.push(monthData);
               }
               
-              monthData.rides++;
-              monthData.cyclists += parseInt(cyclists || 0);
-              monthData.events.push({
-                name: rideName,
-                url: videoUrl || '',
-                photos: photoUrls ? photoUrls.split(',').map(u => u.trim()) : [],
-                videos: []
-              });
+              const eventExists = monthData.events.some(e => e.name === rideName);
+              if (!eventExists) {
+                monthData.rides++;
+                monthData.cyclists += parseInt(cyclists || 0);
+                monthData.events.push({
+                  name: rideName,
+                  url: videoUrl || '',
+                  photos: photoUrls ? photoUrls.split(',').map(u => u.trim()) : [],
+                  videos: []
+                });
+              }
             });
           }
           
-          const jsContent = `// Auto-generated from Google Sheets\n// Last updated: ${new Date().toISOString()}\nwindow.yearData = ${JSON.stringify(yearData, null, 2)};`;
+          const jsContent = `// Auto-synced from Google Sheets\n// Last updated: ${new Date().toISOString()}\nwindow.yearData = ${JSON.stringify(existingData, null, 2)};`;
           fs.writeFileSync('v3/assets/js/yearData.js', jsContent);
-          console.log('✅ yearData.js updated successfully');
+          console.log('✅ yearData.js merged successfully');
           EOF
       
       - name: Check for changes
