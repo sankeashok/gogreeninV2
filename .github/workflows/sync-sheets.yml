@@ -1,0 +1,92 @@
+name: Sync Google Sheets to Website
+
+on:
+  schedule:
+    - cron: '0 0 * * *'  # Runs daily at midnight UTC
+  workflow_dispatch:  # Allows manual trigger
+
+jobs:
+  sync-data:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+        with:
+          ref: gh-pages
+      
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '18'
+      
+      - name: Fetch data from Google Sheets
+        env:
+          SHEET_ID: ${{ secrets.GOOGLE_SHEET_ID }}
+          API_KEY: ${{ secrets.GOOGLE_API_KEY }}
+        run: |
+          curl -s "https://sheets.googleapis.com/v4/spreadsheets/${SHEET_ID}/values/Sheet1?key=${API_KEY}" > sheet-data.json
+      
+      - name: Convert to yearData.js
+        run: |
+          node << 'EOF'
+          const fs = require('fs');
+          const data = JSON.parse(fs.readFileSync('sheet-data.json', 'utf8'));
+          
+          const yearData = {};
+          
+          if (data.values && data.values.length > 1) {
+            const rows = data.values.slice(1); // Skip header
+            
+            rows.forEach(row => {
+              const [year, month, rideName, cyclists, videoUrl, photoUrls] = row;
+              
+              if (!year || !month) return;
+              
+              if (!yearData[year]) {
+                yearData[year] = {
+                  title: `${year} Journey`,
+                  description: `Events from ${year}`,
+                  events: [],
+                  monthlyData: []
+                };
+              }
+              
+              let monthData = yearData[year].monthlyData.find(m => m.month === month);
+              if (!monthData) {
+                monthData = { month, rides: 0, cyclists: 0, events: [] };
+                yearData[year].monthlyData.push(monthData);
+              }
+              
+              monthData.rides++;
+              monthData.cyclists += parseInt(cyclists || 0);
+              monthData.events.push({
+                name: rideName,
+                url: videoUrl || '',
+                photos: photoUrls ? photoUrls.split(',').map(u => u.trim()) : [],
+                videos: []
+              });
+            });
+          }
+          
+          const jsContent = `// Auto-generated from Google Sheets\n// Last updated: ${new Date().toISOString()}\nwindow.yearData = ${JSON.stringify(yearData, null, 2)};`;
+          fs.writeFileSync('v3/assets/js/yearData.js', jsContent);
+          console.log('✅ yearData.js updated successfully');
+          EOF
+      
+      - name: Check for changes
+        id: check_changes
+        run: |
+          git diff --quiet v3/assets/js/yearData.js || echo "changed=true" >> $GITHUB_OUTPUT
+      
+      - name: Commit and push if changed
+        if: steps.check_changes.outputs.changed == 'true'
+        run: |
+          git config user.name "GitHub Actions Bot"
+          git config user.email "actions@github.com"
+          git add v3/assets/js/yearData.js
+          git commit -m "Auto-sync: Update ride data from Google Sheets"
+          git push
+      
+      - name: Cleanup
+        run: rm -f sheet-data.json
