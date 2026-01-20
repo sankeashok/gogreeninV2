@@ -699,28 +699,53 @@ body {
     }
     
     .timeline::before {
-        left: 30px;
+        display: none;
     }
     
     .timeline-year {
         position: relative;
         left: 0;
         transform: none;
-        width: 60px;
-        height: 60px;
-        font-size: 14px;
-        flex-shrink: 0;
+        width: 80px;
+        height: 80px;
+        font-size: 18px;
+        margin: 0 auto 15px;
     }
     
     .timeline-item {
-        flex-direction: row !important;
-        align-items: flex-start;
+        flex-direction: column !important;
+        align-items: center;
+        margin-bottom: 30px;
     }
     
     .timeline-content {
-        width: calc(100% - 80px);
-        margin-left: 20px !important;
+        width: 100%;
+        margin-left: 0 !important;
         margin-right: 0 !important;
+    }
+    
+    .timeline-content h3 {
+        display: inline;
+        margin-right: 10px;
+    }
+    
+    .timeline-content p {
+        display: inline;
+    }
+    
+    .timeline-content ul {
+        display: inline;
+        padding-left: 10px;
+    }
+    
+    .timeline-content li {
+        display: inline;
+        padding: 0 5px;
+    }
+    
+    .timeline-content li::before {
+        content: '• ';
+        position: static;
     }
     
     .ride-gallery {
