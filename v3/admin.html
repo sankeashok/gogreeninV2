@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GoGreenIn Admin Dashboard</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Inter', sans-serif; background: #0a0e27; color: #fff; padding: 20px; }
+        .container { max-width: 1200px; margin: 0 auto; }
+        h1 { margin-bottom: 30px; background: linear-gradient(135deg, #00ff88 0%, #00d4ff 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .auth-section { background: rgba(255,255,255,0.05); padding: 30px; border-radius: 15px; margin-bottom: 30px; }
+        .admin-content { display: none; }
+        .admin-content.active { display: block; }
+        input, textarea, select { width: 100%; padding: 12px; margin: 10px 0; background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.2); color: #fff; border-radius: 8px; }
+        button { padding: 12px 30px; background: linear-gradient(135deg, #00ff88 0%, #00d4ff 100%); color: #0a0e27; border: none; border-radius: 25px; font-weight: 600; cursor: pointer; margin: 10px 5px; }
+        button:hover { transform: translateY(-2px); }
+        .form-group { margin-bottom: 20px; }
+        label { display: block; margin-bottom: 5px; color: #00ff88; }
+        .card { background: rgba(255,255,255,0.05); padding: 20px; border-radius: 15px; margin-bottom: 20px; }
+        .success { background: rgba(0,255,136,0.1); border: 1px solid #00ff88; padding: 15px; border-radius: 8px; margin: 10px 0; }
+        .error { background: rgba(255,107,53,0.1); border: 1px solid #ff6b35; padding: 15px; border-radius: 8px; margin: 10px 0; }
+        .photo-urls { min-height: 100px; }
+        .tabs { display: flex; gap: 10px; margin-bottom: 20px; }
+        .tab { padding: 10px 20px; background: rgba(255,255,255,0.05); border-radius: 8px; cursor: pointer; }
+        .tab.active { background: linear-gradient(135deg, #00ff88 0%, #00d4ff 100%); color: #0a0e27; }
+        .tab-content { display: none; }
+        .tab-content.active { display: block; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🚴 GoGreenIn Admin Dashboard</h1>
+        
+        <!-- Authentication -->
+        <div class="auth-section" id="auth-section">
+            <h2>Login</h2>
+            <input type="password" id="admin-password" placeholder="Enter admin password">
+            <button onclick="login()">Login</button>
+        </div>
+
+        <!-- Admin Content -->
+        <div class="admin-content" id="admin-content">
+            <button onclick="logout()" style="float: right;">Logout</button>
+            
+            <div class="tabs">
+                <div class="tab active" onclick="switchTab('add-ride')">Add New Ride</div>
+                <div class="tab" onclick="switchTab('sync-sheets')">Sync with Google Sheets</div>
+                <div class="tab" onclick="switchTab('preview')">Preview Data</div>
+            </div>
+
+            <!-- Add Ride Tab -->
+            <div class="tab-content active" id="add-ride">
+                <div class="card">
+                    <h2>Add New Ride</h2>
+                    <form id="ride-form">
+                        <div class="form-group">
+                            <label>Year</label>
+                            <select id="year" required>
+                                <option value="2026">2026</option>
+                                <option value="2025">2025</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label>Month</label>
+                            <select id="month" required>
+                                <option value="Jan">January</option>
+                                <option value="Feb">February</option>
+                                <option value="Mar">March</option>
+                                <option value="Apr">April</option>
+                                <option value="May">May</option>
+                                <option value="Jun">June</option>
+                                <option value="Jul">July</option>
+                                <option value="Aug">August</option>
+                                <option value="Sep">September</option>
+                                <option value="Oct">October</option>
+                                <option value="Nov">November</option>
+                                <option value="Dec">December</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label>Ride Name</label>
+                            <input type="text" id="ride-name" placeholder="e.g., Ride 1 - Sunday Morning Ride" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label>Number of Cyclists</label>
+                            <input type="number" id="cyclists" placeholder="e.g., 50" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label>Video URL (YouTube/Shorts)</label>
+                            <input type="url" id="video-url" placeholder="https://youtube.com/...">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label>Photo URLs (Cloudinary - one per line)</label>
+                            <textarea id="photo-urls" class="photo-urls" placeholder="https://res.cloudinary.com/...&#10;https://res.cloudinary.com/..."></textarea>
+                        </div>
+                        
+                        <button type="submit">Add Ride</button>
+                    </form>
+                    <div id="add-result"></div>
+                </div>
+            </div>
+
+            <!-- Sync Sheets Tab -->
+            <div class="tab-content" id="sync-sheets">
+                <div class="card">
+                    <h2>Google Sheets Integration</h2>
+                    <p style="color: #8892b0; margin-bottom: 20px;">Connect your Google Sheet to automatically sync ride data.</p>
+                    
+                    <div class="form-group">
+                        <label>Google Sheet ID</label>
+                        <input type="text" id="sheet-id" placeholder="Paste your Google Sheet ID here">
+                        <small style="color: #8892b0;">Find in URL: docs.google.com/spreadsheets/d/[SHEET_ID]/edit</small>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>API Key</label>
+                        <input type="text" id="api-key" placeholder="Your Google Sheets API key">
+                        <small style="color: #8892b0;">Get from: console.cloud.google.com</small>
+                    </div>
+                    
+                    <button onclick="saveSheetConfig()">Save Configuration</button>
+                    <button onclick="syncFromSheets()">Sync Now</button>
+                    <div id="sync-result"></div>
+                </div>
+                
+                <div class="card">
+                    <h3>Setup Instructions</h3>
+                    <ol style="line-height: 2; color: #8892b0;">
+                        <li>Create a Google Sheet with columns: Year, Month, RideName, Cyclists, VideoURL, PhotoURLs</li>
+                        <li>Make sheet publicly viewable (Share → Anyone with link can view)</li>
+                        <li>Get Sheet ID from URL</li>
+                        <li>Create API key at console.cloud.google.com</li>
+                        <li>Enable Google Sheets API</li>
+                        <li>Paste credentials above and click Sync</li>
+                    </ol>
+                </div>
+            </div>
+
+            <!-- Preview Tab -->
+            <div class="tab-content" id="preview">
+                <div class="card">
+                    <h2>Current Data Preview</h2>
+                    <button onclick="loadPreview()">Refresh Preview</button>
+                    <button onclick="downloadYearData()">Download yearData.js</button>
+                    <pre id="preview-data" style="background: rgba(0,0,0,0.3); padding: 20px; border-radius: 8px; overflow-x: auto; max-height: 500px;"></pre>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const ADMIN_PASSWORD = 'gogreenin2026'; // Change this!
+        
+        function login() {
+            const password = document.getElementById('admin-password').value;
+            if (password === ADMIN_PASSWORD) {
+                document.getElementById('auth-section').style.display = 'none';
+                document.getElementById('admin-content').classList.add('active');
+                localStorage.setItem('admin-logged-in', 'true');
+            } else {
+                alert('Incorrect password!');
+            }
+        }
+        
+        function logout() {
+            localStorage.removeItem('admin-logged-in');
+            location.reload();
+        }
+        
+        // Check if already logged in
+        if (localStorage.getItem('admin-logged-in') === 'true') {
+            document.getElementById('auth-section').style.display = 'none';
+            document.getElementById('admin-content').classList.add('active');
+        }
+        
+        function switchTab(tabName) {
+            document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+            document.querySelectorAll('.tab-content').forEach(t => t.classList.remove('active'));
+            event.target.classList.add('active');
+            document.getElementById(tabName).classList.add('active');
+        }
+        
+        document.getElementById('ride-form').addEventListener('submit', async (e) => {
+            e.preventDefault();
+            
+            const year = document.getElementById('year').value;
+            const month = document.getElementById('month').value;
+            const rideName = document.getElementById('ride-name').value;
+            const cyclists = document.getElementById('cyclists').value;
+            const videoUrl = document.getElementById('video-url').value;
+            const photoUrls = document.getElementById('photo-urls').value.split('\n').filter(url => url.trim());
+            
+            const rideData = {
+                year, month, rideName, cyclists, videoUrl, photoUrls
+            };
+            
+            // Save to localStorage for now
+            let rides = JSON.parse(localStorage.getItem('rides') || '[]');
+            rides.push(rideData);
+            localStorage.setItem('rides', JSON.stringify(rides));
+            
+            document.getElementById('add-result').innerHTML = '<div class="success">✅ Ride added successfully!</div>';
+            document.getElementById('ride-form').reset();
+            
+            setTimeout(() => {
+                document.getElementById('add-result').innerHTML = '';
+            }, 3000);
+        });
+        
+        function saveSheetConfig() {
+            const sheetId = document.getElementById('sheet-id').value;
+            const apiKey = document.getElementById('api-key').value;
+            
+            if (sheetId && apiKey) {
+                localStorage.setItem('sheet-id', sheetId);
+                localStorage.setItem('api-key', apiKey);
+                document.getElementById('sync-result').innerHTML = '<div class="success">✅ Configuration saved!</div>';
+            } else {
+                document.getElementById('sync-result').innerHTML = '<div class="error">❌ Please fill all fields</div>';
+            }
+        }
+        
+        async function syncFromSheets() {
+            const sheetId = localStorage.getItem('sheet-id');
+            const apiKey = localStorage.getItem('api-key');
+            
+            if (!sheetId || !apiKey) {
+                document.getElementById('sync-result').innerHTML = '<div class="error">❌ Please configure Sheet ID and API Key first</div>';
+                return;
+            }
+            
+            try {
+                const url = `https://sheets.googleapis.com/v4/spreadsheets/${sheetId}/values/Sheet1?key=${apiKey}`;
+                const response = await fetch(url);
+                const data = await response.json();
+                
+                if (data.values) {
+                    const rides = data.values.slice(1).map(row => ({
+                        year: row[0],
+                        month: row[1],
+                        rideName: row[2],
+                        cyclists: row[3],
+                        videoUrl: row[4],
+                        photoUrls: row[5] ? row[5].split(',').map(u => u.trim()) : []
+                    }));
+                    
+                    localStorage.setItem('rides', JSON.stringify(rides));
+                    document.getElementById('sync-result').innerHTML = `<div class="success">✅ Synced ${rides.length} rides from Google Sheets!</div>`;
+                } else {
+                    throw new Error('No data found');
+                }
+            } catch (error) {
+                document.getElementById('sync-result').innerHTML = `<div class="error">❌ Sync failed: ${error.message}</div>`;
+            }
+        }
+        
+        function loadPreview() {
+            const rides = JSON.parse(localStorage.getItem('rides') || '[]');
+            document.getElementById('preview-data').textContent = JSON.stringify(rides, null, 2);
+        }
+        
+        function downloadYearData() {
+            const rides = JSON.parse(localStorage.getItem('rides') || '[]');
+            
+            // Convert to yearData format
+            const yearData = {};
+            rides.forEach(ride => {
+                if (!yearData[ride.year]) {
+                    yearData[ride.year] = { monthlyData: [] };
+                }
+                
+                let monthData = yearData[ride.year].monthlyData.find(m => m.month === ride.month);
+                if (!monthData) {
+                    monthData = { month: ride.month, rides: 0, cyclists: 0, events: [] };
+                    yearData[ride.year].monthlyData.push(monthData);
+                }
+                
+                monthData.rides++;
+                monthData.cyclists += parseInt(ride.cyclists);
+                monthData.events.push({
+                    name: ride.rideName,
+                    url: ride.videoUrl,
+                    photos: ride.photoUrls,
+                    videos: []
+                });
+            });
+            
+            const jsContent = `window.yearData = ${JSON.stringify(yearData, null, 2)};`;
+            const blob = new Blob([jsContent], { type: 'text/javascript' });
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = 'yearData.js';
+            a.click();
+        }
+        
+        // Load preview on page load
+        loadPreview();
+    </script>
+</body>
+</html>
