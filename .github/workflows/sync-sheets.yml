@@ -68,10 +68,10 @@ jobs:
                 existingData[year].monthlyData.push(monthData);
               }
               
-              const eventExists = monthData.events.some(e => e.name === rideName);
+              const eventExists = monthData.events.some(e => 
+                (typeof e === 'string' ? e : e.name) === rideName
+              );
               if (!eventExists) {
-                monthData.rides++;
-                monthData.cyclists += parseInt(cyclists || 0);
                 monthData.events.push({
                   name: rideName,
                   url: videoUrl || '',
@@ -79,6 +79,32 @@ jobs:
                   videos: []
                 });
               }
+            });
+            
+            // Recalculate rides and cyclists after deduplication
+            existingData[year].monthlyData.forEach(monthData => {
+              monthData.rides = monthData.events.length;
+              monthData.cyclists = monthData.events.reduce((sum, e) => sum + (parseInt(e.cyclists) || 0), 0);
+            });
+          }
+          
+          // Remove duplicate events within each month
+          Object.keys(existingData).forEach(year => {
+            if (existingData[year].monthlyData) {
+              existingData[year].monthlyData.forEach(monthData => {
+                const uniqueEvents = [];
+                const seen = new Set();
+                monthData.events.forEach(event => {
+                  const name = typeof event === 'string' ? event : event.name;
+                  if (!seen.has(name)) {
+                    seen.add(name);
+                    uniqueEvents.push(event);
+                  }
+                });
+                monthData.events = uniqueEvents;
+                monthData.rides = uniqueEvents.length;
+              });
+            }
             });
           }
           
