@@ -27,66 +27,97 @@ jobs:
         run: |
           curl -s "https://sheets.googleapis.com/v4/spreadsheets/${SHEET_ID}/values/Sheet1?key=${API_KEY}" > sheet-data.json
       
-      - name: Sync Google Sheets (replace mode)
+      - name: Sync and deduplicate
         run: |
           node << 'EOF'
           const fs = require('fs');
           const sheetData = JSON.parse(fs.readFileSync('sheet-data.json', 'utf8'));
           
+          // Load existing yearData for historical years
           let existingData = {};
           try {
             const existingFile = fs.readFileSync('v3/assets/js/yearData.js', 'utf8');
             const match = existingFile.match(/window\.yearData\s*=\s*({[\s\S]*});/);
             if (match) existingData = JSON.parse(match[1]);
-          } catch (e) {}
+          } catch (e) {
+            console.log('Starting fresh');
+          }
           
-          // Clear monthlyData for years in Google Sheets
-          const sheetYears = new Set();
+          // Build fresh data from Google Sheets
+          const sheetYearsData = {};
+          
           if (sheetData.values && sheetData.values.length > 1) {
             sheetData.values.slice(1).forEach(row => {
-              if (row[0]) sheetYears.add(row[0].toString());
-            });
-            
-            sheetYears.forEach(year => {
-              if (existingData[year]) existingData[year].monthlyData = [];
-            });
-            
-            // Add fresh data
-            sheetData.values.slice(1).forEach(row => {
               const [year, month, rideName, cyclists, videoUrl, photoUrls] = row;
-              if (!year || !month) return;
+              if (!year || !month || !rideName) return;
               
-              if (!existingData[year]) {
-                existingData[year] = {
-                  title: `${year} Journey`,
-                  description: `Events from ${year}`,
-                  events: [],
-                  monthlyData: []
-                };
+              if (!sheetYearsData[year]) {
+                sheetYearsData[year] = {};
               }
               
-              if (!existingData[year].monthlyData) existingData[year].monthlyData = [];
-              
-              let monthData = existingData[year].monthlyData.find(m => m.month === month);
-              if (!monthData) {
-                monthData = { month, rides: 0, cyclists: 0, events: [] };
-                existingData[year].monthlyData.push(monthData);
+              if (!sheetYearsData[year][month]) {
+                sheetYearsData[year][month] = [];
               }
               
-              monthData.rides++;
-              monthData.cyclists += parseInt(cyclists || 0);
-              monthData.events.push({
+              // Add ride (duplicates will be removed later)
+              sheetYearsData[year][month].push({
                 name: rideName,
                 url: videoUrl || '',
                 photos: photoUrls ? photoUrls.split(',').map(u => u.trim()) : [],
-                videos: []
+                videos: [],
+                cyclists: parseInt(cyclists || 0)
               });
             });
           }
           
+          // Replace monthlyData for years in Google Sheets
+          Object.keys(sheetYearsData).forEach(year => {
+            if (!existingData[year]) {
+              existingData[year] = {
+                title: `${year} Journey`,
+                description: `Events from ${year}`,
+                events: [],
+                monthlyData: []
+              };
+            }
+            
+            // Clear and rebuild monthlyData
+            existingData[year].monthlyData = [];
+            
+            Object.keys(sheetYearsData[year]).forEach(month => {
+              const rides = sheetYearsData[year][month];
+              
+              // Remove duplicates by name
+              const uniqueRides = [];
+              const seen = new Set();
+              rides.forEach(ride => {
+                if (!seen.has(ride.name)) {
+                  seen.add(ride.name);
+                  uniqueRides.push(ride);
+                }
+              });
+              
+              // Sort by ride number (descending)
+              uniqueRides.sort((a, b) => {
+                const getRideNum = (name) => {
+                  const match = name.match(/Ride\s+(\d+)/i);
+                  return match ? parseInt(match[1]) : 0;
+                };
+                return getRideNum(b.name) - getRideNum(a.name);
+              });
+              
+              existingData[year].monthlyData.push({
+                month: month,
+                rides: uniqueRides.length,
+                cyclists: uniqueRides.reduce((sum, r) => sum + r.cyclists, 0),
+                events: uniqueRides
+              });
+            });
+          });
+          
           const jsContent = `// Auto-synced from Google Sheets\n// Last updated: ${new Date().toISOString()}\nwindow.yearData = ${JSON.stringify(existingData, null, 2)};`;
           fs.writeFileSync('v3/assets/js/yearData.js', jsContent);
-          console.log('✅ Synced successfully');
+          console.log('✅ Synced successfully - no duplicates');
           EOF
       
       - name: Check for changes
