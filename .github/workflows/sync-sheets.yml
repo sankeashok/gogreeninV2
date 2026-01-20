@@ -33,10 +33,21 @@ jobs:
           const fs = require('fs');
           const data = JSON.parse(fs.readFileSync('sheet-data.json', 'utf8'));
           
-          const yearData = {};
+          // Load existing yearData
+          let yearData = {};
+          try {
+            const existingData = fs.readFileSync('v3/assets/js/yearData.js', 'utf8');
+            const match = existingData.match(/window\.yearData\s*=\s*({[\s\S]*});/);
+            if (match) {
+              yearData = eval('(' + match[1] + ')');
+            }
+          } catch (e) {
+            console.log('No existing data, starting fresh');
+          }
           
+          // Merge new data from Google Sheets
           if (data.values && data.values.length > 1) {
-            const rows = data.values.slice(1); // Skip header
+            const rows = data.values.slice(1);
             
             rows.forEach(row => {
               const [year, month, rideName, cyclists, videoUrl, photoUrls] = row;
@@ -52,8 +63,9 @@ jobs:
                 };
               }
               
-              let monthData = yearData[year].monthlyData.find(m => m.month === month);
+              let monthData = yearData[year].monthlyData?.find(m => m.month === month);
               if (!monthData) {
+                if (!yearData[year].monthlyData) yearData[year].monthlyData = [];
                 monthData = { month, rides: 0, cyclists: 0, events: [] };
                 yearData[year].monthlyData.push(monthData);
               }
