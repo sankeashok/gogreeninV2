@@ -1,5 +1,5 @@
 // Auto-generated from Google Sheets
-// Last updated: 2026-01-20T16:52:46.875Z
+// Last updated: 2026-01-20T17:05:45.606Z
 window.yearData = {
   "2008": {
     "title": "The Beginning",
@@ -133,8 +133,8 @@ window.yearData = {
     "monthlyData": [
       {
         "month": "Dec",
-        "rides": 9,
-        "cyclists": 316,
+        "rides": 11,
+        "cyclists": 324,
         "events": [
           {
             "name": "Ride 5 - GoGreen IRP Year End Ride",
@@ -146,6 +146,20 @@ window.yearData = {
           },
           {
             "name": "Ride 3 - 17th Anniversary Celebration",
+            "url": "https://youtu.be/MEbBPBkV_rM",
+            "photos": [],
+            "videos": []
+          },
+          {
+            "name": "GoGreen IRP Year End Ride",
+            "url": "",
+            "photos": [
+              "https://res.cloudinary.com/dv6y9ykt9/image/upload/v1768845887/IMG-20251228-WA0011_gqglsx.jpg"
+            ],
+            "videos": []
+          },
+          {
+            "name": "17th Anniversary Celebration",
             "url": "https://youtu.be/MEbBPBkV_rM",
             "photos": [],
             "videos": []
@@ -194,8 +208,8 @@ window.yearData = {
     "monthlyData": [
       {
         "month": "Jan",
-        "rides": 11,
-        "cyclists": 67,
+        "rides": 15,
+        "cyclists": 93,
         "events": [
           {
             "name": "Ride 3 - KBDA Cycle Ride - Powered by HCL Cyclothon",
@@ -298,6 +312,45 @@ window.yearData = {
           },
           {
             "name": "New Year Kickoff Ride",
+            "url": "",
+            "photos": [
+              "https://res.cloudinary.com/dv6y9ykt9/image/upload/v1768845892/IMG-20260104-WA00_jz3kw8.jpg",
+              "https://res.cloudinary.com/dv6y9ykt9/image/upload/v1768845888/IMG-20260104-WA0008_lov5q8.jpg"
+            ],
+            "videos": []
+          },
+          {
+            "name": "Ride 4 - Republic Day Celebration",
+            "url": "",
+            "photos": [
+              "https://res.cloudinary.com/dv6y9ykt9/image/upload/v1768845890/IMG-20260118-WA0041_czomzc.jpg",
+              "https://res.cloudinary.com/dv6y9ykt9/image/upload/v1768845890/IMG-20260118-WA0040_ljkvxn.jpg"
+            ],
+            "videos": []
+          },
+          {
+            "name": "Ride 3 - KBDA Cycle Ride - Powered by HCL Cyclothon",
+            "url": "https://youtube.com/shorts/t1ylrrnwlGQ",
+            "photos": [
+              "https://res.cloudinary.com/dv6y9ykt9/image/upload/v1768845885/IMG-20260118-WA0003_e2npfr.jpg",
+              "https://res.cloudinary.com/dv6y9ykt9/image/upload/v1768845881/IMG-20260118-WA0010_bmmupy.jpg",
+              "https://res.cloudinary.com/dv6y9ykt9/image/upload/v1768845890/IMG-20260118-WA0016_zkpvdh.jpg",
+              "https://res.cloudinary.com/dv6y9ykt9/image/upload/v1768845890/IMG-20260118-WA0040_ljkvxn.jpg",
+              "https://res.cloudinary.com/dv6y9ykt9/image/upload/v1768845890/IMG-20260118-WA0041_czomzc.jpg"
+            ],
+            "videos": []
+          },
+          {
+            "name": "Ride 2 - www.GoGreenin.org website launch day",
+            "url": "https://youtube.com/shorts/FceLuIk_1n4",
+            "photos": [
+              "https://res.cloudinary.com/dv6y9ykt9/image/upload/v1768845893/IMG_20260111_073002956_HDR_v30gam.jpg",
+              "https://res.cloudinary.com/dv6y9ykt9/image/upload/v1768845891/IMG-20260111-WA0009_mglz1t.jpg"
+            ],
+            "videos": []
+          },
+          {
+            "name": "Ride 1 - New Year Kickoff Ride",
             "url": "",
             "photos": [
               "https://res.cloudinary.com/dv6y9ykt9/image/upload/v1768845892/IMG-20260104-WA00_jz3kw8.jpg",
