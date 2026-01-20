@@ -33,8 +33,15 @@ function openYearModal(year) {
     if (data.monthlyData && data.monthlyData.length > 0) {
         eventsHTML += '<h4>Monthly Breakdown:</h4>';
         data.monthlyData.forEach((monthData, index) => {
-            // Sort events in descending order (newest first)
-            const sortedEvents = [...monthData.events].reverse();
+            // Sort events by ride number in descending order
+            const sortedEvents = [...monthData.events].sort((a, b) => {
+                const getRideNum = (event) => {
+                    const name = typeof event === 'string' ? event : event.name;
+                    const match = name.match(/Ride\s+(\d+)/i);
+                    return match ? parseInt(match[1]) : 0;
+                };
+                return getRideNum(b) - getRideNum(a);
+            });
             eventsHTML += `
                 <div class="modal-month-item">
                     <div class="month-header" onclick="toggleMonthEvents(${index})">
