@@ -59,14 +59,17 @@ jobs:
                 sheetYearsData[year][month] = [];
               }
               
-              // Add ride (duplicates will be removed later)
-              sheetYearsData[year][month].push({
-                name: rideName,
-                url: videoUrl || '',
-                photos: photoUrls ? photoUrls.split(',').map(u => u.trim()) : [],
-                videos: [],
-                cyclists: parseInt(cyclists || 0)
-              });
+              // Check if ride already exists in this month
+              const exists = sheetYearsData[year][month].some(r => r.name === rideName);
+              if (!exists) {
+                sheetYearsData[year][month].push({
+                  name: rideName,
+                  url: videoUrl || '',
+                  photos: photoUrls ? photoUrls.split(',').map(u => u.trim()) : [],
+                  videos: [],
+                  cyclists: parseInt(cyclists || 0)
+                });
+              }
             });
           }
           
@@ -87,18 +90,9 @@ jobs:
             Object.keys(sheetYearsData[year]).forEach(month => {
               const rides = sheetYearsData[year][month];
               
-              // Remove duplicates by name
-              const uniqueRides = [];
-              const seen = new Set();
-              rides.forEach(ride => {
-                if (!seen.has(ride.name)) {
-                  seen.add(ride.name);
-                  uniqueRides.push(ride);
-                }
-              });
-              
+              // Already deduplicated when reading from sheet
               // Sort by ride number (descending)
-              uniqueRides.sort((a, b) => {
+              rides.sort((a, b) => {
                 const getRideNum = (name) => {
                   const match = name.match(/Ride\s+(\d+)/i);
                   return match ? parseInt(match[1]) : 0;
@@ -108,9 +102,9 @@ jobs:
               
               existingData[year].monthlyData.push({
                 month: month,
-                rides: uniqueRides.length,
-                cyclists: uniqueRides.reduce((sum, r) => sum + r.cyclists, 0),
-                events: uniqueRides
+                rides: rides.length,
+                cyclists: rides.reduce((sum, r) => sum + r.cyclists, 0),
+                events: rides
               });
             });
           });
