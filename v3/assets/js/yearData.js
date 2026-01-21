@@ -1,5 +1,5 @@
-// Auto-generated from Google Sheets
-// Last updated: 2026-01-21T01:28:48.008Z
+// Auto-synced from Google Sheets
+// Last updated: 2026-01-21T06:25:56.377Z
 window.yearData = {
   "2008": {
     "title": "The Beginning",
@@ -133,8 +133,8 @@ window.yearData = {
     "monthlyData": [
       {
         "month": "Dec",
-        "rides": 4,
-        "cyclists": 16,
+        "rides": 2,
+        "cyclists": 8,
         "events": [
           {
             "name": "GoGreen IRP Year End Ride",
@@ -153,22 +153,6 @@ window.yearData = {
             ],
             "videos": [],
             "cyclists": 3
-          },
-          {
-            "name": "GoGreen IRP Year End Ride",
-            "url": "",
-            "photos": [
-              "https://res.cloudinary.com/dv6y9ykt9/image/upload/v1768845887/IMG-20251228-WA0011_gqglsx.jpg"
-            ],
-            "videos": []
-          },
-          {
-            "name": "17th Anniversary Celebration",
-            "url": "https://youtu.be/MEbBPBkV_rM",
-            "photos": [
-              "https://res.cloudinary.com/dv6y9ykt9/image/upload/v1768845892/IMG-20260104-WA00_jz3kw8.jpg"
-            ],
-            "videos": []
           }
         ]
       }
@@ -186,8 +170,8 @@ window.yearData = {
     "monthlyData": [
       {
         "month": "Jan",
-        "rides": 8,
-        "cyclists": 52,
+        "rides": 4,
+        "cyclists": 26,
         "events": [
           {
             "name": "Ride 4 - Republic Day Celebration",
@@ -231,52 +215,13 @@ window.yearData = {
             ],
             "videos": [],
             "cyclists": 1
-          },
-          {
-            "name": "Ride 4 - Republic Day Celebration",
-            "url": "",
-            "photos": [
-              "https://res.cloudinary.com/dv6y9ykt9/image/upload/v1768845890/IMG-20260118-WA0041_czomzc.jpg",
-              "https://res.cloudinary.com/dv6y9ykt9/image/upload/v1768845890/IMG-20260118-WA0040_ljkvxn.jpg"
-            ],
-            "videos": []
-          },
-          {
-            "name": "Ride 3 - KBDA Cycle Ride - Powered by HCL Cyclothon",
-            "url": "https://youtube.com/shorts/t1ylrrnwlGQ",
-            "photos": [
-              "https://res.cloudinary.com/dv6y9ykt9/image/upload/v1768845885/IMG-20260118-WA0003_e2npfr.jpg",
-              "https://res.cloudinary.com/dv6y9ykt9/image/upload/v1768845881/IMG-20260118-WA0010_bmmupy.jpg",
-              "https://res.cloudinary.com/dv6y9ykt9/image/upload/v1768845890/IMG-20260118-WA0016_zkpvdh.jpg",
-              "https://res.cloudinary.com/dv6y9ykt9/image/upload/v1768845890/IMG-20260118-WA0040_ljkvxn.jpg",
-              "https://res.cloudinary.com/dv6y9ykt9/image/upload/v1768845890/IMG-20260118-WA0041_czomzc.jpg"
-            ],
-            "videos": []
-          },
-          {
-            "name": "Ride 2 - www.GoGreenin.org website launch day",
-            "url": "https://youtube.com/shorts/FceLuIk_1n4",
-            "photos": [
-              "https://res.cloudinary.com/dv6y9ykt9/image/upload/v1768845893/IMG_20260111_073002956_HDR_v30gam.jpg",
-              "https://res.cloudinary.com/dv6y9ykt9/image/upload/v1768845891/IMG-20260111-WA0009_mglz1t.jpg"
-            ],
-            "videos": []
-          },
-          {
-            "name": "Ride 1 - New Year Kickoff Ride",
-            "url": "",
-            "photos": [
-              "https://res.cloudinary.com/dv6y9ykt9/image/upload/v1768845892/IMG-20260104-WA00_jz3kw8.jpg",
-              "https://res.cloudinary.com/dv6y9ykt9/image/upload/v1768845888/IMG-20260104-WA0008_lov5q8.jpg"
-            ],
-            "videos": []
           }
         ]
       },
       {
         "month": "Feb",
-        "rides": 2,
-        "cyclists": 20,
+        "rides": 1,
+        "cyclists": 10,
         "events": [
           {
             "name": "Ride 1 - Feb Month Endurance",
@@ -284,12 +229,6 @@ window.yearData = {
             "photos": [],
             "videos": [],
             "cyclists": 10
-          },
-          {
-            "name": "Ride 1 - Feb Month Endurance",
-            "url": "",
-            "photos": [],
-            "videos": []
           }
         ]
       }
