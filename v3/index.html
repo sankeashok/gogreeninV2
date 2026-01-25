@@ -391,16 +391,16 @@
             <h2 class="section-title">Latest Ride</h2>
             <div class="latest-ride-card">
                 <div class="ride-header">
-                    <h3>Ride 3 - KBDA Cycle Ride - Powered by HCL Cyclothon</h3>
-                    <span class="ride-date">January 18, 2026</span>
+                    <h3>Ride 4 - Leading Pinkathon Run-2026</h3>
+                    <span class="ride-date">January 25, 2026</span>
                 </div>
                 <div class="ride-gallery" id="latest-ride-gallery">
-                    <img src="https://res.cloudinary.com/dv6y9ykt9/image/upload/w_400,h_300,c_fill/v1768845890/IMG-20260118-WA0041_czomzc.jpg" alt="Ride">
-                    <img src="https://res.cloudinary.com/dv6y9ykt9/image/upload/w_400,h_300,c_fill/v1768845890/IMG-20260118-WA0040_ljkvxn.jpg" alt="Ride">
-                    <img src="https://res.cloudinary.com/dv6y9ykt9/image/upload/w_400,h_300,c_fill/v1768845890/IMG-20260118-WA0016_zkpvdh.jpg" alt="Ride">
-                    <img src="https://res.cloudinary.com/dv6y9ykt9/image/upload/w_400,h_300,c_fill/v1768845881/IMG-20260118-WA0010_bmmupy.jpg" alt="Ride">
-                    <img src="https://res.cloudinary.com/dv6y9ykt9/image/upload/w_400,h_300,c_fill/v1768845885/IMG-20260118-WA0003_e2npfr.jpg" alt="Ride">
-                    <img src="https://res.cloudinary.com/dv6y9ykt9/image/upload/w_400,h_300,c_fill/v1768845882/IMG-20260118-WA0018_vdpalw.jpg" alt="Ride">
+                    <div><img src="https://res.cloudinary.com/dv6y9ykt9/image/upload/w_400,h_300,c_fill/IMG-20260125-WA00000_poicso.jpg" alt="Ride" onclick="openImageFullscreen(this.src)"></div>
+                    <div><img src="https://res.cloudinary.com/dv6y9ykt9/image/upload/w_400,h_300,c_fill/IMG-20260125-WA00001_xq8bd4.jpg" alt="Ride" onclick="openImageFullscreen(this.src)"></div>
+                    <div><img src="https://res.cloudinary.com/dv6y9ykt9/image/upload/w_400,h_300,c_fill/IMG-20260125-WA00002_mq20dh.jpg" alt="Ride" onclick="openImageFullscreen(this.src)"></div>
+                    <div><img src="https://res.cloudinary.com/dv6y9ykt9/image/upload/w_400,h_300,c_fill/IMG-20260125-WA00003_isq3rg.jpg" alt="Ride" onclick="openImageFullscreen(this.src)"></div>
+                    <div><img src="https://res.cloudinary.com/dv6y9ykt9/image/upload/w_400,h_300,c_fill/IMG-20260125-WA00004_xombpd.jpg" alt="Ride" onclick="openImageFullscreen(this.src)"></div>
+                    <div><img src="https://res.cloudinary.com/dv6y9ykt9/image/upload/w_400,h_300,c_fill/IMG-20260125-WA00005_sq9jms.jpg" alt="Ride" onclick="openImageFullscreen(this.src)"></div>
                 </div>
                 <a href="https://youtube.com/shorts/t1ylrrnwlGQ" target="_blank" class="ride-video-link">Watch Video →</a>
             </div>
@@ -493,7 +493,10 @@
     <!-- Image Modal -->
     <div id="imageModal" class="modal" style="display: none;">
         <span class="modal-close" onclick="closeImageModal()">&times;</span>
+        <button class="lightbox-nav lightbox-prev" onclick="navigateImage(-1)">‹</button>
         <img id="fullscreenImage" src="" alt="Fullscreen">
+        <button class="lightbox-nav lightbox-next" onclick="navigateImage(1)">›</button>
+        <div class="lightbox-counter" id="lightboxCounter"></div>
     </div>
 
     <!-- Scripts -->
