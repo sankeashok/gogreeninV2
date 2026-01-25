@@ -1,5 +1,5 @@
 // Auto-synced from Google Sheets
-// Last updated: 2026-01-25T12:06:16.891Z
+// Last updated: 2026-01-25T12:26:31.159Z
 window.yearData = {
   "2008": {
     "title": "The Beginning",
@@ -170,16 +170,13 @@ window.yearData = {
     "monthlyData": [
       {
         "month": "Jan",
-        "rides": 6,
-        "cyclists": 48,
+        "rides": 5,
+        "cyclists": 38,
         "events": [
           {
             "name": "Ride 5 - Republic Day Celebration",
             "url": "",
-            "photos": [
-              "https://res.cloudinary.com/dv6y9ykt9/image/upload/v1768845890/IMG-20260118-WA0041_czomzc.jpg",
-              "https://res.cloudinary.com/dv6y9ykt9/image/upload/v1768845890/IMG-20260118-WA0040_ljkvxn.jpg"
-            ],
+            "photos": [],
             "videos": [],
             "cyclists": 20
           },
@@ -237,13 +234,6 @@ window.yearData = {
             ],
             "videos": [],
             "cyclists": 1
-          },
-          {
-            "name": "Ride 1 - Feb Month Endurance",
-            "url": "",
-            "photos": [],
-            "videos": [],
-            "cyclists": 10
           }
         ]
       }
