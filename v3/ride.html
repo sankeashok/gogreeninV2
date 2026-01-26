@@ -153,7 +153,7 @@
     </style>
 </head>
 <body>
-    <a href="../index.html" class="back-btn">← Back to Home</a>
+    <a href="index.html" class="back-btn">← Back to Home</a>
     <button class="share-btn" onclick="shareRide()">📤 Share</button>
     
     <div class="ride-viewer">
@@ -206,7 +206,7 @@
             
             const ride = monthData.events.find(event => {
                 const eventName = typeof event === 'string' ? event : event.name;
-                const match = eventName.match(/Ride\\s+(\\d+)/i);
+                const match = eventName.match(/Ride\s+(\d+)/i);
                 return match && parseInt(match[1]) === parseInt(rideNumber);
             });
             
