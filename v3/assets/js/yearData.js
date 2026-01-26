@@ -1,5 +1,5 @@
 // Auto-synced from Google Sheets
-// Last updated: 2026-01-26T07:34:24.420Z
+// Last updated: 2026-01-26T08:31:33.755Z
 window.yearData = {
   "2008": {
     "title": "The Beginning",
