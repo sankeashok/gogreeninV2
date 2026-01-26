@@ -31,26 +31,6 @@ function openYearModal(year) {
     let eventsHTML = '<div class="modal-event-list">';
     
     if (data.monthlyData && data.monthlyData.length > 0) {
-        eventsHTML += '<h4>Monthly Breakdown:</h4>';
-        
-        // Collect ALL photos from ALL rides in the month
-        let allMonthPhotos = [];
-        data.monthlyData.forEach(monthData => {
-            monthData.events.forEach(event => {
-                const eventPhotos = typeof event === 'object' ? (event.photos || []) : [];
-                allMonthPhotos = allMonthPhotos.concat(eventPhotos);
-            });
-        });
-        
-        // Display all photos in one gallery
-        if (allMonthPhotos.length > 0) {
-            eventsHTML += `<div class="event-photos">`;
-            allMonthPhotos.forEach(photo => {
-                eventsHTML += `<div><img src="${photo}" onclick="openImageFullscreen('${photo.replace('/w_400,h_300,c_fill/', '/')}')" style="width: 100%; height: 100%; object-fit: cover; cursor: pointer;"></div>`;
-            });
-            eventsHTML += '</div>';
-        }
-        
         data.monthlyData.forEach((monthData, index) => {
             // Sort events by ride number in descending order
             const sortedEvents = [...monthData.events].sort((a, b) => {
@@ -86,17 +66,19 @@ function openYearModal(year) {
                                 const rideNumber = rideMatch[1];
                                 html += `<br><a href="ride.html?year=${year}&month=${monthData.month}&ride=${rideNumber}" target="_blank" style="color: #ff6b35; font-size: 14px; margin-top: 10px; display: inline-block;">🔗 View Full Ride Page</a>`;
                             }
-                            
-                            if (eventPhotos.length > 0) {
-                                html += `<div class="event-photos">`;
-                                eventPhotos.forEach((photo, index) => {
-                                    html += `<div><img src="${photo}" onclick="openImageFullscreen('${photo.replace('/w_400,h_300,c_fill/', '/')}')" style="width: 100%; height: 100%; object-fit: cover; cursor: pointer;"></div>`;
-                                });
-                                html += '</div>';
-                            }
                             html += '</div>';
                             return html;
                         }).join('')}
+                        
+                        <h4 style="margin-top: 20px; color: var(--primary);">Monthly Breakdown:</h4>
+                        <div class="event-photos">
+                            ${monthData.events.map(event => {
+                                const eventPhotos = typeof event === 'object' ? (event.photos || []) : [];
+                                return eventPhotos.map(photo => 
+                                    `<div><img src="${photo}" onclick="openImageFullscreen('${photo.replace('/w_400,h_300,c_fill/', '/')}')" style="width: 100%; height: 100%; object-fit: cover; cursor: pointer;"></div>`
+                                ).join('');
+                            }).join('')}
+                        </div>
                     </div>
                 </div>
             `;
