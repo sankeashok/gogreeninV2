@@ -199,7 +199,7 @@
             if (!yearData.monthlyData) return null;
             
             const monthData = yearData.monthlyData.find(m => 
-                m.month.toLowerCase() === month.toLowerCase()
+                m.month.toLowerCase().includes(month.toLowerCase())
             );
             
             if (!monthData) return null;
