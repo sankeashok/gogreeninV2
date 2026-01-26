@@ -32,6 +32,25 @@ function openYearModal(year) {
     
     if (data.monthlyData && data.monthlyData.length > 0) {
         eventsHTML += '<h4>Monthly Breakdown:</h4>';
+        
+        // Collect ALL photos from ALL rides in the month
+        let allMonthPhotos = [];
+        data.monthlyData.forEach(monthData => {
+            monthData.events.forEach(event => {
+                const eventPhotos = typeof event === 'object' ? (event.photos || []) : [];
+                allMonthPhotos = allMonthPhotos.concat(eventPhotos);
+            });
+        });
+        
+        // Display all photos in one gallery
+        if (allMonthPhotos.length > 0) {
+            eventsHTML += `<div class="event-photos">`;
+            allMonthPhotos.forEach(photo => {
+                eventsHTML += `<div><img src="${photo}" onclick="openImageFullscreen('${photo.replace('/w_400,h_300,c_fill/', '/')}')" style="width: 100%; height: 100%; object-fit: cover; cursor: pointer;"></div>`;
+            });
+            eventsHTML += '</div>';
+        }
+        
         data.monthlyData.forEach((monthData, index) => {
             // Sort events by ride number in descending order
             const sortedEvents = [...monthData.events].sort((a, b) => {
@@ -62,9 +81,9 @@ function openYearModal(year) {
                             }
                             
                             if (eventPhotos.length > 0) {
-                                html += `<div class="event-photos" style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin-top: 10px;">`;
-                                eventPhotos.slice(0, 6).forEach(photo => {
-                                    html += `<img src="${photo}" onclick="openImageFullscreen('${photo}')" style="width: 100%; height: 100px; object-fit: cover; cursor: pointer; border-radius: 8px;">`;
+                                html += `<div class="event-photos">`;
+                                eventPhotos.forEach((photo, index) => {
+                                    html += `<div><img src="${photo}" onclick="openImageFullscreen('${photo.replace('/w_400,h_300,c_fill/', '/')}')" style="width: 100%; height: 100%; object-fit: cover; cursor: pointer;"></div>`;
                                 });
                                 html += '</div>';
                             }
@@ -91,16 +110,61 @@ function closeYearModal() {
     document.body.style.overflow = 'auto';
 }
 
+let currentImageIndex = 0;
+let currentImageGallery = [];
+
 function closeImageModal() {
     document.getElementById('imageModal').style.display = 'none';
     document.body.style.overflow = 'auto';
 }
 
 function openImageFullscreen(src) {
-    document.getElementById('fullscreenImage').src = src;
+    // Get original URL without transformations
+    const originalSrc = src.replace('/w_400,h_300,c_fill/', '/');
+    
+    // Collect all images from ALL galleries on the page
+    currentImageGallery = [];
+    
+    // Get images from latest ride gallery
+    document.querySelectorAll('.ride-gallery img').forEach(img => {
+        currentImageGallery.push(img.src.replace('/w_400,h_300,c_fill/', '/'));
+    });
+    
+    // Get images from modal event photos
+    document.querySelectorAll('.event-photos img, .media-grid img').forEach(img => {
+        const cleanSrc = img.src.replace('/w_400,h_300,c_fill/', '/');
+        if (!currentImageGallery.includes(cleanSrc)) {
+            currentImageGallery.push(cleanSrc);
+        }
+    });
+    
+    currentImageIndex = currentImageGallery.indexOf(originalSrc);
+    
+    showImage(currentImageIndex);
     document.getElementById('imageModal').style.display = 'flex';
     document.body.style.overflow = 'hidden';
 }
+
+function navigateImage(direction) {
+    currentImageIndex += direction;
+    if (currentImageIndex < 0) currentImageIndex = currentImageGallery.length - 1;
+    if (currentImageIndex >= currentImageGallery.length) currentImageIndex = 0;
+    showImage(currentImageIndex);
+}
+
+function showImage(index) {
+    document.getElementById('fullscreenImage').src = currentImageGallery[index];
+    document.getElementById('lightboxCounter').textContent = `${index + 1} / ${currentImageGallery.length}`;
+}
+
+// Keyboard navigation
+document.addEventListener('keydown', (e) => {
+    if (document.getElementById('imageModal').style.display === 'flex') {
+        if (e.key === 'ArrowLeft') navigateImage(-1);
+        if (e.key === 'ArrowRight') navigateImage(1);
+        if (e.key === 'Escape') closeImageModal();
+    }
+});
 
 function toggleMonthEvents(index) {
     const events = document.getElementById(`month-events-${index}`);
