@@ -1,5 +1,5 @@
 // Auto-synced from Google Sheets
-// Last updated: 2026-01-26T07:34:24.420Z
+// Last updated: 2026-01-26T08:34:40.886Z
 window.yearData = {
   "2008": {
     "title": "The Beginning",
@@ -241,7 +241,7 @@ window.yearData = {
             "cyclists": 2
           },
           {
-            "name": "Ride 1 - New Year Kickoff Ride",
+            "name": "Ride 1 - New Year Kickoff Ride to Chikka Tirupathi",
             "url": "",
             "photos": [
               "https://res.cloudinary.com/dv6y9ykt9/image/upload/v1768845892/IMG-20260104-WA00_jz3kw8.jpg",
