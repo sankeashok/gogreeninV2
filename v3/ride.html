@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title id="pageTitle">GoGreenIn - Ride Details</title>
+    
+    <!-- Dynamic Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="" id="ogUrl">
+    <meta property="og:title" content="" id="ogTitle">
+    <meta property="og:description" content="" id="ogDescription">
+    <meta property="og:image" content="" id="ogImage">
+    
+    <!-- Dynamic Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="" id="twitterUrl">
+    <meta property="twitter:title" content="" id="twitterTitle">
+    <meta property="twitter:description" content="" id="twitterDescription">
+    <meta property="twitter:image" content="" id="twitterImage">
+    
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/main.css">
+    
+    <style>
+        .ride-viewer {
+            min-height: 100vh;
+            padding: 100px 20px 50px;
+        }
+        
+        .ride-header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+        
+        .ride-title {
+            font-size: 3rem;
+            margin-bottom: 15px;
+            background: var(--gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        
+        .ride-meta {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin-bottom: 20px;
+            flex-wrap: wrap;
+        }
+        
+        .meta-item {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 10px 20px;
+            border-radius: var(--radius-full);
+            border: 1px solid rgba(0, 255, 136, 0.2);
+        }
+        
+        .ride-description {
+            font-size: 1.2rem;
+            color: var(--gray);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        .media-section {
+            margin-bottom: 60px;
+        }
+        
+        .section-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 30px;
+        }
+        
+        .section-title {
+            font-size: 2rem;
+            color: var(--primary);
+        }
+        
+        .media-count {
+            background: var(--gradient);
+            color: var(--dark);
+            padding: 8px 16px;
+            border-radius: var(--radius-full);
+            font-weight: 600;
+        }
+        
+        .back-btn {
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            background: var(--gradient);
+            color: var(--dark);
+            padding: 12px 24px;
+            border: none;
+            border-radius: var(--radius-full);
+            text-decoration: none;
+            font-weight: 600;
+            z-index: 100;
+            transition: var(--transition);
+        }
+        
+        .back-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-primary);
+        }
+        
+        .share-btn {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: rgba(255, 255, 255, 0.1);
+            color: var(--light);
+            padding: 12px 24px;
+            border: 1px solid var(--primary);
+            border-radius: var(--radius-full);
+            cursor: pointer;
+            font-weight: 600;
+            z-index: 100;
+            transition: var(--transition);
+        }
+        
+        .share-btn:hover {
+            background: var(--primary);
+            color: var(--dark);
+        }
+        
+        .error-message {
+            text-align: center;
+            padding: 100px 20px;
+            color: var(--gray);
+        }
+        
+        @media (max-width: 768px) {
+            .ride-title {
+                font-size: 2rem;
+            }
+            
+            .ride-meta {
+                flex-direction: column;
+                align-items: center;
+                gap: 15px;
+            }
+            
+            .section-header {
+                flex-direction: column;
+                gap: 15px;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <a href="../index.html" class="back-btn">← Back to Home</a>
+    <button class="share-btn" onclick="shareRide()">📤 Share</button>
+    
+    <div class="ride-viewer">
+        <div class="container">
+            <div id="rideContent">
+                <div class="error-message">
+                    <h2>Loading ride details...</h2>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Image Modal -->
+    <div id="imageModal" class="modal" style="display: none;">
+        <span class="modal-close" onclick="closeImageModal()">&times;</span>
+        <button class="lightbox-nav lightbox-prev" onclick="navigateImage(-1)">‹</button>
+        <img id="fullscreenImage" src="" alt="Fullscreen">
+        <button class="lightbox-nav lightbox-next" onclick="navigateImage(1)">›</button>
+        <div class="lightbox-counter" id="lightboxCounter"></div>
+    </div>
+    
+    <script src="assets/js/yearData.js"></script>
+    <script>
+        let currentRideData = null;
+        let currentImageIndex = 0;
+        let currentImageGallery = [];
+        
+        // Parse URL parameters
+        function getUrlParams() {
+            const params = new URLSearchParams(window.location.search);
+            return {
+                year: params.get('year'),
+                month: params.get('month'),
+                ride: params.get('ride')
+            };
+        }
+        
+        // Find ride data
+        function findRideData(year, month, rideNumber) {
+            if (!window.yearData || !window.yearData[year]) return null;
+            
+            const yearData = window.yearData[year];
+            if (!yearData.monthlyData) return null;
+            
+            const monthData = yearData.monthlyData.find(m => 
+                m.month.toLowerCase() === month.toLowerCase()
+            );
+            
+            if (!monthData) return null;
+            
+            const ride = monthData.events.find(event => {
+                const eventName = typeof event === 'string' ? event : event.name;
+                const match = eventName.match(/Ride\\s+(\\d+)/i);
+                return match && parseInt(match[1]) === parseInt(rideNumber);
+            });
+            
+            return ride ? { ...ride, year, month, monthData } : null;
+        }
+        
+        // Update meta tags for social sharing
+        function updateMetaTags(rideData) {
+            const rideName = typeof rideData === 'string' ? rideData : rideData.name;
+            const photos = typeof rideData === 'object' ? (rideData.photos || []) : [];
+            const firstPhoto = photos[0] || 'https://sankeashok.github.io/gogreeninV2/GGI_logo.png';
+            
+            const title = `GoGreenIn - ${rideName}`;
+            const description = `Join GoGreenIn's cycling adventure! View photos and videos from ${rideName}. ${photos.length} photos available.`;
+            const url = window.location.href;
+            
+            // Update page title
+            document.getElementById('pageTitle').textContent = title;
+            document.title = title;
+            
+            // Update Open Graph
+            document.getElementById('ogUrl').content = url;
+            document.getElementById('ogTitle').content = title;
+            document.getElementById('ogDescription').content = description;
+            document.getElementById('ogImage').content = firstPhoto;
+            
+            // Update Twitter
+            document.getElementById('twitterUrl').content = url;
+            document.getElementById('twitterTitle').content = title;
+            document.getElementById('twitterDescription').content = description;
+            document.getElementById('twitterImage').content = firstPhoto;
+        }
+        
+        // Render ride content
+        function renderRide(rideData) {
+            const rideName = typeof rideData === 'string' ? rideData : rideData.name;
+            const rideUrl = typeof rideData === 'object' ? rideData.url : '';
+            const photos = typeof rideData === 'object' ? (rideData.photos || []) : [];
+            
+            currentImageGallery = photos;
+            
+            const content = `
+                <div class="ride-header">
+                    <h1 class="ride-title">${rideName}</h1>
+                    <div class="ride-meta">
+                        <div class="meta-item">📅 ${rideData.month} ${rideData.year}</div>
+                        <div class="meta-item">🚴 ${rideData.monthData.cyclists} Cyclists</div>
+                        <div class="meta-item">📸 ${photos.length} Photos</div>
+                    </div>
+                    <p class="ride-description">Experience the journey through our cycling community's adventure!</p>
+                </div>
+                
+                ${photos.length > 0 ? `
+                <div class="media-section">
+                    <div class="section-header">
+                        <h2 class="section-title">Photos</h2>
+                        <div class="media-count">${photos.length} Images</div>
+                    </div>
+                    <div class="ride-gallery">
+                        ${photos.map((photo, index) => `
+                            <div><img src="${photo.replace('/w_400,h_300,c_fill/', '/')}" onclick="openImageFullscreen('${photo.replace('/w_400,h_300,c_fill/', '/')}')" alt="Ride photo ${index + 1}"></div>
+                        `).join('')}
+                    </div>
+                </div>
+                ` : ''}
+                
+                ${rideUrl ? `
+                <div class="media-section">
+                    <div class="section-header">
+                        <h2 class="section-title">Video</h2>
+                    </div>
+                    <div style="text-align: center;">
+                        <a href="${rideUrl}" target="_blank" class="btn-primary" style="display: inline-block; padding: 15px 30px; text-decoration: none; border-radius: 25px;">🎥 Watch Video</a>
+                    </div>
+                </div>
+                ` : ''}
+            `;
+            
+            document.getElementById('rideContent').innerHTML = content;
+        }
+        
+        // Image modal functions
+        function openImageFullscreen(src) {
+            currentImageIndex = currentImageGallery.indexOf(src);
+            showImage(currentImageIndex);
+            document.getElementById('imageModal').style.display = 'flex';
+            document.body.style.overflow = 'hidden';
+        }
+        
+        function closeImageModal() {
+            document.getElementById('imageModal').style.display = 'none';
+            document.body.style.overflow = 'auto';
+        }
+        
+        function navigateImage(direction) {
+            currentImageIndex += direction;
+            if (currentImageIndex < 0) currentImageIndex = currentImageGallery.length - 1;
+            if (currentImageIndex >= currentImageGallery.length) currentImageIndex = 0;
+            showImage(currentImageIndex);
+        }
+        
+        function showImage(index) {
+            document.getElementById('fullscreenImage').src = currentImageGallery[index];
+            document.getElementById('lightboxCounter').textContent = `${index + 1} / ${currentImageGallery.length}`;
+        }
+        
+        // Share function
+        function shareRide() {
+            if (navigator.share && currentRideData) {
+                const rideName = typeof currentRideData === 'string' ? currentRideData : currentRideData.name;
+                navigator.share({
+                    title: `GoGreenIn - ${rideName}`,
+                    text: `Check out this cycling adventure from GoGreenIn!`,
+                    url: window.location.href
+                });
+            } else {
+                // Fallback: copy to clipboard
+                navigator.clipboard.writeText(window.location.href);
+                alert('Link copied to clipboard!');
+            }
+        }
+        
+        // Keyboard navigation
+        document.addEventListener('keydown', (e) => {
+            if (document.getElementById('imageModal').style.display === 'flex') {
+                if (e.key === 'ArrowLeft') navigateImage(-1);
+                if (e.key === 'ArrowRight') navigateImage(1);
+                if (e.key === 'Escape') closeImageModal();
+            }
+        });
+        
+        // Initialize page
+        document.addEventListener('DOMContentLoaded', () => {
+            const params = getUrlParams();
+            
+            if (!params.year || !params.month || !params.ride) {
+                document.getElementById('rideContent').innerHTML = `
+                    <div class="error-message">
+                        <h2>Invalid URL Parameters</h2>
+                        <p>Please provide year, month, and ride parameters.</p>
+                        <p>Example: ?year=2026&month=Jan&ride=5</p>
+                    </div>
+                `;
+                return;
+            }
+            
+            const rideData = findRideData(params.year, params.month, params.ride);
+            
+            if (!rideData) {
+                document.getElementById('rideContent').innerHTML = `
+                    <div class="error-message">
+                        <h2>Ride Not Found</h2>
+                        <p>Could not find ride ${params.ride} for ${params.month} ${params.year}</p>
+                    </div>
+                `;
+                return;
+            }
+            
+            currentRideData = rideData;
+            updateMetaTags(rideData);
+            renderRide(rideData);
+        });
+    </script>
+</body>
+</html>

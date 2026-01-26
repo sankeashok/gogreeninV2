@@ -80,6 +80,13 @@ function openYearModal(year) {
                                 html += eventName;
                             }
                             
+                            // Add "View Full Ride" button
+                            const rideMatch = eventName.match(/Ride\s+(\d+)/i);
+                            if (rideMatch) {
+                                const rideNumber = rideMatch[1];
+                                html += `<br><a href="ride.html?year=${year}&month=${monthData.month}&ride=${rideNumber}" target="_blank" style="color: #ff6b35; font-size: 14px; margin-top: 10px; display: inline-block;">🔗 View Full Ride Page</a>`;
+                            }
+                            
                             if (eventPhotos.length > 0) {
                                 html += `<div class="event-photos">`;
                                 eventPhotos.forEach((photo, index) => {
