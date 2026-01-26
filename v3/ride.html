@@ -217,7 +217,7 @@
         function updateMetaTags(rideData) {
             const rideName = typeof rideData === 'string' ? rideData : rideData.name;
             const photos = typeof rideData === 'object' ? (rideData.photos || []) : [];
-            const firstPhoto = photos[0] || 'https://sankeashok.github.io/gogreeninV2/GGI_logo.png';
+            const firstPhoto = photos[0] ? photos[0].replace('/w_400,h_300,c_fill/', '/') : 'https://sankeashok.github.io/gogreeninV2/GGI_logo.png';
             
             const title = `GoGreenIn - ${rideName}`;
             const description = `Join GoGreenIn's cycling adventure! View photos and videos from ${rideName}. ${photos.length} photos available.`;
